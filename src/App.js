@@ -1,9 +1,14 @@
 // Import dependances
 import React from 'react';
 import { Container, Grid } from '@material-ui/core';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
 // Import pages files
 import Accueil from './pages/Accueil/Accueil.js'
+import Formations from './pages/Formations/Formations.js'
+import Stages from './pages/Stages/Stages.js'
+import Contact from './pages/Contact/Contact.js'
+
 
 // Import components files
 import Header from './components/Header/Header.js'
@@ -37,7 +42,20 @@ function App() {
           style={{backgroundColor: 'red'}}
           >
             <Navbar/>
-            <Accueil/>
+            <Router>
+              <Route exact path='/'>
+                <Accueil/>
+              </Route>
+              <Route exact path='/formations'>
+                <Formations/>
+              </Route>
+              <Route exact path='/stages'>
+                <Stages/>
+              </Route>
+              <Route exact path='/contact'>
+                <Contact/>
+              </Route>
+            </Router>
             <Footer/>
         </Grid>
       </Grid>
