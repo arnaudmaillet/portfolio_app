@@ -1,0 +1,45 @@
+@import './../../settings.scss';
+
+.timeline {
+    padding: 0!important;
+
+    &_header {
+        min-height: 80px!important;
+
+        &_text {
+            padding-top: 7px;
+        }
+
+        &_dot {
+            background-color: $main-color;
+            padding: 5px!important;
+
+            .MuiSvgIcon-root{
+                font-size: 30px;
+                color: $icon-main-color;
+            }
+        }
+    }
+
+    &_dot{
+        color: $icon-main-color;
+        border-color: $main-color;
+        padding: 2px!important;
+    }
+
+    &_separator_padding{
+        padding-left: 18px!important;
+    }
+
+    .MuiTimelineItem-root {
+        min-height: 0px;
+    }
+
+    .MuiTimelineItem-missingOppositeContent:before {
+        display: none;
+    }
+
+    .MuiTimelineConnector-root{
+        background-color: #eee!important;
+    }
+}
