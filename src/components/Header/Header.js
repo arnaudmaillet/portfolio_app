@@ -1,8 +1,9 @@
 import React from 'react'
-
-import './Header.scss'
 import { Typography } from '@material-ui/core'
 
+import Timeline from './../Timeline/Timeline.js'
+
+import './Header.scss'
 import ImgProfil from './../../assets/img/profil.jpg'
 
 const Header = () => {
@@ -13,10 +14,10 @@ const Header = () => {
                 <Typography className='profile_name_title'>Developper par passion</Typography>
             </div>
             <div className='profile_img'>
-                <img src={ImgProfil} alt='Image de profil'/>
+                <img src={ImgProfil} alt='picture'/>
             </div>
             <div className = 'profile_information'>
-                <p>Timeline</p>
+                <Timeline/>
                 <button>Mon CV</button>
             </div>
         </div>
