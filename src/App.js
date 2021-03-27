@@ -27,9 +27,7 @@ function App() {
           xs={12} 
           sm={12} 
           md={4} 
-          lg={3}
-          style={{backgroundColor: 'blue'}}
-          >
+          lg={3}>
             <Header/>
         </Grid>
         <Grid 
@@ -38,9 +36,7 @@ function App() {
           xs
           sm
           md
-          lg
-          style={{backgroundColor: 'red'}}
-          >
+          lg>
             <Navbar/>
             <Router>
               <Route exact path='/'>
