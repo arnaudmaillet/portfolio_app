@@ -1,5 +1,16 @@
+// Import dependances
 import React from 'react';
 import { Container, Grid } from '@material-ui/core';
+
+// Import pages files
+import Accueil from './pages/Accueil/Accueil.js'
+
+// Import components files
+import Header from './components/Header/Header.js'
+import Navbar from './components/Navbar/Navbar.js'
+import Footer from './components/Footer/Footer.js'
+
+// Import style
 import './App.scss';
 
 function App() {
@@ -14,17 +25,20 @@ function App() {
           lg={3}
           style={{backgroundColor: 'blue'}}
           >
-            ABC
+            <Header/>
         </Grid>
         <Grid 
-          item 
+          item
+          // xs, sm, md, lg = auto sizing
           xs
           sm
           md
           lg
           style={{backgroundColor: 'red'}}
           >
-            XYZ
+            <Navbar/>
+            <Accueil/>
+            <Footer/>
         </Grid>
       </Grid>
     </Container>
