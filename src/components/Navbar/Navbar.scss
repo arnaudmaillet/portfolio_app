@@ -22,12 +22,22 @@
         border-bottom-left-radius: $border-main-radius;
     }
 
-    &_link {
-        margin-right: auto;
-    }
-
     &_left_section{
         margin-right: auto;
+
+        &_link {
+            font-weight: 500;
+            color: $font-text-color;
+            transition: $transition-duration;
+    
+            &:hover {
+                color: $main-color;
+            }
+        }
+
+        .active {
+            color: $main-color;
+        }
     }
 
     
@@ -43,3 +53,4 @@
     }
     
 }
+

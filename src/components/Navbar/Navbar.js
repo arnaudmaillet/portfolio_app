@@ -31,36 +31,24 @@ const MyNavbar = (props) => {
                         exact
                         as={NavLink} 
                         to='/' 
-                        className=
-                        {
-                        pathName == '/' ? 
-                            ('myNavbar_link_active') 
-                            : ('myNavbar_link')
-                        }>Accueil</Nav.Link>
+                        className='myNavbar_left_section_link'
+                        >Accueil</Nav.Link>
 
                     {/* Formations */}
                     <Nav.Link
                         exact 
                         as={NavLink} 
                         to='/formations' 
-                        className=
-                        {
-                        pathName == '/formations' ? 
-                            ('myNavbar_link_active') 
-                            : ('myNavbar_link')
-                        }>Formations</Nav.Link>
+                        className='myNavbar_left_section_link'
+                        >Formations</Nav.Link>
 
                     {/* Stages */}
                     <Nav.Link
                         exact 
                         as={NavLink} 
                         to='/stages' 
-                        className=
-                        {
-                        pathName == '/stages' ? 
-                            ('myNavbar_link_active') 
-                            : ('myNavbar_link')
-                        }>Stages</Nav.Link>
+                        className='myNavbar_left_section_link'
+                        >Stages</Nav.Link>
                 </Nav>
                 <div className='myNavbar_right_section'>
                     {/* Foreach social object in array, define key as social object */}
