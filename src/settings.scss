@@ -2,16 +2,25 @@
 
 // Colors
 //$main-color : #425CBB!important;
-$main-color : #FFC500!important;
-$bg-main-color : #FAFAFA!important;
-$bg-second-color : black!important;
-$font-main-color : black!important;
-$font-text-color : #787878!important;
-$icon-main-color : darkslategray!important;
+$main-color: #FFC500!important;
+$bg-main-color: #FAFAFA!important;
+$bg-second-color: black!important;
+$font-main-color: black!important;
+$font-text-color: #787878!important;
+$icon-main-color: darkslategray!important;
+
+// Sizing
+$btn-icon-size: 20px!important; 
 
 // Borders
-$border-main-radius : 6px!important;
-$border-btn-radius : 50px!important;
+$border-main-radius: 6px!important;
+$border-btn-radius: 50px!important;
+
+// transition time
+$transition-duration: .3s;
+
+// Shadow
+$shadow-main: 0px 2px 92px 0px rgba(0, 0, 0, 0.07);
 
 // Shadow container
 .container_shadow{

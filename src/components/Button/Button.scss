@@ -9,7 +9,7 @@
     line-height: 35px;
     min-width: 100px;
 
-    &_container {
+    &_icon {
         color: $font-main-color;
         background-color: $bg-main-color;
         border-radius: $border-btn-radius;
@@ -22,7 +22,7 @@
         justify-content: center;
 
         > .MuiSvgIcon-root {
-            font-size: 16px;
+            font-size: $btn-icon-size;
         }
     }
 

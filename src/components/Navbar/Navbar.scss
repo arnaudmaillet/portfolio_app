@@ -1,0 +1,45 @@
+@import './../../settings.scss';
+
+.myNavbar {
+    margin-bottom: 30px;
+    background-color: $bg-main-color;
+    padding: 0 22px 0 0!important;
+    border-radius: $border-main-radius;
+    box-shadow: $shadow-main;
+
+    .header_navlink{
+        padding: 0;
+    }
+
+    &_home {
+        background-color: $main-color;
+        height: 70px;
+        padding: 22px;
+        display: flex!important;
+        align-items: center!important;
+        justify-content: center!important;
+        border-top-left-radius: $border-main-radius;
+        border-bottom-left-radius: $border-main-radius;
+    }
+
+    &_link {
+        margin-right: auto;
+    }
+
+    &_left_section{
+        margin-right: auto;
+    }
+
+    
+    &_right_section{
+        display: flex!important;
+        align-items: center!important;
+
+        > a > .MuiSvgIcon-root {
+            font-size: 16px;
+            margin-right: 12px;
+            color: $icon-main-color;
+        }
+    }
+    
+}

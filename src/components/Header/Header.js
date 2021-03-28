@@ -8,8 +8,6 @@ import MyTimeline, { CustomTimelineSeparator } from './../Timeline/Timeline.js'
 import CustomButton from "./../Button/Button.js";
 
 import './Header.scss'
-import ImgProfil from './../../assets/img/profil.jpg'
-
 
 
 const Header = () => {
@@ -20,10 +18,10 @@ const Header = () => {
                 <Typography className='profile_name_title'>{MyData.profile.title}</Typography>
             </div>
             <div className='profile_img'>
-                <img src={ImgProfil} alt='picture' />
+                <img src={MyData.profile.img} alt='picture' />
             </div>
             <div className='profile_information'>
-                <MyTimeline icon={MyData.icon.header_timeline}>
+                <MyTimeline icon={MyData.icons.header_timeline}>
                     <CustomTimelineItem 
                         title='Nom'
                         text={MyData.profile.name}/>
@@ -48,7 +46,7 @@ const Header = () => {
                 <div className='profile_information_btn_container'>
                     <CustomButton 
                         text='Télécharger CV'
-                        icon={MyData.icon.btn_download}/>
+                        icon={MyData.icons.btn_download}/>
                 </div>
             </div>
         </div>

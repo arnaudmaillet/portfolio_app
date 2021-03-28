@@ -12,7 +12,7 @@ import Contact from './pages/Contact/Contact.js'
 
 // Import components files
 import Header from './components/Header/Header.js'
-import Navbar from './components/Navbar/Navbar.js'
+import MyNavbar from './components/Navbar/Navbar.js'
 import Footer from './components/Footer/Footer.js'
 
 // Import style
@@ -21,41 +21,42 @@ import './App.scss';
 function App() {
   return (
     <Container className='top_main_margin'>
-      <Grid 
-        container 
+      <Grid
+        container
         spacing={7}>
-        <Grid 
-          item 
-          xs={12} 
-          sm={12} 
-          md={4} 
+        <Grid
+          item
+          xs={12}
+          sm={12}
+          md={4}
           lg={3}>
-            <Header/>
+          <Header />
         </Grid>
-        <Grid 
-          style={{backgroundColor: 'red'}}
+        <Grid
           item
           // xs, sm, md, lg = auto sizing
           xs
           sm
           md
           lg>
-            <Navbar/>
-            <Router>
+          <Router>
+            <MyNavbar />
+            <Switch>
               <Route exact path='/'>
-                <Accueil/>
+                <Accueil />
               </Route>
               <Route exact path='/formations'>
-                <Formations/>
+                <Formations />
               </Route>
               <Route exact path='/stages'>
-                <Stages/>
+                <Stages />
               </Route>
               <Route exact path='/contact'>
-                <Contact/>
+                <Contact />
               </Route>
-            </Router>
-            <Footer/>
+            </Switch>
+          </Router>
+          <Footer />
         </Grid>
       </Grid>
     </Container>

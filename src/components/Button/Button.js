@@ -9,7 +9,7 @@ const CustomButton = ({text, icon}) => {
             className='my_custom_btn'
             endIcon={
                 icon ? (
-                    <div className='my_custom_btn_container'>{icon}</div>
+                    <div className='my_custom_btn_icon'>{icon}</div>
                 ) : (
                     null
                 )
