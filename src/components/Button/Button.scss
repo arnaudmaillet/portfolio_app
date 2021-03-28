@@ -1,0 +1,36 @@
+@import './../../settings.scss';
+
+.my_custom_btn {
+    background-color: $main-color;
+    font-size: 14px;
+    font-weight: 600!important;
+    border-radius: $border-btn-radius;
+    padding: 1px 12px;
+    line-height: 35px;
+    min-width: 100px;
+
+    &_container {
+        color: $font-main-color;
+        background-color: $bg-main-color;
+        border-radius: $border-btn-radius;
+        height: 27px;
+        width: 27px;
+        line-height: 29px;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        > .MuiSvgIcon-root {
+            font-size: 16px;
+        }
+    }
+
+    &_text {
+        font-size: 14px;
+        text-transform: none;
+        text-align: center;
+        width: 100%;
+        margin: 0 5px 0 5px;
+    }
+}

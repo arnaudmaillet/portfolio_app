@@ -4,10 +4,12 @@ import TimelineItem from '@material-ui/lab/TimelineItem'
 import TimelineContent from '@material-ui/lab/TimelineContent';
 
 import MyData from './../../utils/data.js'
-import Timeline, { CustomTimelineSeparator } from './../Timeline/Timeline.js'
+import MyTimeline, { CustomTimelineSeparator } from './../Timeline/Timeline.js'
+import CustomButton from "./../Button/Button.js";
 
 import './Header.scss'
 import ImgProfil from './../../assets/img/profil.jpg'
+
 
 
 const Header = () => {
@@ -21,7 +23,7 @@ const Header = () => {
                 <img src={ImgProfil} alt='picture' />
             </div>
             <div className='profile_information'>
-                <Timeline icon={MyData.icon.header_timeline}>
+                <MyTimeline icon={MyData.icon.header_timeline}>
                     <CustomTimelineItem 
                         title='Nom'
                         text={MyData.profile.name}/>
@@ -42,8 +44,12 @@ const Header = () => {
                             text={MyData.socials[key].text} 
                             link={MyData.socials[key].link}/>
                     ))}
-                </Timeline>
-                <button>Mon CV</button>
+                </MyTimeline>
+                <div className='profile_information_btn_container'>
+                    <CustomButton 
+                        text='Télécharger CV'
+                        icon={MyData.icon.btn_download}/>
+                </div>
             </div>
         </div>
     )

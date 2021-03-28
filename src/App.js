@@ -20,8 +20,10 @@ import './App.scss';
 
 function App() {
   return (
-    <Container>
-      <Grid container>
+    <Container className='top_main_margin'>
+      <Grid 
+        container 
+        spacing={7}>
         <Grid 
           item 
           xs={12} 
@@ -31,6 +33,7 @@ function App() {
             <Header/>
         </Grid>
         <Grid 
+          style={{backgroundColor: 'red'}}
           item
           // xs, sm, md, lg = auto sizing
           xs

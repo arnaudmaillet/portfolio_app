@@ -11,6 +11,7 @@ $icon-main-color : darkslategray!important;
 
 // Borders
 $border-main-radius : 6px!important;
+$border-btn-radius : 50px!important;
 
 // Shadow container
 .container_shadow{
@@ -19,4 +20,7 @@ $border-main-radius : 6px!important;
     -moz-box-shadow: 0px 2px 92px 0px rgba(0, 0, 0, 0.13);
 }
 
-
+// Margin & Padding
+.top_main_margin{
+    margin-top: 60px;
+}

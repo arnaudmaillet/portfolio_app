@@ -2,7 +2,8 @@ import FacebookIcon from '@material-ui/icons/Facebook';
 import TwitterIcon from '@material-ui/icons/Twitter';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import GitHubIcon from '@material-ui/icons/GitHub';
-import PersonPinIcon from '@material-ui/icons/PersonPin';
+import AccountCircleRoundedIcon from '@material-ui/icons/AccountCircleRounded';
+import GetAppRoundedIcon from '@material-ui/icons/GetAppRounded';
 
 export default {
 
@@ -18,7 +19,8 @@ export default {
     },
 
     icon:{
-        header_timeline: <PersonPinIcon/>
+        header_timeline: <AccountCircleRoundedIcon/>,
+        btn_download : <GetAppRoundedIcon/>,
     },
 
     // Array of social object.
