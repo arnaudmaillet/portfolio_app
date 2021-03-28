@@ -12,7 +12,7 @@ import ImgProfil from './../../assets/img/profil.jpg'
 
 const Header = () => {
     return (
-        <div className='profile'>
+        <div className='profile container_shadow'>
             <div className='profile_name'>
                 <Typography className='profile_name_text'>{MyData.profile.name}</Typography>
                 <Typography className='profile_name_title'>{MyData.profile.title}</Typography>
@@ -34,7 +34,14 @@ const Header = () => {
                     <CustomTimelineItem 
                         title='Adresse'
                         text={MyData.profile.adress}/>
-                    
+
+                    {/* Foreach social object in array, define key as social object */}
+                    {Object.keys(MyData.socials).map((key) => (
+                        <CustomTimelineItem 
+                            key = {key}
+                            text={MyData.socials[key].text} 
+                            link={MyData.socials[key].link}/>
+                    ))}
                 </Timeline>
                 <button>Mon CV</button>
             </div>
@@ -46,17 +53,19 @@ const Header = () => {
 const CustomTimelineItem = ({ title, text, link }) => (
     <TimelineItem>
         <CustomTimelineSeparator/>
-        <TimelineContent>
+        <TimelineContent className='timeline_content'>
 
-            {/* Conditionnal if link display link else display text*/}
+            {/* Conditionnal if link display link else display text */}
             {
                 link ? (
-                    <Typography>
-                        <span>{title} :</span>
-                        <a href={link} target='_blank'>{text}</a>
+                    <Typography className='timeline_content_item'>
+                        <span>{title}</span>
+                        <a 
+                            href={link} 
+                            target='_blank'>{text}</a>
                     </Typography>
                 ) : (
-                    <Typography>
+                    <Typography className='timeline_content_item'>
                         <span>{title} :</span> {text}
                     </Typography>
                 )

@@ -15,7 +15,7 @@
             padding: 5px!important;
 
             .MuiSvgIcon-root{
-                font-size: 30px;
+                font-size: 35px;
                 color: $icon-main-color;
             }
         }
@@ -28,7 +28,7 @@
     }
 
     &_separator_padding{
-        padding-left: 18px!important;
+        padding-left: 20px!important;
     }
 
     .MuiTimelineItem-root {
@@ -41,5 +41,9 @@
 
     .MuiTimelineConnector-root{
         background-color: #eee!important;
+    }
+
+    .MuiTimelineDot-root{
+       margin-top: 14px; 
     }
 }

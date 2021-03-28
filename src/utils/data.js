@@ -21,28 +21,33 @@ export default {
         header_timeline: <PersonPinIcon/>
     },
 
+    // Array of social object.
     socials: {
-        facebook:{
+        Facebook:{
+            id: 1,
             link: 'https://www.facebook.com/',
             text: 'Facebook',
             icon: <FacebookIcon/>
         },
 
-        twitter:{
+        Twitter:{
+            id: 2,
             link: 'https://twitter.com/',
             text: 'Twitter',
             icon: <TwitterIcon/>
         },
 
-        linkedin:{
+        Linkedin:{
+            id: 3,
             link: 'https://www.linkedin.com/',
             text: 'Linkedin',
             icon: <LinkedInIcon/>
         },
 
-        linkedin:{
+        Github:{
+            id: 4,
             link: 'https://github.com/arnaudmaillet',
-            text: 'Linkedin',
+            text: 'Github',
             icon: <GitHubIcon/>
         },
     }
