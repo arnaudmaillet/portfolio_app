@@ -2,20 +2,46 @@
 
 .about-me {
 
-    padding-bottom: $bottom-main-padding;
+    padding-bottom: $main-margin;
 
     &_title {
         position: relative;
         display: inline-block;
         padding: 0 3px;  
-        margin-bottom: $bottom-main-margin; 
+        margin-bottom: $second-margin; 
     }
 
     &_text {
-        color: $font-main-color;
+        color: $font-text-color;
         font: smaller!important;
         line-height: 28px!important;
-        white-space: pre-line!important;
+        white-space: pre-line;
+        text-align: justify;
+    }
+}
+
+.history {
+    
+    padding-bottom: $main-margin;
+
+    &_title {
+        margin-bottom: $second-margin; 
+    }
+
+    &_item-title {
+        font-size: 16px!important;
+        font-weight: 600!important;
+        margin-bottom: 10px; 
+    }
+
+    &_item-date {
+        color: $font-text-color;
+    }
+
+    &_item-text {
+        color: $font-text-color;
+        font-size: smaller;
+        margin: 6px 0 20px 0!important;
         text-align: justify;
     }
 }

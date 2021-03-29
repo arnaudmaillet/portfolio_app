@@ -13,13 +13,19 @@
 
     &_home {
         background-color: $main-color;
-        height: 70px;
+        height: 65px;
+        width: 65px;
         padding: 22px;
         display: flex!important;
         align-items: center!important;
         justify-content: center!important;
         border-top-left-radius: $border-main-radius;
         border-bottom-left-radius: $border-main-radius;
+
+        .MuiSvgIcon-root{
+            font-size: 35px;
+            color: $icon-main-color;
+        }
     }
 
     &_left_section{

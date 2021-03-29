@@ -8,8 +8,8 @@ $bg-second-color: black!important;
 $font-main-color: black!important;
 $font-text-color: #787878!important;
 $font-second-color: #FAFAFA!important;
-$icon-main-color: darkslategray!important;
-$bg-footer-color: #1E1E1E;
+$icon-main-color: #1E1E1E!important;
+$bg-footer-color: #1E1E1E!important;
 
 // Sizing
 $btn-icon-size: 20px!important; 
@@ -25,8 +25,9 @@ $transition-duration: .3s!important;
 $shadow-main: 0px 2px 92px 0px rgba(0, 0, 0, 0.13)!important;
 
 // Margin & Padding
-$top-main-margin: 60px!important;
-$top-second-margin: 30px!important;
+$main-margin: 60px!important;
+$second-margin: 30px!important;
+
 $main-padding: 30px!important;
-$bottom-main-padding: 45px!important;
-$bottom-main-margin: 30px!important;
+$main-padding: 45px!important;
+

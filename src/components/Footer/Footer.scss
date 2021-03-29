@@ -1,12 +1,12 @@
 @import './../../utils/settings.scss';
 
 .footer {
+    height: 65px;
     background-color: $bg-footer-color;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
-    height: 70px;
     border-radius: $border-main-radius;
     padding: 20px 25px;
     box-shadow: $shadow-main;

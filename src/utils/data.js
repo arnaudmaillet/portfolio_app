@@ -6,6 +6,8 @@ import GitHubIcon from '@material-ui/icons/GitHub';
 import AccountCircleRoundedIcon from '@material-ui/icons/AccountCircleRounded';
 import GetAppRoundedIcon from '@material-ui/icons/GetAppRounded';
 import ContactlessRoundedIcon from '@material-ui/icons/ContactlessRounded';
+import WorkRoundedIcon from '@material-ui/icons/WorkRounded';
+import SchoolRoundedIcon from '@material-ui/icons/SchoolRounded';
 
 // Import profile image
 import ImgProfil from './../assets/img/profil.jpg'
@@ -29,6 +31,8 @@ export default {
 
     icons: {
         header_timeline: <AccountCircleRoundedIcon/>,
+        work_timeline: <WorkRoundedIcon/>,
+        education_timeline: <SchoolRoundedIcon/>,
         btn_download: <GetAppRoundedIcon/>,
         btn_contact: <ContactlessRoundedIcon/>
     },
@@ -68,11 +72,59 @@ export default {
 
     // Pages
 
-    // About me
-    AboutSection: {
-        title: 'Présentation',
-        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-    }
+
+
+    home: {
+
+        // About me
+        about: {
+            title: 'Présentation',
+            text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. \n\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+        },
+
+
+        // History
+        history: {
+            title: 'Parcours',
+
+            work: [
+                {
+                    title: 'Entreprise 1',
+                    date: '1900-1914',
+                    text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+                },
+                {
+                    title: 'Entreprise 2',
+                    date: '1880-1890',
+                    text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+                },
+                {
+                    title: 'Entreprise 3',
+                    date: '1860-1866',
+                    text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+                },
+            ],
+
+            education: [
+                {
+                    title: 'Ecole 1',
+                    date: '1900-1914',
+                    text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+                },
+                {
+                    title: 'Ecole 2',
+                    date: '1880-1890',
+                    text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+                },
+                {
+                    title: 'Ecole 3',
+                    date: '1860-1866',
+                    text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+                },
+            ]
+        },
+    },
+    
 
 
 }
