@@ -10,6 +10,19 @@
         -moz-osx-font-smoothing: grayscale;
         overflow-x: hidden;
         background: url('./assets/img/bg.png');
+
+        .main-content {
+            background-color: $bg-main-color;
+            min-height: 100vh;
+            margin-bottom: 30px;
+            padding: 40px;
+            border-radius: $border-main-radius;
+            -webkit-border-radius: $border-main-radius;
+            -moz-border-radius: $border-main-radius;
+            box-shadow: $shadow-main;
+            -webkit-box-shadow: $shadow-main;
+            -moz-box-shadow: $shadow-main;
+        }
     }
 
     code{

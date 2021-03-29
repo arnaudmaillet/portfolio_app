@@ -42,23 +42,25 @@ function App() {
           lg>
           <Router>
             <MyNavbar />
-            <Switch>
-              <Route exact path='/'>
-                <Accueil />
-              </Route>
-              <Route exact path='/formations'>
-                <Formations />
-              </Route>
-              <Route exact path='/stages'>
-                <Stages />
-              </Route>
-              <Route exact path='/contact'>
-                <Contact />
-              </Route>
-              <Route exact path='/veilles'>
-                <Veilles />
-              </Route>
-            </Switch>
+            <div className='main-content'>
+              <Switch>
+                <Route exact path='/'>
+                  <Accueil />
+                </Route>
+                <Route exact path='/formations'>
+                  <Formations />
+                </Route>
+                <Route exact path='/stages'>
+                  <Stages />
+                </Route>
+                <Route exact path='/contact'>
+                  <Contact />
+                </Route>
+                <Route exact path='/veilles'>
+                  <Veilles />
+                </Route>
+              </Switch>
+            </div>
           </Router>
           <Footer />
         </Grid>

@@ -6,7 +6,7 @@ const Footer = () => {
     return (
         <div className='footer'>
             <div className='footer_left'>
-                <a href='www.google.com' className='footer_left_terms'>Mentions légales</a>
+                <a href='/' className='footer_left_terms'>Mentions légales</a>
             </div>
             <div className='footer_right'>
                 <div className='footer_right_copyrights'>All right reserved to 

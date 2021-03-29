@@ -12,7 +12,7 @@ import ImgProfil from './../assets/img/profil.jpg'
 
 export default {
 
-    // none or top
+    // values of sticky navbar : none or top
     navbar: 'top',
 
     profile: {
@@ -27,7 +27,7 @@ export default {
         phone: '0101010101'
     },
 
-    icons:{
+    icons: {
         header_timeline: <AccountCircleRoundedIcon/>,
         btn_download: <GetAppRoundedIcon/>,
         btn_contact: <ContactlessRoundedIcon/>
@@ -35,33 +35,44 @@ export default {
 
     // Array of social object.
     socials: {
-        Facebook:{
+        Facebook: {
             id: 1,
             link: 'https://www.facebook.com/',
             text: 'Facebook',
             icon: <FacebookIcon/>
         },
 
-        Twitter:{
+        Twitter: {
             id: 2,
             link: 'https://twitter.com/',
             text: 'Twitter',
             icon: <TwitterIcon/>
         },
 
-        Linkedin:{
+        Linkedin: {
             id: 3,
             link: 'https://www.linkedin.com/',
             text: 'Linkedin',
             icon: <LinkedInIcon/>
         },
 
-        Github:{
+        Github: {
             id: 4,
             link: 'https://github.com/arnaudmaillet',
             text: 'Github',
             icon: <GitHubIcon/>
         },
+    },
+
+
+
+    // Pages
+
+    // About me
+    AboutSection: {
+        title: 'A propos',
+        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
     }
+
 
 }
