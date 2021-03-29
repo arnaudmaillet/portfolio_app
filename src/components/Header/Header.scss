@@ -1,4 +1,4 @@
-@import './../../settings.scss';
+@import './../../utils/settings.scss';
 
 
 .profile {
@@ -6,6 +6,7 @@
     border-radius: $border-main-radius;
     width: 100%;
     display: inline-block;
+    box-shadow: $shadow-main;
 
     &_name {
         line-height: 18px;

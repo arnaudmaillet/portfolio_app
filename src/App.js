@@ -8,6 +8,7 @@ import Accueil from './pages/Accueil/Accueil.js'
 import Formations from './pages/Formations/Formations.js'
 import Stages from './pages/Stages/Stages.js'
 import Contact from './pages/Contact/Contact.js'
+import Veilles from './pages/Veilles/Veilles.js'
 
 
 // Import components files
@@ -53,6 +54,9 @@ function App() {
               </Route>
               <Route exact path='/contact'>
                 <Contact />
+              </Route>
+              <Route exact path='/veilles'>
+                <Veilles />
               </Route>
             </Switch>
           </Router>

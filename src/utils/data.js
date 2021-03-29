@@ -12,6 +12,9 @@ import ImgProfil from './../assets/img/profil.jpg'
 
 export default {
 
+    // none or top
+    navbar: 'top',
+
     profile: {
         name: 'Maillet Arnaud',
         title: 'Developper par passion',

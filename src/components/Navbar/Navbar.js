@@ -16,7 +16,7 @@ const MyNavbar = (props) => {
     const pathName = props?.location?.pathName
 
     return (
-        <Navbar expand='lg' sticky='top' className='myNavbar'>
+        <Navbar expand='lg' sticky={MyData.navbar} className='myNavbar'>
             <Nav.Link as={NavLink} to='/' exact className='header_navlink'>
                 <Navbar.Brand className='myNavbar_home'>
                     <HomeRounded/>
@@ -49,6 +49,14 @@ const MyNavbar = (props) => {
                         to='/stages' 
                         className='myNavbar_left_section_link'
                         >Stages</Nav.Link>
+
+                    {/* Veilles */}
+                    <Nav.Link
+                        exact 
+                        as={NavLink} 
+                        to='/veilles' 
+                        className='myNavbar_left_section_link'
+                        >Veilles</Nav.Link>
                 </Nav>
                 <div className='myNavbar_right_section'>
                     {/* Foreach social object in array, define key as social object */}

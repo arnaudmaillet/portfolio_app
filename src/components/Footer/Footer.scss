@@ -1,0 +1,34 @@
+@import './../../utils/settings.scss';
+
+.footer {
+    background-color: $bg-footer-color;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    height: 70px;
+    border-radius: $border-main-radius;
+    padding: 20px 25px;
+    box-shadow: $shadow-main;
+
+    &_right {
+
+        &_copyrights {
+            font-size: small!important;
+            text-align: end;
+            color: #9C9C9C;
+            
+            &_name {
+                color: $font-second-color;
+            }
+        }
+    }
+
+    &_left {
+        > a {
+            text-decoration: none;
+            color: $main-color;
+        }
+    }
+}
+

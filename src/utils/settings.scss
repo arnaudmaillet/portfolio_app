@@ -7,7 +7,9 @@ $bg-main-color: #FAFAFA!important;
 $bg-second-color: black!important;
 $font-main-color: black!important;
 $font-text-color: #787878!important;
+$font-second-color: #FAFAFA!important;
 $icon-main-color: darkslategray!important;
+$bg-footer-color: #1E1E1E;
 
 // Sizing
 $btn-icon-size: 20px!important; 
@@ -20,14 +22,8 @@ $border-btn-radius: 50px!important;
 $transition-duration: .3s;
 
 // Shadow
-$shadow-main: 0px 2px 92px 0px rgba(0, 0, 0, 0.07);
+$shadow-main: 0px 2px 92px 0px rgba(0, 0, 0, 0.13);
 
-// Shadow container
-.container_shadow{
-    box-shadow: 0px 2px 92px 0px rgba(0, 0, 0, 0.13);
-    -webkit-box-shadow: 0px 2px 92px 0px rgba(0, 0, 0, 0.13);
-    -moz-box-shadow: 0px 2px 92px 0px rgba(0, 0, 0, 0.13);
-}
 
 // Margin & Padding
 .top_main_margin{
