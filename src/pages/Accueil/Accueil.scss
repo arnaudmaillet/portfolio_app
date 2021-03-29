@@ -1,12 +1,21 @@
-@import './../../utils//settings.scss';
+@import './../../utils/settings.scss';
 
 .about-me {
 
-    &_title{
+    padding-bottom: $bottom-main-padding;
+
+    &_title {
         position: relative;
         display: inline-block;
-        padding: 0 3px;
+        padding: 0 3px;  
+        margin-bottom: $bottom-main-margin; 
     }
 
-    
+    &_text {
+        color: $font-main-color;
+        font: smaller!important;
+        line-height: 28px!important;
+        white-space: pre-line!important;
+        text-align: justify;
+    }
 }

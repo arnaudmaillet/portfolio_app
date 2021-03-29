@@ -19,11 +19,14 @@ $border-main-radius: 6px!important;
 $border-btn-radius: 50px!important;
 
 // transition time
-$transition-duration: .3s;
+$transition-duration: .3s!important;
 
 // Shadow
-$shadow-main: 0px 2px 92px 0px rgba(0, 0, 0, 0.13);
-
+$shadow-main: 0px 2px 92px 0px rgba(0, 0, 0, 0.13)!important;
 
 // Margin & Padding
-$top_main_margin: 60px!important;
+$top-main-margin: 60px!important;
+$top-second-margin: 30px!important;
+$main-padding: 30px!important;
+$bottom-main-padding: 45px!important;
+$bottom-main-margin: 30px!important;
