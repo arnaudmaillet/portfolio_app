@@ -11,6 +11,10 @@
         overflow-x: hidden;
         background: url('./assets/img/bg.png');
 
+        .app-container{
+            margin-top: $top_main_margin;
+        }
+
         .main-content {
             background-color: $bg-main-color;
             min-height: 100vh;

@@ -21,7 +21,7 @@ import './App.scss';
 
 function App() {
   return (
-    <Container className='top_main_margin'>
+    <Container className='app-container'>
       <Grid
         container
         spacing={7}>

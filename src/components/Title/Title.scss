@@ -1,6 +1,22 @@
 @import './../../utils//settings.scss';
 
 .title-text{
-    text-transform: uppercase;
+    position: relative;
     font-weight: 600!important;
+    margin: 0;
+    font-size: 20px!important;
+    z-index: 0;
+
+    &:before{
+        content: '';
+        position: absolute;
+        height: 3px;
+        width: 100%;
+        bottom: 4px;
+        left: 0;
+        opacity: 0.5;
+        background-color: $main-color;
+        border-radius: $border-btn-radius;
+        z-index: -1;
+    }
 }
