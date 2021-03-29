@@ -1,6 +1,7 @@
 import React from 'react'
 import { Grid, Typography } from '@material-ui/core'
 import MyData from './../../utils/data.js'
+import Title from './../../components/Title/Title.js'
 
 import './Accueil.scss'
 
@@ -9,9 +10,9 @@ const Accueil = () => {
         <>
             {/* A propos */}
             <Grid container className='about-me'>
-                <Grid item className='about-me_title'>
-                    <span></span>
-                    <Typography variant='h6'>{MyData.AboutSection.title}</Typography>
+                <Title classSection='about-me'>{MyData.AboutSection.title}</Title>
+                <Grid item xs={12}>
+                    <Typography className='about-me_text'>{MyData.AboutSection.text}</Typography>
                 </Grid>
             </Grid>
 
