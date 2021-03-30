@@ -8,9 +8,13 @@ import GetAppRoundedIcon from '@material-ui/icons/GetAppRounded';
 import ContactlessRoundedIcon from '@material-ui/icons/ContactlessRounded';
 import WorkRoundedIcon from '@material-ui/icons/WorkRounded';
 import SchoolRoundedIcon from '@material-ui/icons/SchoolRounded';
+import WebOutlinedIcon from '@material-ui/icons/WebOutlined';
+import DeveloperModeOutlinedIcon from '@material-ui/icons/DeveloperModeOutlined';
+import DnsOutlinedIcon from '@material-ui/icons/DnsOutlined';
 
 // Import profile image
 import ImgProfil from './../assets/img/profil.jpg'
+import { AddAlarm } from '@material-ui/icons';
 
 export default {
 
@@ -72,8 +76,6 @@ export default {
 
     // Pages
 
-
-
     home: {
 
         // About me
@@ -121,10 +123,44 @@ export default {
                     date: '1860-1866',
                     text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
                 },
-            ]
+            ],
+        },
+
+        // Services
+        services: [
+            {
+                title: 'Developpement web',
+                icon: <WebOutlinedIcon/>,
+                text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.'
+            },
+            {
+                title: 'Developpement D\'applications',
+                icon: <DeveloperModeOutlinedIcon/>,
+                text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.'
+            },
+            {
+                title: 'Maintenance informatique',
+                icon: <DnsOutlinedIcon/>,
+                text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.'
+            },
+        ],
+
+        // Skills
+        skills: {
+            web: [
+                {
+                    title: 'Front-end',
+                    text: ['HTML', 'CSS', 'SCSS', 'Javascript', 'ReactJS', 'Bootstrap', 'Material UI'],
+                },
+                {
+                    title: 'Back-end',
+                    text: ['NodeJS', 'PHP'],
+                },
+            ],
+
+            applications: ['C#, python'],
+            databases: ['MySQL', 'Access'],
+            source_control: ['Git', 'Github']
         },
     },
-    
-
-
 }
