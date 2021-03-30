@@ -2,7 +2,7 @@
 
 .about-me {
 
-    padding-bottom: $main-margin;
+    padding: 0 $main-margin $main-margin $main-margin;
 
     &_title {
         position: relative;
@@ -14,7 +14,7 @@
     &_text {
         color: $font-text-color;
         font: smaller!important;
-        line-height: 28px!important;
+        line-height: $main-line-height;
         white-space: pre-line;
         text-align: justify;
     }
@@ -22,10 +22,13 @@
 
 .history {
     
-    padding-bottom: $main-margin;
+    padding: 0 $main-margin $main-margin $main-margin;
 
     &_title {
         margin-bottom: $second-margin; 
+        padding: 0 3px;
+        position: relative;
+        display: inline-block;
     }
 
     &_item-title {
@@ -43,5 +46,75 @@
         font-size: smaller;
         margin: 6px 0 20px 0!important;
         text-align: justify;
+        line-height: $main-line-height;
+    }
+}
+
+.services {
+    height: 100%;
+    padding: 0 $main-margin $main-margin $main-margin;
+    text-align: center;
+
+    &_title {
+        margin-bottom: $second-margin; 
+        padding: 0 3px;
+        position: relative;
+        display: inline-block;
+    }
+
+    &_item-title {
+        font-size: 16px!important;
+        font-weight: 600!important;
+        margin: 0 0 15px 0!important;
+    }
+
+    &_item-text {
+        color: $font-text-color;
+        font-size: smaller;
+        margin: 6px 0 20px 0!important;
+        text-align: justify;
+        line-height: $main-line-height;
+    }
+
+    &_item-icon > .MuiSvgIcon-root {
+        font-size: $main-icon-size;
+        margin: 0 0 15px 0!important;
+        font-weight: 300!important;
+    }
+}
+.skills{
+
+    padding: $main-margin;
+    background-color: $bg-main-light-color;
+    border-bottom-left-radius: $border-main-radius;
+    border-bottom-right-radius: $border-main-radius;
+    
+    &_section {
+        border-radius: $border-main-radius;
+        padding: 20px;
+        box-shadow: $shadow-main;
+        min-height: 186px;
+        height: 100%;
+
+        &_item-title {
+            font-size: 16px!important;
+            font-weight: 600!important;
+            margin: 0 0 15px 0!important;
+        }
+
+        &_item-element {
+            display: flex;
+            align-items: center;
+            color: $font-text-color;
+            font-weight: 400!important;
+            line-height: 18px!important;
+            line-height: $main-line-height;
+
+            .MuiTimelineDot-root {
+                border-color: $main-color;
+                padding: 2px!important;
+                margin-right: 5px!important;
+            }
+        }
     }
 }

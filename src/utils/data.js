@@ -91,16 +91,19 @@ export default {
 
             work: [
                 {
+                    id: 1,
                     title: 'Entreprise 1',
                     date: '1900-1914',
                     text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
                 },
                 {
+                    id: 2,
                     title: 'Entreprise 2',
                     date: '1880-1890',
                     text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
                 },
                 {
+                    id: 3,
                     title: 'Entreprise 3',
                     date: '1860-1866',
                     text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
@@ -109,16 +112,19 @@ export default {
 
             education: [
                 {
+                    id: 1,
                     title: 'Ecole 1',
                     date: '1900-1914',
                     text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
                 },
                 {
+                    id: 2,
                     title: 'Ecole 2',
                     date: '1880-1890',
                     text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
                 },
                 {
+                    id: 3,
                     title: 'Ecole 3',
                     date: '1860-1866',
                     text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
@@ -127,40 +133,62 @@ export default {
         },
 
         // Services
-        services: [
-            {
-                title: 'Developpement web',
-                icon: <WebOutlinedIcon/>,
-                text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.'
-            },
-            {
-                title: 'Developpement D\'applications',
-                icon: <DeveloperModeOutlinedIcon/>,
-                text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.'
-            },
-            {
-                title: 'Maintenance informatique',
-                icon: <DnsOutlinedIcon/>,
-                text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.'
-            },
-        ],
+        services: {
+
+            title: 'Compétences',
+            items: [
+                {
+                    id: 1,
+                    title: 'Developpement d\'interfaces web',
+                    icon: <WebOutlinedIcon/>,
+                    text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.'
+                },
+                {
+                    id: 2,
+                    title: 'Developpement d\'applications',
+                    icon: <DeveloperModeOutlinedIcon/>,
+                    text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.'
+                },
+                {
+                    id: 3,
+                    title: 'Maintenance informatique',
+                    icon: <DnsOutlinedIcon/>,
+                    text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.'
+                },
+            ],   
+        },
 
         // Skills
         skills: {
-            web: [
-                {
-                    title: 'Front-end',
-                    text: ['HTML', 'CSS', 'SCSS', 'Javascript', 'ReactJS', 'Bootstrap', 'Material UI'],
-                },
-                {
-                    title: 'Back-end',
-                    text: ['NodeJS', 'PHP'],
-                },
-            ],
 
-            applications: ['C#, python'],
-            databases: ['MySQL', 'Access'],
-            source_control: ['Git', 'Github']
+            title: 'Compétences',
+            items: [
+                {
+                    id: 1,
+                    title: 'Front-end',
+                    elements: ['HTML', 'CSS', 'SCSS', 'JQuery', 'Javascript', 'ReactJS', 'Bootstrap', 'Material UI'],
+                },
+                {
+                    id: 2,
+                    title: 'Back-end',
+                    elements: ['NodeJS', 'PHP'],
+                },
+                {
+                    id: 3,
+                    title: 'Applications',
+                    elements: ['C#', 'Python'],
+                },
+                {
+                    id: 4,
+                    title: 'Database',
+                    elements: ['MySQL', 'Access'],
+                },
+                {
+                    id: 5,
+                    title: 'Versioning',
+                    elements: ['Git', 'Github'],
+                }
+            ],
         },
     },
 }
