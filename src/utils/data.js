@@ -14,7 +14,6 @@ import DnsOutlinedIcon from '@material-ui/icons/DnsOutlined';
 
 // Import profile image
 import ImgProfil from './../assets/img/profil.jpg'
-import { AddAlarm } from '@material-ui/icons';
 
 export default {
 

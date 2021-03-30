@@ -87,7 +87,7 @@ const Accueil = () => {
                 <Grid item xs={12}>
                     <Grid container justify='space-between' spacing={3}>
                         {MyData.home.skills.items.map((item) => (
-                            <Grid item xs={12} sm={6} md={3}>
+                            <Grid item xs={12} sm={6} md={3} key={item.id}>
                                 <Paper elevation={0} className='skills_section'>
                                     <Typography variant='h6' className='skills_section_item-title'>{item.title}</Typography>
                                     {item.elements.map((element) => (
