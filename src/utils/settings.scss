@@ -15,13 +15,15 @@ $bg-footer-color: #1E1E1E!important;
 // Sizing
 $main-icon-size: 35px!important;
 $btn-icon-size: 20px!important; 
+$font-size-main-title: 20px!important;
 
 // Borders
 $border-main-radius: 6px!important;
 $border-btn-radius: 50px!important;
 
-// transition time
+// transitions & animations
 $transition-duration: .3s!important;
+$hover-main-transform: scale(1.2);
 
 // Shadow
 $shadow-main: 0px 2px 92px 0px rgba(0, 0, 0, 0.13)!important;

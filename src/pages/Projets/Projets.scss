@@ -50,14 +50,58 @@
         &_text {
             color: $font-text-color;
             font: smaller!important;
-            line-height: $main-line-height;
+            line-height: 25px!important;
             white-space: pre-line;
             text-align: justify;
         }
     }
+
+    &_dialog-title {
+        font-size: 20px!important;
+        font-weight: 600!important;
+        
+    }
+
+    &_dialog-image {
+        max-height: 300px;
+        width: 100%;
+        object-fit: cover;
+        object-position: center center;
+    }
+
+    &_dialog-text {
+        margin-top: 10px!important;
+        color: $font-text-color;
+        font: smaller!important;
+        line-height: $main-line-height;
+        white-space: pre-line;
+        text-align: justify;
+    }
+
+    &_dialog-action {
+        justify-content: start!important;
+        margin: 5px 0 5px 0;
+        justify-content: flex-end!important;
+        
+        &_icon {
+            margin: 0px 12px;
+            cursor: pointer;
+            color: $icon-main-color;
+            transition: $transition-duration;
+
+            &:hover {
+                color: $main-color;
+                transform: $hover-main-transform;
+            }
+
+            > .MuiSvgIcon-root {
+                font-size: $main-icon-size;
+            }
+        }
+    }
 }
 
-.aaaa{
-    height: inherit;
-    width: inherit;
+.aaa{
+    background-color: $main-color;
+    padding: 10px;
 }
