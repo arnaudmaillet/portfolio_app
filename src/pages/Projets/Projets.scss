@@ -4,6 +4,7 @@
 
     padding: 0 $main-margin $main-margin $main-margin;
 
+
     &_title {
         position: relative;
         display: inline-block;
@@ -41,7 +42,22 @@
         }
 
         &_title {
-            font-weight: 500;
+            font-size: 16px!important;
+            font-weight: 600!important;
+            margin: 0 0 15px 0!important;
+        }
+    
+        &_text {
+            color: $font-text-color;
+            font: smaller!important;
+            line-height: $main-line-height;
+            white-space: pre-line;
+            text-align: justify;
         }
     }
+}
+
+.aaaa{
+    height: inherit;
+    width: inherit;
 }

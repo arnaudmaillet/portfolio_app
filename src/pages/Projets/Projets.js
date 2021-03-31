@@ -4,13 +4,13 @@ import MyData from './../../utils/data.js'
 import { Grid, Typography, Tabs, Tab, Card, CardActionArea, CardMedia, CardContent, Grow, Dialog, DialogTitle, DialogContent, DialogActions } from '@material-ui/core'
 import Title from '../../components/Title/Title.js'
 
+
 const Projets = () => {
 
     const [tabValue, setTabValue] = useState('all')
     const [projectDialog, setProjectDialog] = useState(false)
 
     return (
-        <>
             <Grid container className='projects'>
                 <Title classSection='projects'>{MyData.projects.title}</Title>
 
@@ -42,15 +42,15 @@ const Projets = () => {
 
                 {/* Projects */}
                 <Grid item xs={12}>
-                    <Grid container spacing={2} style={{backgroundColor: 'red'}}>
+                    <Grid container spacing={3}>
                         {MyData.projects.items.map((project) => (
-                            <div key={project.id}>
+                            <React.Fragment key={project.id}>
                                 {/* If current tabValue value (value returned by the current state value) is equal to project.tag value or 'all' */}
                                 {tabValue === project.tag || tabValue === 'all' ? (
-                                    <Grid item>
+                                    <Grid item xs={12} sm={6} md={4} lg={4}>
                                         <Grow in timeout={1000}>
                                         {/* Project value is passed to the setProjectDialog function */}
-                                        <Card className='projects_custom-card' onClick={() => setProjectDialog(project)}>
+                                            <Card className='projects_custom-card' onClick={() => setProjectDialog(project)}>
                                                 <CardActionArea>
                                                     <CardMedia className='projects_custom-card_img' image={project.img} title={project.title} />
                                                     <CardContent>
@@ -62,7 +62,7 @@ const Projets = () => {
                                         </Grow>
                                     </Grid>
                                 ) : null}
-                            </div>
+                            </React.Fragment>
                         ))}
                     </Grid>
                 </Grid>
@@ -85,7 +85,6 @@ const Projets = () => {
                     </DialogActions>
                 </Dialog>
             </Grid>
-        </>
     )
 }
 
