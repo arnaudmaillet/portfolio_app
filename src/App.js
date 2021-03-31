@@ -6,7 +6,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 // Import pages files
 import Accueil from './pages/Accueil/Accueil.js'
 import Formations from './pages/Formations/Formations.js'
-import Stages from './pages/Stages/Stages.js'
+import Projets from './pages/Projets/Projets.js'
 import Contact from './pages/Contact/Contact.js'
 import Veilles from './pages/Veilles/Veilles.js'
 
@@ -50,8 +50,8 @@ function App() {
                 <Route exact path='/formations'>
                   <Formations />
                 </Route>
-                <Route exact path='/stages'>
-                  <Stages />
+                <Route exact path='/projets'>
+                  <Projets />
                 </Route>
                 <Route exact path='/contact'>
                   <Contact />

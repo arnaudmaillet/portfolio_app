@@ -11,9 +11,12 @@ import SchoolRoundedIcon from '@material-ui/icons/SchoolRounded';
 import WebOutlinedIcon from '@material-ui/icons/WebOutlined';
 import DeveloperModeOutlinedIcon from '@material-ui/icons/DeveloperModeOutlined';
 import DnsOutlinedIcon from '@material-ui/icons/DnsOutlined';
+import DescriptionRoundedIcon from '@material-ui/icons/DescriptionRounded';
+import LanguageRoundedIcon from '@material-ui/icons/LanguageRounded';
 
 // Import profile image
-import ImgProfil from './../assets/img/profil.jpg'
+import ImgProfil from './../assets/img/profil.jpg';
+import ImgProjet from './../assets/img/projet.jpg'
 
 export default {
 
@@ -74,7 +77,6 @@ export default {
 
 
     // Pages
-
     home: {
 
         // About me
@@ -190,4 +192,55 @@ export default {
             ],
         },
     },
+
+    projects: {
+
+        title: 'Projets',
+        items: [
+            {
+                tag: 'React',
+                image: {ImgProjet},
+                title: 'React Projet 1',
+                text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor, adipiscing elit, sed do eiusmod tempor.',
+                links: [
+                    {link: 'https://www.google.com', icon: <DescriptionRoundedIcon/>},
+                    {link: 'https://www.google.com', icon: <LanguageRoundedIcon/>},
+                    {link: 'https://www.google.com', icon: <GitHubIcon/>},
+                ]
+            },
+            {
+                tag: 'React',
+                image: {ImgProjet},
+                title: 'React Projet 2',
+                text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor, adipiscing elit, sed do eiusmod tempor.',
+                links: [
+                    {link: 'https://www.google.com', icon: <DescriptionRoundedIcon/>},
+                    {link: 'https://www.google.com', icon: <LanguageRoundedIcon/>},
+                    {link: 'https://www.google.com', icon: <GitHubIcon/>},
+                ]
+            },
+            {
+                tag: 'C#',
+                image: {ImgProjet},
+                title: 'C# Projet 1',
+                text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor, adipiscing elit, sed do eiusmod tempor.',
+                links: [
+                    {link: 'https://www.google.com', icon: <DescriptionRoundedIcon/>},
+                    {link: 'https://www.google.com', icon: <LanguageRoundedIcon/>},
+                    {link: 'https://www.google.com', icon: <GitHubIcon/>},
+                ]
+            },
+            {
+                tag: 'Php',
+                image: {ImgProjet},
+                title: 'Php Projet 1',
+                text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor, adipiscing elit, sed do eiusmod tempor.',
+                links: [
+                    {link: 'https://www.google.com', icon: <DescriptionRoundedIcon/>},
+                    {link: 'https://www.google.com', icon: <LanguageRoundedIcon/>},
+                    {link: 'https://www.google.com', icon: <GitHubIcon/>},
+                ]
+            }
+        ]
+    }
 }

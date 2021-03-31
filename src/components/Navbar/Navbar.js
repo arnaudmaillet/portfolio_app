@@ -42,13 +42,13 @@ const MyNavbar = (props) => {
                         className='myNavbar_left_section_link'
                         >Formations</Nav.Link>
 
-                    {/* Stages */}
+                    {/* Projets */}
                     <Nav.Link
                         exact 
                         as={NavLink} 
-                        to='/stages' 
+                        to='/projets' 
                         className='myNavbar_left_section_link'
-                        >Stages</Nav.Link>
+                        >Projets</Nav.Link>
 
                     {/* Veilles */}
                     <Nav.Link
