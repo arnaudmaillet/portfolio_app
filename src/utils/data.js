@@ -16,7 +16,7 @@ import LanguageRoundedIcon from '@material-ui/icons/LanguageRounded';
 
 // Import profile image
 import ImgProfil from './../assets/img/profil.jpg';
-import ImgProjet from './../assets/img/projet.jpg'
+
 
 export default {
 
@@ -198,47 +198,55 @@ export default {
         title: 'Projets',
         items: [
             {
+                id:'1',
                 tag: 'React',
-                image: {ImgProjet},
+                img: '../assets/img/projet.jpg',
                 title: 'React Projet 1',
-                text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor, adipiscing elit, sed do eiusmod tempor.',
+                description: 'Voici un projet de blabla concerant les blablabla',
+                text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. \n\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
                 links: [
-                    {link: 'https://www.google.com', icon: <DescriptionRoundedIcon/>},
-                    {link: 'https://www.google.com', icon: <LanguageRoundedIcon/>},
-                    {link: 'https://www.google.com', icon: <GitHubIcon/>},
+                    {id:'1', link: 'https://www.google.com', icon: <DescriptionRoundedIcon/>},
+                    {id:'2', link: 'https://www.google.com', icon: <LanguageRoundedIcon/>},
+                    {id:'3', link: 'https://www.google.com', icon: <GitHubIcon/>},
                 ]
             },
             {
+                id:'2',
                 tag: 'React',
-                image: {ImgProjet},
+                img: '../assets/img/projet.jpg',
                 title: 'React Projet 2',
-                text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor, adipiscing elit, sed do eiusmod tempor.',
+                description: 'Voici un projet de blabla concerant les blablabla',
+                text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. \n\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
                 links: [
-                    {link: 'https://www.google.com', icon: <DescriptionRoundedIcon/>},
-                    {link: 'https://www.google.com', icon: <LanguageRoundedIcon/>},
-                    {link: 'https://www.google.com', icon: <GitHubIcon/>},
+                    {id:'1', link: 'https://www.google.com', icon: <DescriptionRoundedIcon/>},
+                    {id:'2', link: 'https://www.google.com', icon: <LanguageRoundedIcon/>},
+                    {id:'3', link: 'https://www.google.com', icon: <GitHubIcon/>},
                 ]
             },
             {
+                id:'3',
                 tag: 'C#',
-                image: {ImgProjet},
+                img: '../assets/img/projet.jpg',
                 title: 'C# Projet 1',
-                text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor, adipiscing elit, sed do eiusmod tempor.',
+                description: 'Voici un projet de blabla concerant les blablabla',
+                text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. \n\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
                 links: [
-                    {link: 'https://www.google.com', icon: <DescriptionRoundedIcon/>},
-                    {link: 'https://www.google.com', icon: <LanguageRoundedIcon/>},
-                    {link: 'https://www.google.com', icon: <GitHubIcon/>},
+                    {id:'1', link: 'https://www.google.com', icon: <DescriptionRoundedIcon/>},
+                    {id:'2', link: 'https://www.google.com', icon: <LanguageRoundedIcon/>},
+                    {id:'3', link: 'https://www.google.com', icon: <GitHubIcon/>},
                 ]
             },
             {
+                id:'4',
                 tag: 'Php',
-                image: {ImgProjet},
+                img: '../assets/img/projet.jpg',
                 title: 'Php Projet 1',
-                text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor, adipiscing elit, sed do eiusmod tempor.',
+                description: 'Voici un projet de blabla concerant les blablabla',
+                text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. \n\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
                 links: [
-                    {link: 'https://www.google.com', icon: <DescriptionRoundedIcon/>},
-                    {link: 'https://www.google.com', icon: <LanguageRoundedIcon/>},
-                    {link: 'https://www.google.com', icon: <GitHubIcon/>},
+                    {id:'1', link: 'https://www.google.com', icon: <DescriptionRoundedIcon/>},
+                    {id:'2', link: 'https://www.google.com', icon: <LanguageRoundedIcon/>},
+                    {id:'3', link: 'https://www.google.com', icon: <GitHubIcon/>},
                 ]
             }
         ]
