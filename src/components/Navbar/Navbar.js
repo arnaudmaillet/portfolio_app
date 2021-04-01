@@ -1,4 +1,6 @@
 import React from 'react'
+import { HomeRounded } from '@material-ui/icons';
+import { Tooltip } from "@material-ui/core";
 import './Navbar.scss'
 
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -7,7 +9,7 @@ import { NavLink, withRouter } from 'react-router-dom';
 import MyData from './../../utils/data.js'
 import CustomButton from "./../Button/Button.js"
 
-import { HomeRounded } from '@material-ui/icons';
+
 
 const MyNavbar = (props) => {
 
@@ -17,23 +19,26 @@ const MyNavbar = (props) => {
 
     return (
         <Navbar expand='lg' sticky={MyData.navbar} className='myNavbar'>
-            <Nav.Link as={NavLink} to='/' exact className='header_navlink'>
-                <Navbar.Brand className='myNavbar_home'>
-                    <HomeRounded/>
-                </Navbar.Brand>
-            </Nav.Link>
+            <Tooltip arrow title='Accueil' placement="left">
+                <Nav.Link as={NavLink} to='/' exact className='header_navlink'>
+                    <Navbar.Brand className='myNavbar_home'>
+                        <HomeRounded/>
+                    </Navbar.Brand>
+                </Nav.Link>
+            </Tooltip>
 
             <Navbar.Toggle />
             <Navbar.Collapse>
                 <Nav className='myNavbar_left_section'>
                     {/* Accueil */}
+                    
                     <Nav.Link 
                         exact
                         as={NavLink} 
                         to='/' 
                         className='myNavbar_left_section_link'
                         >Accueil</Nav.Link>
-
+                                      
                     {/* Formations */}
                     <Nav.Link
                         exact 

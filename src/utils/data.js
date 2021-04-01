@@ -198,12 +198,64 @@ export default {
         },
     },
 
+    learning: {
+        
+        selfLearning: {
+
+            title: 'Formations personnelles',
+            items: [
+                {
+                    id: 1,
+                    tag: 'React',
+                    img: ImgProjet,
+                    title: 'Formation 1',
+                    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.',
+                    progress: '80',
+                    link: 'https://www.google.com',
+                    projetId: 1,
+                },
+                {
+                    id: 2,
+                    tag: 'C#',
+                    img: ImgProjet,
+                    title: 'Formation 2',
+                    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.',
+                    progress: '30',
+                    link: 'https://www.google.com',
+                    projetId: 1,
+                },
+                {
+                    id: 3,
+                    tag: 'Java',
+                    img: ImgProjet,
+                    title: 'Formation 3',
+                    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.',
+                    progress: '20',
+                    link: 'https://www.google.com',
+                    projetId: 1,
+                },
+                {
+                    id: 4,
+                    tag: 'SQL',
+                    img: ImgProjet,
+                    title: 'Formation 4',
+                    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.',
+                    progress: '60',
+                    link: 'https://www.google.com',
+                    projetId: 1,
+                }
+            ],
+        },
+    },
+
+
+
     projects: {
 
         title: 'Projets',
         items: [
             {
-                id:'1',
+                id: 1,
                 tag: 'React',
                 img: ImgProjet,
                 title: 'React Projet 1',
@@ -216,7 +268,7 @@ export default {
                 ]
             },
             {
-                id:'2',
+                id: 2,
                 tag: 'React',
                 img: ImgProjet,
                 title: 'React Projet 2',
@@ -229,7 +281,7 @@ export default {
                 ]
             },
             {
-                id:'3',
+                id: 3,
                 tag: 'C#',
                 img: ImgProjet,
                 title: 'C# Projet 1',
@@ -242,7 +294,7 @@ export default {
                 ]
             },
             {
-                id:'4',
+                id: 4,
                 tag: 'Php',
                 img: ImgProjet,
                 title: 'Php Projet 1',

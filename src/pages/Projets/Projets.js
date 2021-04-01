@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
-import './Projets.scss'
 import MyData from './../../utils/data.js'
 import { Grid, Typography, Tabs, Tab, Card, CardActionArea, CardMedia, CardContent, Grow, Dialog, DialogTitle, DialogContent, DialogActions } from '@material-ui/core'
 import Title from '../../components/Title/Title.js'
 
+import './Projets.scss'
 
 const Projets = () => {
 
