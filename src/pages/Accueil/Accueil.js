@@ -36,7 +36,7 @@ const Accueil = () => {
                                         <TimelineContent>
                                             <Typography className='history_item-title'>{work.title}</Typography>
                                             <Typography variant='caption' className='history_item-date'>{work.date}</Typography>
-                                            <Typography variant='body2' className='history_item-text'>{work.text}</Typography>
+                                            <Typography variant='body2' className='history_item-text' color='primary'>{work.text}</Typography>
                                         </TimelineContent>
                                     </TimelineItem>
                                 ))}

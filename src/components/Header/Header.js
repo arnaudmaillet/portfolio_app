@@ -12,7 +12,7 @@ import './Header.scss'
 
 const Header = () => {
     return (
-        <div className='profile container_shadow'>
+        <div className='profile'>
             <div className='profile_name'>
                 <Typography className='profile_name_text'>{MyData.profile.name}</Typography>
                 <Typography className='profile_name_title'>{MyData.profile.title}</Typography>
@@ -36,12 +36,12 @@ const Header = () => {
                         text={MyData.profile.adress}/>
 
                     {/* Foreach social object in array, define key as social object */}
-                    {Object.keys(MyData.socials).map((key) => (
+                    {/* {Object.keys(MyData.socials).map((key) => (
                         <CustomTimelineItem 
                             key = {key}
                             text={MyData.socials[key].text} 
                             link={MyData.socials[key].link}/>
-                    ))}
+                    ))} */}
                 </MyTimeline>
                 <div className='profile_information_btn_container'>
                     <CustomButton 
@@ -65,6 +65,7 @@ const CustomTimelineItem = ({ title, text, link }) => (
                     <Typography className='timeline_content_item'>
                         <span>{title}</span>
                         <a 
+                            
                             href={link} 
                             target='_blank'>{text}</a>
                     </Typography>

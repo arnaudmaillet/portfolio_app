@@ -50,28 +50,32 @@ export default {
             id: 1,
             link: 'https://www.facebook.com/',
             text: 'Facebook',
-            icon: <FacebookIcon/>
+            icon: <FacebookIcon/>,
+            color: '#2f55a4',
         },
 
         Twitter: {
             id: 2,
             link: 'https://twitter.com/',
             text: 'Twitter',
-            icon: <TwitterIcon/>
+            icon: <TwitterIcon/>,
+            color: '00acee',
         },
 
         Linkedin: {
             id: 3,
             link: 'https://www.linkedin.com/',
             text: 'Linkedin',
-            icon: <LinkedInIcon/>
+            icon: <LinkedInIcon/>,
+            color: '0e76a8',
         },
 
         Github: {
             id: 4,
             link: 'https://github.com/arnaudmaillet',
             text: 'Github',
-            icon: <GitHubIcon/>
+            icon: <GitHubIcon/>,
+            color: '#787878'
         },
     },
 

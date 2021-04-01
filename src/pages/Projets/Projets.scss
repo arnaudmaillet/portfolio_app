@@ -9,10 +9,15 @@
         position: relative;
         display: inline-block;
         padding: 0 3px;  
-        margin-bottom: $second-margin; 
     }
 
     &_custom-tabs {
+
+        margin-bottom: $second-margin;
+
+        .MuiTabs-flexContainer{
+            justify-content: flex-end;
+        }
 
         &_item {
             padding: 0!important;
@@ -57,9 +62,13 @@
     }
 
     &_dialog-title {
-        font-size: 20px!important;
-        font-weight: 600!important;
-        
+        background-color: $main-color;
+        padding: 10px;
+
+        &_text {
+            font-size: 20px!important;
+            font-weight: 600!important;
+        }
     }
 
     &_dialog-image {
@@ -70,12 +79,17 @@
     }
 
     &_dialog-text {
-        margin-top: 10px!important;
-        color: $font-text-color;
-        font: smaller!important;
-        line-height: $main-line-height;
-        white-space: pre-line;
-        text-align: justify;
+
+        min-height: 200px;
+        
+        &_content {
+            margin-top: 10px!important;
+            color: $font-text-color;
+            font: smaller!important;
+            line-height: $main-line-height;
+            white-space: pre-line;
+            text-align: justify;
+        }
     }
 
     &_dialog-action {
@@ -99,9 +113,4 @@
             }
         }
     }
-}
-
-.aaa{
-    background-color: $main-color;
-    padding: 10px;
 }

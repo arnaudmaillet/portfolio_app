@@ -19,7 +19,7 @@ const Projets = () => {
                 <Tabs
                     value={tabValue}
                     // Error console {MuiColors} is expected
-                    indicatorColor=''
+                    indicatorColor='primary'
                     className='projects_custom-tabs'
                     onChange={(event, newValue) => setTabValue(newValue)}>
                     <Tab label='Tous' value='all' className={tabValue === 'all' ? 'projects_custom-tabs_item active' : 'projects_custom-tabs_item'} />
@@ -69,7 +69,11 @@ const Projets = () => {
             </Grid>
 
             {/* generating dialog(modal like) */}
-            <Dialog open={projectDialog} onClose={() => setProjectDialog(false)}>
+            <Dialog
+                fullWidth
+                maxWidth='sm'
+                open={projectDialog}
+                onClose={() => setProjectDialog(false)}>
                 <img src={projectDialog.img} alt='' className='projects_dialog-image'></img>
                 <DialogActions className='projects_dialog-action'>
                     {projectDialog?.links?.map(link => (
@@ -78,14 +82,14 @@ const Projets = () => {
                         </a>
                     ))}
                 </DialogActions>
-                <DialogTitle className='aaa'>
-                    <Typography className='projects_dialog-title'>
+                <DialogTitle className='projects_dialog-title'>
+                    <Typography className='projects_dialog-title_text'>
                         {projectDialog.title}
                     </Typography>
                 </DialogTitle>
-                <DialogContent>
-                    <Typography className='projects_dialog-text'>{projectDialog.text}</Typography>
-                </DialogContent>             
+                <DialogContent className='projects_dialog-text'>
+                    <Typography className='projects_dialog-text_content'>{projectDialog.text}</Typography>
+                </DialogContent>
             </Dialog>
         </Grid>
     )

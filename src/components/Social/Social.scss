@@ -1,0 +1,28 @@
+@import './../../utils/settings.scss';
+
+.social {
+    margin-top: 50px;
+    background-color: $bg-main-color;
+    border-radius: $border-main-radius;
+    width: 100%;
+    box-shadow: $shadow-main;
+    padding: 10px 20px 10px 20px;
+
+    a {
+        display: flex;
+        justify-content: center;
+        font-size: $main-icon-size;
+        padding: 10px;
+
+        .MuiSvgIcon-root{
+            font-size: $main-icon-size;
+            color: $font-text-color;
+            transition: $transition-duration;
+
+            &:hover{
+                color: $main-color;
+                transform: $hover-main-transform;
+            }
+        }
+    }
+}

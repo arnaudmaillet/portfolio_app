@@ -2,10 +2,10 @@ import React from 'react'
 import './Navbar.scss'
 
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Button, Form, FormControl, Nav, Navbar, NavDropdown } from "react-bootstrap";
+import { Nav, Navbar } from "react-bootstrap";
 import { NavLink, withRouter } from 'react-router-dom';
 import MyData from './../../utils/data.js'
-import CustomButton from "./../Button/Button.js";
+import CustomButton from "./../Button/Button.js"
 
 import { HomeRounded } from '@material-ui/icons';
 
@@ -60,12 +60,12 @@ const MyNavbar = (props) => {
                 </Nav>
                 <div className='myNavbar_right_section'>
                     {/* Foreach social object in array, define key as social object */}
-                    {Object.keys(MyData.socials).map((key) => (
+                    {/* {Object.keys(MyData.socials).map((key) => (
                         <a
                             key = {key}
                             href={MyData.socials[key].link}
                             target='_blank'>{MyData.socials[key].icon}</a>
-                    ))}
+                    ))} */}
                     <CustomButton
                         text='Contactez-moi'
                         icon={MyData.icons.btn_contact}/>
@@ -74,5 +74,5 @@ const MyNavbar = (props) => {
         </Navbar>
     )
 }
-
 export default withRouter(MyNavbar)
+
