@@ -15,15 +15,16 @@ const Formations = () => {
             {/* School training */}
             <Grid container className='school-training'>
                 <Title classSection='school-training'>{MyData.learning.schoolTraining.title}</Title>
-                <Grid items xs={12}>
-                    <Typography>{MyData.learning.schoolTraining.btsSio.title}</Typography>
-                    <Grid container>
+                <Grid item xs={12}>
+                    <Typography className='school-training_item_title'>{MyData.learning.schoolTraining.btsSio.title}</Typography>
+                    <div>
+                        <Typography className='school-training_item_text'>{MyData.learning.schoolTraining.btsSio.text}</Typography>
+                    </div>
                         {MyData.learning.schoolTraining.btsSio.options.map((option) => (
-                            <Grid item xs={12} md={6}>
-                                <Typography key={option.id}>{option.title}</Typography>
-                            </Grid>
-                        ))}
-                    </Grid>
+                            <div key={option.id} className='school-training_item_options'>
+                                <CustomButton text={option.title} icon={MyData.icons.btn_sio} width='160px'/>
+                            </div>
+                        ))}   
                 </Grid>
             </Grid>
             {/* Self learning */}

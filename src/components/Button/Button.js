@@ -3,10 +3,12 @@ import { Button } from '@material-ui/core'
 
 import "./Button.scss";
 
-const CustomButton = ({text, icon}) => {
+const CustomButton = ({text, icon, width}) => {
+
     return (
         <Button 
             className='my_custom_btn'
+            style={{width: width}}
             endIcon={
                 icon ? (
                     <div className='my_custom_btn_icon'>{icon}</div>

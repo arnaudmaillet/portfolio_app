@@ -7,7 +7,7 @@
     border-radius: $border-main-radius;
     box-shadow: $shadow-main;
 
-    .header_navlink{
+    .header_navlink {
         padding: 0;
     }
 
@@ -22,41 +22,46 @@
         border-top-left-radius: $border-main-radius;
         border-bottom-left-radius: $border-main-radius;
 
-        .MuiSvgIcon-root{
+        .MuiSvgIcon-root {
             font-size: $main-icon-size;
             color: $icon-main-color;
         }
     }
 
-    &_left_section{
-        margin-right: auto;
+    &_content {
+        display: flex;
+        width: 100%;
+        padding: 10px;
 
-        &_link {
-            font-weight: 500;
-            color: $font-text-color;
-            transition: $transition-duration;
+        &_left_section {
+            margin-right: auto;
     
-            &:hover {
+            &_link {
+                font-weight: 500;
+                color: $font-text-color;
+                transition: $transition-duration;
+        
+                &:hover {
+                    color: $main-color;
+                }
+            }
+    
+            .active {
                 color: $main-color;
             }
         }
-
-        .active {
-            color: $main-color;
+    
+        
+        &_right_section{
+            display: flex!important;
+            align-items: center!important;
+    
+            > a > .MuiSvgIcon-root {
+                font-size: 20px;
+                margin-right: 12px;
+                color: $icon-main-color;
+            }
         }
     }
-
-    
-    &_right_section{
-        display: flex!important;
-        align-items: center!important;
-
-        > a > .MuiSvgIcon-root {
-            font-size: 20px;
-            margin-right: 12px;
-            color: $icon-main-color;
-        }
-    }
-    
 }
 

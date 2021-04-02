@@ -77,7 +77,7 @@ const Projets = () => {
                 <img src={projectDialog.img} alt='' className='projects_dialog-image'></img>
                 <DialogActions className='projects_dialog-action'>
                     {projectDialog?.links?.map(link => (
-                        <a href={link.link} target='_blank' key={link.id} className='projects_dialog-action_icon'>
+                        <a href={link.link} rel="noreferrer" target='_blank' key={link.id} className='projects_dialog-action_icon'>
                             {link.icon}
                         </a>
                     ))}

@@ -22,59 +22,62 @@ const MyNavbar = (props) => {
             <Tooltip arrow title='Accueil' placement="left">
                 <Nav.Link as={NavLink} to='/' exact className='header_navlink'>
                     <Navbar.Brand className='myNavbar_home'>
-                        <HomeRounded/>
+                        <HomeRounded />
                     </Navbar.Brand>
                 </Nav.Link>
             </Tooltip>
 
             <Navbar.Toggle />
             <Navbar.Collapse>
-                <Nav className='myNavbar_left_section'>
-                    {/* Accueil */}
-                    
-                    <Nav.Link 
-                        exact
-                        as={NavLink} 
-                        to='/' 
-                        className='myNavbar_left_section_link'
+                <div className='myNavbar_content'>
+                    <Nav className='myNavbar_content_left_section'>
+                        {/* Accueil */}
+
+                        <Nav.Link
+                            exact
+                            as={NavLink}
+                            to='/'
+                            className='myNavbar_content_left_section_link'
                         >Accueil</Nav.Link>
-                                      
-                    {/* Formations */}
-                    <Nav.Link
-                        exact 
-                        as={NavLink} 
-                        to='/formations' 
-                        className='myNavbar_left_section_link'
+
+                        {/* Formations */}
+                        <Nav.Link
+                            exact
+                            as={NavLink}
+                            to='/formations'
+                            className='myNavbar_content_left_section_link'
                         >Formations</Nav.Link>
 
-                    {/* Projets */}
-                    <Nav.Link
-                        exact 
-                        as={NavLink} 
-                        to='/projets' 
-                        className='myNavbar_left_section_link'
+                        {/* Projets */}
+                        <Nav.Link
+                            exact
+                            as={NavLink}
+                            to='/projets'
+                            className='myNavbar_content_left_section_link'
                         >Projets</Nav.Link>
 
-                    {/* Veilles */}
-                    <Nav.Link
-                        exact 
-                        as={NavLink} 
-                        to='/veilles' 
-                        className='myNavbar_left_section_link'
+                        {/* Veilles */}
+                        <Nav.Link
+                            exact
+                            as={NavLink}
+                            to='/veilles'
+                            className='myNavbar_content_left_section_link'
                         >Veilles</Nav.Link>
-                </Nav>
-                <div className='myNavbar_right_section'>
-                    {/* Foreach social object in array, define key as social object */}
-                    {/* {Object.keys(MyData.socials).map((key) => (
+                    </Nav>
+                    <div className='myNavbar_content_right_section'>
+                        {/* Foreach social object in array, define key as social object */}
+                        {/* {Object.keys(MyData.socials).map((key) => (
                         <a
                             key = {key}
                             href={MyData.socials[key].link}
                             target='_blank'>{MyData.socials[key].icon}</a>
-                    ))} */}
-                    <CustomButton
-                        text='Contactez-moi'
-                        icon={MyData.icons.btn_contact}/>
+                        ))} */}
+                        <CustomButton
+                            text='Contactez-moi'
+                            icon={MyData.icons.btn_contact} />
+                    </div>
                 </div>
+
             </Navbar.Collapse>
         </Navbar>
     )

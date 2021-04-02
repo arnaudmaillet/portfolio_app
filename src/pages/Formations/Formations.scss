@@ -3,6 +3,33 @@
 .school-training {
 
     padding: 0 $main-margin $main-margin $main-margin;
+
+    &_title {
+        margin-bottom: $second-margin;
+    }
+
+    &_item {
+
+        &_title {
+            font-size: 16px!important;
+            font-weight: 600!important;
+            margin: 0 0 15px 0!important;
+        }
+
+        &_text {
+            color: $font-text-color;
+            font: smaller!important;
+            line-height: 25px!important;
+            white-space: pre-line;
+            text-align: justify;
+            margin: 0 0 15px 0!important;
+        }
+
+        &_options {
+            display: flex;
+            flex-direction: row;
+        }
+    }
 }
 
 .self-learning {

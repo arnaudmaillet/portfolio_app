@@ -13,6 +13,7 @@ import DeveloperModeOutlinedIcon from '@material-ui/icons/DeveloperModeOutlined'
 import DnsOutlinedIcon from '@material-ui/icons/DnsOutlined';
 import DescriptionRoundedIcon from '@material-ui/icons/DescriptionRounded';
 import LanguageRoundedIcon from '@material-ui/icons/LanguageRounded';
+import SlowMotionVideoRoundedIcon from '@material-ui/icons/SlowMotionVideoRounded';
 
 
 // Import profile image
@@ -43,6 +44,7 @@ export default {
         education_timeline: <SchoolRoundedIcon/>,
         btn_download: <GetAppRoundedIcon/>,
         btn_contact: <ContactlessRoundedIcon/>,
+        btn_sio: <SlowMotionVideoRoundedIcon/>,
     },
 
     // Array of social object.
@@ -250,18 +252,23 @@ export default {
 
         schoolTraining: {
 
-            title: 'Formations scolaires',
+            title: 'Etudes supérieures',
 
             btsSio:{
                 title: 'BTS SIO',
+                text: 'Le BTS Services Informatiques aux Organisations est un diplôme recconu par l\'état de niveau BAC+2. Il remplace depuis Septembre 2011, l\'ancien BTS IG (Informatique de gestion).\n En effet, cette nouvelle formule réponds aux attentes de la profession en matière de qualification. Le programme a évolué en fonction de la place et du rôle des TIC (Technologies de l\'Information et de la Communication) et propose deux spécialités bien distinctes : Le BTS SIO Option SISR et le BTS SIO Option SLAM.',
                 options: [
                     {
                         id: 1,
-                        title: 'Option SLAM'
+                        title: 'Option SLAM',
+                        description: 'Solutions logicielles et applications métiers',
+                        text: 'La spécialisation SLAM du BTS SIO est elle plus orientée Développement. Elle permet d\'apprendre à réaliser des logiciels, sites webs, applications mobiles, mais aussi de rédiger des documentations techniques liées à celles-ci. De plus, elle permet d\'apprendre à former des utilisateurs pour gérer la maintenance des applications.',
                     },
                     {
-                        id: 1,
-                        title: 'Option SISR'
+                        id: 2,
+                        title: 'Option SISR',
+                        description: 'Solutions d\'infrastructures systemes et réseaux',
+                        text: 'La spécialisation SISR du BTS SIO permet d’apprendre un métier qui consiste à installer, configurer et gérer les équipements et les réseaux informatiques. Cela signifie intervenir sur la conception, la mise en place, le déploiement et la maintenance de programmes destinés à la gestion au sein d’une organisation.'
                     },
                 ],
             },
