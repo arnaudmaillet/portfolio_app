@@ -10,6 +10,17 @@ const Formations = () => {
 
     const [tabValue, setTabValue] = useState('all')
 
+    // const [option, setoption] = useState(1)
+
+    // function handleEvent(optionId, event){
+    //     if (optionId === option){
+    //         console.log(option);
+    //     } else {
+    //         setoption(option + 1)
+    //         console.log(option);
+    //     }
+    // }
+
     return (
         <>
             {/* School training */}
@@ -21,8 +32,12 @@ const Formations = () => {
                         <Typography className='school-training_item_text'>{MyData.learning.schoolTraining.btsSio.text}</Typography>
                     </div>
                         {MyData.learning.schoolTraining.btsSio.options.map((option) => (
-                            <div key={option.id} className='school-training_item_options'>
-                                <CustomButton text={option.title} icon={MyData.icons.btn_sio} width='160px'/>
+                            <div key={option.id} className='school-training_item_btn'>
+                                <CustomButton 
+                                    // onClick={handleEvent(option.id)}
+                                    text={option.title} 
+                                    icon={MyData.icons.btn_sio} 
+                                    width='160px'/>
                             </div>
                         ))}   
                 </Grid>
