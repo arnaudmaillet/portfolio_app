@@ -14,6 +14,7 @@ import DnsOutlinedIcon from '@material-ui/icons/DnsOutlined';
 import DescriptionRoundedIcon from '@material-ui/icons/DescriptionRounded';
 import LanguageRoundedIcon from '@material-ui/icons/LanguageRounded';
 
+
 // Import profile image
 import ImgProfil from './../assets/img/profil.jpg';
 import ImgProjet from './../assets/img/projet.jpg'
@@ -41,7 +42,7 @@ export default {
         work_timeline: <WorkRoundedIcon/>,
         education_timeline: <SchoolRoundedIcon/>,
         btn_download: <GetAppRoundedIcon/>,
-        btn_contact: <ContactlessRoundedIcon/>
+        btn_contact: <ContactlessRoundedIcon/>,
     },
 
     // Array of social object.
@@ -141,7 +142,7 @@ export default {
         // Services
         services: {
 
-            title: 'Compétences',
+            title: 'Savoir-faire et compétences',
             items: [
                 {
                     id: 1,
@@ -246,6 +247,25 @@ export default {
                 }
             ],
         },
+
+        schoolTraining: {
+
+            title: 'Formations scolaires',
+
+            btsSio:{
+                title: 'BTS SIO',
+                options: [
+                    {
+                        id: 1,
+                        title: 'Option SLAM'
+                    },
+                    {
+                        id: 1,
+                        title: 'Option SISR'
+                    },
+                ],
+            },
+        }
     },
 
 

@@ -1,11 +1,15 @@
 import React from 'react';
-import { makeStyles, withStyles } from '@material-ui/core/styles';
+import { withStyles } from '@material-ui/core/styles';
 import LinearProgress from '@material-ui/core/LinearProgress';
 import { Typography, Box } from '@material-ui/core'
+import './LinearWithValueLabel.scss'
+
+
+
 
 const BorderLinearProgress = withStyles((theme) => ({
   root: {
-    height: 10,
+    height: 13,
     borderRadius: 3,
   },
   colorPrimary: {
@@ -18,16 +22,10 @@ const BorderLinearProgress = withStyles((theme) => ({
 }))(LinearProgress);
 
 
-const useStyles = makeStyles({
-  root: {
-    flexGrow: 1,
-  },
-});
-
 function LinearProgressWithLabel(props) {
   return (   
-    <Box minWidth={35}>
-      <Typography variant="body2" color="textSecondary">{`${Math.round(
+    <Box minWidth={35} className='linearProgressWithLabel'>
+      <Typography variant="body2" color="primary" className='linearProgressWithLabel_text'>{`${Math.round(
         props.value,
       )}%`}</Typography>
     </Box>
@@ -35,12 +33,10 @@ function LinearProgressWithLabel(props) {
 }
 
 export default function CustomizedProgressBars({value}) {
-  const classes = useStyles();
-
   return (
-    <div className={classes.root}> 
+    <div className='progress-bars'> 
         <BorderLinearProgress variant="determinate" value={value} />
-        <LinearProgressWithLabel value={value}/> 
+        <LinearProgressWithLabel value={value}/>
     </div>
   );
 }

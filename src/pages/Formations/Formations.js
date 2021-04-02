@@ -4,6 +4,7 @@ import './Formations.scss'
 import Title from '../../components/Title/Title'
 import MyData from "./../../utils/data.js"
 import LinearWithValueLabel from './../../components/LinearProgress/LinearWithValueLabel.js'
+import CustomButton from "./../../components/Button/Button.js";
 
 const Formations = () => {
 
@@ -11,6 +12,20 @@ const Formations = () => {
 
     return (
         <>
+            {/* School training */}
+            <Grid container className='school-training'>
+                <Title classSection='school-training'>{MyData.learning.schoolTraining.title}</Title>
+                <Grid items xs={12}>
+                    <Typography>{MyData.learning.schoolTraining.btsSio.title}</Typography>
+                    <Grid container>
+                        {MyData.learning.schoolTraining.btsSio.options.map((option) => (
+                            <Grid item xs={12} md={6}>
+                                <Typography key={option.id}>{option.title}</Typography>
+                            </Grid>
+                        ))}
+                    </Grid>
+                </Grid>
+            </Grid>
             {/* Self learning */}
             <Grid container className='self-learning'>
                 <Title classSection='self-learning'>{MyData.learning.selfLearning.title}</Title>
@@ -59,10 +74,14 @@ const Formations = () => {
                                                             <Typography className='self-learning_custom-card_content_item_title'>{learning.title}</Typography>
                                                             <div className='self-learning_custom-card_content_item_progress'>
                                                                 <LinearWithValueLabel value={learning.progress} />
-                                                            </div>    
+                                                            </div>
                                                         </Grid>
                                                     </Grid>
-                                                    <Typography variant='body2' className='self-learning_custom-card_content_item_text'>{learning.description}</Typography>
+                                                    <Typography variant='body2' className='self-learning_custom-card_content_text'>{learning.description}</Typography>
+                                                    <div className='self-learning_custom-card_content_button'>
+                                                        <CustomButton
+                                                            text='Voir' />
+                                                    </div>
                                                 </CardContent>
                                             </Card>
                                         </Grow>

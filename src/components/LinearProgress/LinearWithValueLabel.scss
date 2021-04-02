@@ -1,0 +1,14 @@
+.progress-bars {
+    max-width: calc(100% - 40px);
+
+    .linearProgressWithLabel {
+        position: relative;
+    
+        &_text{
+            position: absolute!important;
+            top: -15.5px;
+            right: -40px;
+        }
+    }
+}
+

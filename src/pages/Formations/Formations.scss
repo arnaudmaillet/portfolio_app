@@ -1,5 +1,10 @@
 @import './../../utils/settings.scss';
 
+.school-training {
+
+    padding: 0 $main-margin $main-margin $main-margin;
+}
+
 .self-learning {
 
     padding: 0 $main-margin $main-margin $main-margin;
@@ -53,21 +58,27 @@
                     font-weight: 600!important;
                     margin: 0 0 15px 0!important;
                 }
-            
-                &_text {
-                    color: $font-text-color;
-                    font: smaller!important;
-                    line-height: 25px!important;
-                    white-space: pre-line;
-                    text-align: justify;
-                    margin-top: 15px!important;
-                } 
                 
                 &_progress{
                     width: calc(100% - 150px);
                     padding-top: 7px;
                 }
-            }          
+            }  
+            
+            &_text {
+                color: $font-text-color;
+                font: smaller!important;
+                line-height: 25px!important;
+                white-space: pre-line;
+                text-align: justify;
+                margin-top: 15px!important;
+            } 
+
+            &_button {
+                display: flex;
+                justify-content: flex-end;
+                transform: translateY(10px);
+            }
         }    
     }
 
