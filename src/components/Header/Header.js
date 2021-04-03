@@ -8,7 +8,7 @@ import MyTimeline, { CustomTimelineSeparator } from './../Timeline/Timeline.js'
 import CustomButton from "./../Button/Button.js";
 
 import './Header.scss'
-
+import pdf from './../../assets/pdf/CV_ArnaudMAILLET.pdf'
 
 const Header = () => {
     return (
@@ -44,7 +44,9 @@ const Header = () => {
                     ))} */}
                 </MyTimeline>
                 <div className='profile_information_btn_container'>
-                    <CustomButton 
+                    <CustomButton
+                        isDownload = 'true'
+                        href={pdf} 
                         text='Télécharger CV'
                         icon={MyData.icons.btn_download}/>
                 </div>
