@@ -25,6 +25,13 @@
         .MuiSvgIcon-root {
             font-size: $main-icon-size;
             color: $icon-main-color;
+            transition: $transition-duration;
+
+        }
+        &:hover{
+            .MuiSvgIcon-root {
+                transform: $hover-main-transform;
+            }
         }
     }
 
