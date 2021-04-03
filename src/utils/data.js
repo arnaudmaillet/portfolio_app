@@ -331,8 +331,12 @@ export default {
                     {id:'1', link: 'https://www.google.com', icon: <DescriptionRoundedIcon/>},
                     {id:'2', link: 'https://www.google.com', icon: <LanguageRoundedIcon/>},
                     {id:'3', link: 'https://www.google.com', icon: <GitHubIcon/>},
-                ]
-            }
-        ]
-    }
+                ],
+            },
+        ],
+    },
+
+    tech: {
+        title: 'Veilles technologiques',
+    },
 }

@@ -5,7 +5,7 @@
     padding: 0 $main-margin $main-margin $main-margin;
 
     &_title {
-        margin-bottom: $second-margin;
+        margin-bottom: $main-margin!important;
     }
 
     &_item {
@@ -27,6 +27,19 @@
 
         &_btn {
             margin-bottom: 20px;
+        }
+
+        &_option {
+            color: $font-text-color;
+            font: smaller!important;
+            line-height: 25px!important;
+            white-space: pre-line;
+            text-align: justify;
+            margin: 0 0 25px 0!important;
+            padding: 15px;
+            border: 1px solid $main-color;
+            border-radius: $border-main-radius;
+            box-shadow: $shadow-main;
         }
     }
 }

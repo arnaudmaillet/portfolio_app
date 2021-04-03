@@ -10,16 +10,8 @@ const Formations = () => {
 
     const [tabValue, setTabValue] = useState('all')
 
-    // const [option, setoption] = useState(1)
+    const [option, setoption] = useState(1)
 
-    // function handleEvent(optionId, event){
-    //     if (optionId === option){
-    //         console.log(option);
-    //     } else {
-    //         setoption(option + 1)
-    //         console.log(option);
-    //     }
-    // }
 
     return (
         <>
@@ -31,15 +23,33 @@ const Formations = () => {
                     <div>
                         <Typography className='school-training_item_text'>{MyData.learning.schoolTraining.btsSio.text}</Typography>
                     </div>
-                        {MyData.learning.schoolTraining.btsSio.options.map((option) => (
-                            <div key={option.id} className='school-training_item_btn'>
+                    <Grid container>
+                        <Grid item xs={12} md={3} style={{marginTop: '22px'}}>
+                        {MyData.learning.schoolTraining.btsSio.options.map((item) => (
+                            <div 
+                                key={item.id} 
+                                className='school-training_item_btn' 
+                                onClick={()=> {
+                                    if(item.id !== option){
+                                        setoption(item.id)
+                                    }
+                                }}>
                                 <CustomButton 
-                                    // onClick={handleEvent(option.id)}
-                                    text={option.title} 
+                                    text={item.title} 
                                     icon={MyData.icons.btn_sio} 
                                     width='160px'/>
                             </div>
-                        ))}   
+                        ))}
+                        {console.log(option)}
+                        </Grid>
+                        <Grid item xs={12} md={9}>
+                            {option === 1 ? (
+                                <Typography className='school-training_item_option'>{MyData.learning.schoolTraining.btsSio.options[0].text}</Typography>
+                            ) : (
+                                <Typography className='school-training_item_option'>{MyData.learning.schoolTraining.btsSio.options[1].text}</Typography>
+                            )}
+                        </Grid>
+                    </Grid>
                 </Grid>
             </Grid>
             {/* Self learning */}
