@@ -24,28 +24,33 @@ const Formations = () => {
                         <Typography className='school-training_item_text'>{MyData.learning.schoolTraining.btsSio.text}</Typography>
                     </div>
                     <Grid container>
-                        <Grid item xs={12} md={3} style={{marginTop: '22px'}}>
-                        <div 
-                            className='school-training_item_btn'
-                            onClick={() => setoption(0)}>
-                        <CustomButton 
-                                    text={MyData.learning.schoolTraining.btsSio.options[0].title} 
-                                    icon={option === 0 ? MyData.icons.btn_sio : null}
-                                    width='160px'
-                                    textDisplay='flex'/>
-                        </div>
-                        <div 
-                            className='school-training_item_btn'
-                            onClick={() => setoption(1)}>
-                        <CustomButton 
-                                    text={MyData.learning.schoolTraining.btsSio.options[1].title} 
-                                    icon={option === 1 ? MyData.icons.btn_sio : null}
-                                    width='160px'
-                                    textDisplay='flex'/>
-                        </div>
-                        
-                        
-                        {/* {MyData.learning.schoolTraining.btsSio.options.map((item) => (
+                        <Grid item xs={12} md={3} style={{ marginTop: '22px' }}>
+                            <Grid container>
+                                <Grid item xs={6} md={12} className='school-training_item_btn'>
+                                    <div
+                                        className='school-training_item_btn_content'
+                                        onClick={() => setoption(0)}>
+                                        <CustomButton
+                                            text={MyData.learning.schoolTraining.btsSio.options[0].title}
+                                            icon={option === 0 ? MyData.icons.btn_sio : null}
+                                            width='160px'
+                                            textDisplay='flex' />
+                                    </div>
+                                </Grid>
+                                <Grid item xs={6} md={12} className='school-training_item_btn'>
+                                    <div
+                                        className='school-training_item_btn_content'
+                                        onClick={() => setoption(1)}>
+                                        <CustomButton
+                                            text={MyData.learning.schoolTraining.btsSio.options[1].title}
+                                            icon={option === 1 ? MyData.icons.btn_sio : null}
+                                            width='160px'
+                                            textDisplay='flex' />
+                                    </div>
+                                </Grid>
+                            </Grid>
+
+                            {/* {MyData.learning.schoolTraining.btsSio.options.map((item) => (
                             <div 
                                 key={item.id} 
                                 className={option === 1 ? 'school-training_item_btn' : 'school-training_item_btn_active'}
