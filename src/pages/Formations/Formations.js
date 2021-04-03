@@ -10,7 +10,7 @@ const Formations = () => {
 
     const [tabValue, setTabValue] = useState('all')
 
-    const [option, setoption] = useState(1)
+    const [option, setoption] = useState(0)
 
 
     return (
@@ -25,10 +25,30 @@ const Formations = () => {
                     </div>
                     <Grid container>
                         <Grid item xs={12} md={3} style={{marginTop: '22px'}}>
-                        {MyData.learning.schoolTraining.btsSio.options.map((item) => (
+                        <div 
+                            className='school-training_item_btn'
+                            onClick={() => setoption(0)}>
+                        <CustomButton 
+                                    text={MyData.learning.schoolTraining.btsSio.options[0].title} 
+                                    icon={option === 0 ? MyData.icons.btn_sio : null}
+                                    width='160px'
+                                    textDisplay='flex'/>
+                        </div>
+                        <div 
+                            className='school-training_item_btn'
+                            onClick={() => setoption(1)}>
+                        <CustomButton 
+                                    text={MyData.learning.schoolTraining.btsSio.options[1].title} 
+                                    icon={option === 1 ? MyData.icons.btn_sio : null}
+                                    width='160px'
+                                    textDisplay='flex'/>
+                        </div>
+                        
+                        
+                        {/* {MyData.learning.schoolTraining.btsSio.options.map((item) => (
                             <div 
                                 key={item.id} 
-                                className='school-training_item_btn' 
+                                className={option === 1 ? 'school-training_item_btn' : 'school-training_item_btn_active'}
                                 onClick={()=> {
                                     if(item.id !== option){
                                         setoption(item.id)
@@ -39,8 +59,7 @@ const Formations = () => {
                                     icon={MyData.icons.btn_sio} 
                                     width='160px'/>
                             </div>
-                        ))}
-                        {console.log(option)}
+                        ))} */}
                         </Grid>
                         <Grid item xs={12} md={9}>
                             {option === 1 ? (

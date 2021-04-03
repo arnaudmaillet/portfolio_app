@@ -8,6 +8,7 @@
     padding: 1px 12px;
     line-height: 35px;
     min-width: 100px;
+    transition: $transition-duration;
 
     &_icon {
         color: $font-main-color;
@@ -29,8 +30,11 @@
     &_text {
         font-size: 14px;
         text-transform: none;
-        text-align: center;
         width: 100%;
         margin: 0 5px 0 5px;
+    }
+
+    &:hover {
+        transform: $hover-second-transform;
     }
 }

@@ -3,7 +3,7 @@ import { Button } from '@material-ui/core'
 
 import "./Button.scss";
 
-const CustomButton = ({text, icon, width}) => {
+const CustomButton = ({text, icon, width, textDisplay}) => {
 
     return (
         <Button 
@@ -16,7 +16,10 @@ const CustomButton = ({text, icon, width}) => {
                     null
                 )
             }>
-            <span className='my_custom_btn_text'>{text}</span>
+            <div 
+                className='my_custom_btn_text' 
+                style={{display: textDisplay}}>
+                    {text}</div>
         </Button>
     )
 }
