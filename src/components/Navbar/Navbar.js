@@ -8,23 +8,25 @@ import { Nav, Navbar } from "react-bootstrap";
 import { NavLink, withRouter } from 'react-router-dom';
 import MyData from './../../utils/data.js'
 import CustomButton from "./../Button/Button.js"
+import scrollTo from "gatsby-plugin-smoothscroll";
 
 
 
 const MyNavbar = (props) => {
 
+    // Debug navlink
     // const pathName = props.location.pathName -> error : props & location can be empty
     // if props exist & location exist
-    const pathName = props?.location?.pathName
+    //const pathName = props?.location?.pathName
 
     return (
         <Navbar expand='lg' sticky={MyData.navbar} className='myNavbar'>
-            <Tooltip arrow title='Accueil' placement="left">
-                <Nav.Link as={NavLink} to='/' exact className='header_navlink'>
+            <Tooltip arrow title='Remonter en haut de page' placement="bottom">
+                <button className='header_navlink' onClick={() => scrollTo('#top')}>
                     <Navbar.Brand className='myNavbar_home'>
                         <HomeRounded />
                     </Navbar.Brand>
-                </Nav.Link>
+                </button>
             </Tooltip>
 
             <Navbar.Toggle />
