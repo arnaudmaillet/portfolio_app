@@ -45,7 +45,7 @@ const Header = () => {
                 </MyTimeline>
                 <div className='profile_information_btn_container'>
                     <CustomButton
-                        isDownload = 'true'
+                        isDownload
                         href={pdf} 
                         text='Télécharger CV'
                         icon={MyData.icons.btn_download}/>

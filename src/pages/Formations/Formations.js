@@ -125,6 +125,9 @@ const Formations = () => {
                                                     <Typography variant='body2' className='self-learning_custom-card_content_text'>{learning.description}</Typography>
                                                     <div className='self-learning_custom-card_content_button'>
                                                         <CustomButton
+                                                            textDisplay='flex'
+                                                            justifyText='center'
+                                                            href={learning.link}
                                                             text='Voir' />
                                                     </div>
                                                 </CardContent>
