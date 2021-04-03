@@ -14,6 +14,7 @@ import Veilles from './pages/Veilles/Veilles.js'
 // Import components files
 import Header from './components/Header/Header.js'
 import Social from "./components/Social/Social.js"
+import Map from "./components/Map/Map.js"
 import MyNavbar from './components/Navbar/Navbar.js'
 import Footer from './components/Footer/Footer.js'
 
@@ -34,6 +35,7 @@ function App() {
             lg={3}>
             <Header/>
             <Social/>
+            <Map/>
           </Grid>
           <Grid
             item
