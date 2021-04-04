@@ -1,5 +1,4 @@
-import React from 'react'
-import { HomeRounded } from '@material-ui/icons';
+import React, { useState } from 'react'
 import { Tooltip } from "@material-ui/core";
 import './Navbar.scss'
 
@@ -19,12 +18,17 @@ const MyNavbar = (props) => {
     // if props exist & location exist
     //const pathName = props?.location?.pathName
 
+    const [link, setlink] = useState('accueil') 
+
     return (
         <Navbar expand='lg' sticky={MyData.navbar} className='myNavbar'>
             <Tooltip arrow title='Remonter en haut de page' placement="bottom">
                 <button className='header_navlink' onClick={() => scrollTo('#top')}>
                     <Navbar.Brand className='myNavbar_home'>
-                        <HomeRounded />
+                        {link === 'accueil' ? MyData.icons.nav_item1 : null}
+                        {link === 'formations' ? MyData.icons.nav_item2 : null}
+                        {link === 'projets' ? MyData.icons.nav_item3 : null}
+                        {link === 'veilles' ? MyData.icons.nav_item4 : null}   
                     </Navbar.Brand>
                 </button>
             </Tooltip>
@@ -40,6 +44,7 @@ const MyNavbar = (props) => {
                             as={NavLink}
                             to='/'
                             className='myNavbar_content_left_section_link'
+                            onClick={()=> setlink('accueil')}
                         >Accueil</Nav.Link>
 
                         {/* Formations */}
@@ -48,6 +53,7 @@ const MyNavbar = (props) => {
                             as={NavLink}
                             to='/formations'
                             className='myNavbar_content_left_section_link'
+                            onClick={()=> setlink('formations')}
                         >Formations</Nav.Link>
 
                         {/* Projets */}
@@ -56,6 +62,7 @@ const MyNavbar = (props) => {
                             as={NavLink}
                             to='/projets'
                             className='myNavbar_content_left_section_link'
+                            onClick={()=> setlink('projets')}
                         >Projets</Nav.Link>
 
                         {/* Veilles */}
@@ -64,6 +71,7 @@ const MyNavbar = (props) => {
                             as={NavLink}
                             to='/veilles'
                             className='myNavbar_content_left_section_link'
+                            onClick={()=> setlink('veilles')}
                         >Veilles</Nav.Link>
                     </Nav>
                     <div className='myNavbar_content_right_section'>
