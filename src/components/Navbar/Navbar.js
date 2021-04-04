@@ -18,17 +18,24 @@ const MyNavbar = (props) => {
     // if props exist & location exist
     //const pathName = props?.location?.pathName
 
-    const [link, setlink] = useState('accueil') 
+    const [link, setlink] = useState('accueil')
+    
+    const [arrowTop, setArrowTop] = useState(false)
 
     return (
         <Navbar expand='lg' sticky={MyData.navbar} className='myNavbar'>
             <Tooltip arrow title='Remonter en haut de page' placement="bottom">
-                <button className='header_navlink' onClick={() => scrollTo('#top')}>
+                <button 
+                    className='header_navlink' 
+                    onMouseEnter={()=>setArrowTop(true)}
+                    onMouseLeave={()=>setArrowTop(false)}
+                    onClick={()=>scrollTo('#top')}>
                     <Navbar.Brand className='myNavbar_home'>
-                        {link === 'accueil' ? MyData.icons.nav_item1 : null}
-                        {link === 'formations' ? MyData.icons.nav_item2 : null}
-                        {link === 'projets' ? MyData.icons.nav_item3 : null}
-                        {link === 'veilles' ? MyData.icons.nav_item4 : null}   
+                        {link === 'accueil' && !arrowTop ? MyData.icons.nav_item1 : null}
+                        {link === 'formations' && !arrowTop ? MyData.icons.nav_item2 : null}
+                        {link === 'projets' && !arrowTop ? MyData.icons.nav_item3 : null}
+                        {link === 'veilles' && !arrowTop ? MyData.icons.nav_item4 : null} 
+                        {arrowTop ? MyData.icons.nav_top : null}  
                     </Navbar.Brand>
                 </button>
             </Tooltip>

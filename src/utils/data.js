@@ -2,7 +2,7 @@
 import HomeRoundedIcon from '@material-ui/icons/HomeRounded';
 import DvrRoundedIcon from '@material-ui/icons/DvrRounded';
 import NewReleasesRoundedIcon from '@material-ui/icons/NewReleasesRounded';
-
+import PublishRoundedIcon from '@material-ui/icons/PublishRounded';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import TwitterIcon from '@material-ui/icons/Twitter';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
@@ -49,6 +49,7 @@ export default {
         nav_item2: <SchoolRoundedIcon/>,
         nav_item3: <DvrRoundedIcon/>,
         nav_item4: <NewReleasesRoundedIcon/>,
+        nav_top: <PublishRoundedIcon/>,
 
         header_timeline: <AccountCircleRoundedIcon/>,
         work_timeline: <WorkRoundedIcon/>,
