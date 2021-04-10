@@ -7,6 +7,7 @@ import './Social.scss';
 
 const style = makeStyles(theme =>({
     icon:{
+        color: theme.palette.info.main,
         '&:hover' : {
             color: theme.palette.primary.main
         }
