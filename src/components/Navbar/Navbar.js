@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Tooltip } from "@material-ui/core";
+import { Tooltip, Button } from "@material-ui/core";
 import './Navbar.scss'
 
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -25,7 +25,9 @@ const MyNavbar = (props) => {
     return (
         <Navbar expand='lg' sticky={MyData.navbar} className='myNavbar'>
             <Tooltip arrow title='Remonter en haut de page' placement="bottom">
-                <button 
+                <Button
+                    variant='contained'
+                    color = 'primary'
                     className='header_navlink' 
                     onMouseEnter={()=>setArrowTop(true)}
                     onMouseLeave={()=>setArrowTop(false)}
@@ -37,7 +39,7 @@ const MyNavbar = (props) => {
                         {link === 'veilles' && !arrowTop ? MyData.icons.nav_item4 : null} 
                         {arrowTop ? MyData.icons.nav_top : null}  
                     </Navbar.Brand>
-                </button>
+                </Button>
             </Tooltip>
 
             <Navbar.Toggle />
@@ -90,6 +92,7 @@ const MyNavbar = (props) => {
                             target='_blank'>{MyData.socials[key].icon}</a>
                         ))} */}
                         <CustomButton
+                            color='primary'
                             text='Contactez-moi'
                             icon={MyData.icons.btn_contact} />
                     </div>

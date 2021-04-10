@@ -35,7 +35,7 @@ export default {
         title: 'Developper par passion',
     
         img : ImgProfil,
-        age: '2000 ans',
+        age: '20 ans',
         email: 'arnaud@arnaud.com',
         adress: '12 rue de la rue',
         job: 'etudiant',

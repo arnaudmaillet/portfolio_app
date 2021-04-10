@@ -14,26 +14,18 @@
     }
 
     &_home {
-        background-color: $main-color;
+        // background-color: $main-color;
         height: 65px;
         width: 65px;
         padding: 22px;
         display: flex!important;
         align-items: center!important;
-        justify-content: center!important;
         border-top-left-radius: $border-main-radius;
         border-bottom-left-radius: $border-main-radius;
 
         .MuiSvgIcon-root {
             font-size: $main-icon-size;
             color: $icon-main-color;
-            transition: $transition-duration;
-
-        }
-        &:hover{
-            .MuiSvgIcon-root {
-                transform: $hover-main-transform;
-            }
         }
     }
 

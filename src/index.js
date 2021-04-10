@@ -10,8 +10,12 @@ const theme = createMuiTheme({
   palette: {
     primary: {
       main: "#FFC500",
+      contrastText: '#000'
+    },
+    textColor: {
+      color: "#787878"
     }
-  }
+  },
 })
 
 ReactDOM.render(

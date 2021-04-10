@@ -3,12 +3,14 @@ import { Button } from '@material-ui/core'
 
 import "./Button.scss";
 
-const CustomButton = ({ text, icon, width, textDisplay, isDownload, href, justifyText }) => {
+const CustomButton = ({ text, icon, width, color, textDisplay, justifyText, isDownload, href,}) => {
 
     return (
         <>
             {isDownload ?
                 (<Button
+                    variant="contained"
+                    color={color}
                     href={href}
                     download
                     className='my_custom_btn'
@@ -27,6 +29,8 @@ const CustomButton = ({ text, icon, width, textDisplay, isDownload, href, justif
                 </Button>)
                 :
                 (<Button
+                    variant="contained"
+                    color={color}
                     className='my_custom_btn'
                     href={href}
                     target='_blank'

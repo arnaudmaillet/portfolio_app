@@ -16,11 +16,10 @@
 
         .MuiSvgIcon-root{
             font-size: $main-icon-size;
-            color: $font-text-color;
+            // color: $font-text-color;
             transition: $transition-duration;
 
             &:hover{
-                color: $main-color;
                 transform: $hover-main-transform;
             }
         }

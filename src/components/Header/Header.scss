@@ -54,15 +54,6 @@
                         color: $font-main-color;
                         font-weight: 600!important;
                     }
-
-                    > a {
-                        text-decoration: none;
-                        color: $main-color;
-
-                        &:hover{
-                            text-decoration: underline;
-                        }
-                    }
                 }
             }
         }
@@ -72,6 +63,11 @@
             display: flex;
             justify-content: center;
             margin-top: 20px;
+
+            .MuiSvgIcon-root{
+                text-decoration: none;
+                color: $font-main-color;
+            }
         }
     }
 }
