@@ -5,7 +5,7 @@ import './Navbar.scss'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Nav, Navbar } from "react-bootstrap";
 import { NavLink, withRouter } from 'react-router-dom';
-import MyData from './../../utils/data.js'
+import MyData from '../../utils/Data.js'
 import CustomButton from "./../Button/Button.js"
 import scrollTo from "gatsby-plugin-smoothscroll";
 
@@ -84,13 +84,6 @@ const MyNavbar = (props) => {
                         >Veilles</Nav.Link>
                     </Nav>
                     <div className='myNavbar_content_right_section'>
-                        {/* Foreach social object in array, define key as social object */}
-                        {/* {Object.keys(MyData.socials).map((key) => (
-                        <a
-                            key = {key}
-                            href={MyData.socials[key].link}
-                            target='_blank'>{MyData.socials[key].icon}</a>
-                        ))} */}
                         <CustomButton
                             color='primary'
                             text='Contactez-moi'

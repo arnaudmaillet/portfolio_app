@@ -1,6 +1,6 @@
 import React from 'react'
 import { Grid } from '@material-ui/core';
-import MyData from "./../../utils/data.js";
+import MyData from "../../utils/Data.js";
 import Iframe from 'react-iframe';
 
 import './Map.scss'

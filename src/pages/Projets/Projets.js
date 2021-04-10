@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import MyData from './../../utils/data.js'
+import MyData from '../../utils/Data.js'
 import { Grid, Typography, Tabs, Tab, Card, CardActionArea, CardMedia, CardContent, Grow, Dialog, DialogTitle, DialogContent, DialogActions } from '@material-ui/core'
 import Title from '../../components/Title/Title.js'
 

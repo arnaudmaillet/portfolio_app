@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Grid, Tabs, Tab, Grow, Card, CardMedia, CardContent, Typography } from '@material-ui/core'
 import './Formations.scss'
 import Title from '../../components/Title/Title'
-import MyData from "./../../utils/data.js"
+import MyData from "../../utils/Data.js"
 import LinearWithValueLabel from './../../components/LinearProgress/LinearWithValueLabel.js'
 import CustomButton from "./../../components/Button/Button.js";
 

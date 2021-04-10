@@ -3,7 +3,7 @@ import { Typography, makeStyles } from '@material-ui/core'
 import TimelineItem from '@material-ui/lab/TimelineItem'
 import TimelineContent from '@material-ui/lab/TimelineContent';
 
-import MyData from './../../utils/data.js'
+import MyData from '../../utils/Data.js'
 import MyTimeline, { CustomTimelineSeparator } from './../Timeline/Timeline.js'
 import CustomButton from "./../Button/Button.js";
 

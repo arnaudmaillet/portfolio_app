@@ -2,7 +2,7 @@ import React from 'react'
 import { Grid, Typography } from '@material-ui/core'
 import Title from './../../components/Title/Title.js'
 
-import MyData from './../../utils/data.js'
+import MyData from '../../utils/Data.js'
 
 import './Veilles.scss'
 

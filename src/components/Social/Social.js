@@ -1,6 +1,6 @@
 import React from 'react'
 import { Grid, Tooltip } from '@material-ui/core';
-import MyData from "./../../utils/data.js";
+import MyData from "../../utils/Data.js";
 import { makeStyles } from "@material-ui/core";
 
 import './Social.scss';

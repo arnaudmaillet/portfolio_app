@@ -1,6 +1,6 @@
 import React from 'react'
 import { Grid, Icon, Paper, Typography } from '@material-ui/core'
-import MyData from './../../utils/data.js'
+import MyData from '../../utils/Data.js'
 import Title from './../../components/Title/Title.js'
 import MyTimeline, { CustomTimelineSeparator } from './../../components/Timeline/Timeline.js'
 import TimelineItem from '@material-ui/lab/TimelineItem'

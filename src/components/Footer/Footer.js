@@ -1,6 +1,6 @@
 import React from 'react'
 import './Footer.scss'
-import MyData from './../../utils/data.js'
+import MyData from '../../utils/Data.js'
 
 const Footer = () => {
     return (
