@@ -1,9 +1,9 @@
 // Import dependances
-import React from 'react';
-import { Container, Grid, Button } from '@material-ui/core';
+import React, { useState } from 'react';
+import { Container, Grid } from '@material-ui/core';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
-import { withTheme } from "./utils/Theme.js";
-import Brightness4RoundedIcon from '@material-ui/icons/Brightness4Rounded';
+// import { withTheme } from "./utils/Theme.js";
+import { ThemeProvider, createMuiTheme } from "@material-ui/core"; 
 
 // Import pages files
 import Accueil from './pages/Accueil/Accueil.js'
@@ -23,9 +23,39 @@ import Footer from './components/Footer/Footer.js'
 // Import style
 import './App.scss';
 
-function App(props) {
-  const { darkMode, setDarkMode } = props
+function App() {
+  const lightTheme = createMuiTheme({
+    palette: {
+        type: 'light',
+        primary: {
+            main: '#FFC500',
+            contrastText: '#000'
+        },
+        info: {
+            main: '#787878',
+            light: '#FAFAFA',
+            dark: '#1E1E1E',
+        }
+    },
+  })
+  
+  const darkTheme = createMuiTheme({
+    palette: {
+        type: 'dark',
+        primary: {
+            main: '#ff1e00',
+            contrastText: '#000'
+        },
+        info: {
+            main: '#787878',
+            light: '#FAFAFA',
+            dark: '#1E1E1E',
+        }
+    },
+  })
+  const [darkMode, setDarkMode] =  useState()
   return (
+    <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
     <Container className='app-container'>
       <Grid
         container
@@ -48,11 +78,7 @@ function App(props) {
           md
           lg>
           <Router>
-            <MyNavbar />
-            <Button
-              onChange={()=> setDarkMode(!darkMode)}
-              color="primary"
-            ><Brightness4RoundedIcon/></Button>
+            <MyNavbar onChange={() => setDarkMode(!darkMode)} checked={darkMode}/>
             <div className='main-content'>
               <Switch>
                 <Route exact path='/'>
@@ -77,7 +103,8 @@ function App(props) {
         </Grid>
       </Grid>
     </Container>
+    </ThemeProvider>
   );
 }
 
-export default withTheme(App);
+export default App;

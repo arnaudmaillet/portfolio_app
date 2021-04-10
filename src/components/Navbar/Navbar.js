@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Tooltip, Button } from "@material-ui/core";
+import { Tooltip, FormControlLabel, Switch, Button } from "@material-ui/core";
 import './Navbar.scss'
 
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -11,7 +11,7 @@ import scrollTo from "gatsby-plugin-smoothscroll";
 
 
 
-const MyNavbar = (props) => {
+const MyNavbar = ({ props, onChange, checked }) => {
 
     // Debug navlink
     // const pathName = props.location.pathName -> error : props & location can be empty
@@ -19,7 +19,7 @@ const MyNavbar = (props) => {
     //const pathName = props?.location?.pathName
 
     const [link, setlink] = useState('accueil')
-    
+
     const [arrowTop, setArrowTop] = useState(false)
 
     return (
@@ -27,17 +27,17 @@ const MyNavbar = (props) => {
             <Tooltip arrow title='Remonter en haut de page' placement="bottom">
                 <Button
                     variant='contained'
-                    color = 'primary'
-                    className='header_navlink' 
-                    onMouseEnter={()=>setArrowTop(true)}
-                    onMouseLeave={()=>setArrowTop(false)}
-                    onClick={()=>scrollTo('#top')}>
+                    color='primary'
+                    className='header_navlink'
+                    onMouseEnter={() => setArrowTop(true)}
+                    onMouseLeave={() => setArrowTop(false)}
+                    onClick={() => scrollTo('#top')}>
                     <Navbar.Brand className='myNavbar_home'>
                         {link === 'accueil' && !arrowTop ? MyData.icons.nav_item1 : null}
                         {link === 'formations' && !arrowTop ? MyData.icons.nav_item2 : null}
                         {link === 'projets' && !arrowTop ? MyData.icons.nav_item3 : null}
-                        {link === 'veilles' && !arrowTop ? MyData.icons.nav_item4 : null} 
-                        {arrowTop ? MyData.icons.nav_top : null}  
+                        {link === 'veilles' && !arrowTop ? MyData.icons.nav_item4 : null}
+                        {arrowTop ? MyData.icons.nav_top : null}
                     </Navbar.Brand>
                 </Button>
             </Tooltip>
@@ -53,7 +53,7 @@ const MyNavbar = (props) => {
                             as={NavLink}
                             to='/'
                             className='myNavbar_content_left_section_link'
-                            onClick={()=> setlink('accueil')}
+                            onClick={() => setlink('accueil')}
                         >Accueil</Nav.Link>
 
                         {/* Formations */}
@@ -62,7 +62,7 @@ const MyNavbar = (props) => {
                             as={NavLink}
                             to='/formations'
                             className='myNavbar_content_left_section_link'
-                            onClick={()=> setlink('formations')}
+                            onClick={() => setlink('formations')}
                         >Formations</Nav.Link>
 
                         {/* Projets */}
@@ -71,7 +71,7 @@ const MyNavbar = (props) => {
                             as={NavLink}
                             to='/projets'
                             className='myNavbar_content_left_section_link'
-                            onClick={()=> setlink('projets')}
+                            onClick={() => setlink('projets')}
                         >Projets</Nav.Link>
 
                         {/* Veilles */}
@@ -80,17 +80,25 @@ const MyNavbar = (props) => {
                             as={NavLink}
                             to='/veilles'
                             className='myNavbar_content_left_section_link'
-                            onClick={()=> setlink('veilles')}
+                            onClick={() => setlink('veilles')}
                         >Veilles</Nav.Link>
                     </Nav>
                     <div className='myNavbar_content_right_section'>
+                        <FormControlLabel
+                            control={
+                                <Switch
+                                    checked={checked}
+                                    onChange={onChange}
+                                    color="primary"
+                                />
+                            }
+                        />
                         <CustomButton
                             color='primary'
                             text='Contactez-moi'
                             icon={MyData.icons.btn_contact} />
                     </div>
                 </div>
-
             </Navbar.Collapse>
         </Navbar>
     )

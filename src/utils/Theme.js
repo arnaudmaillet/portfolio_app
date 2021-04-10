@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { ThemeProvider, createMuiTheme } from "@material-ui/core";
 
-const theme = createMuiTheme({
+const lightTheme = createMuiTheme({
     palette: {
         type: 'light',
         primary: {
@@ -16,7 +16,7 @@ const theme = createMuiTheme({
     },
 })
 
-const themeDark = createMuiTheme({
+const darkTheme = createMuiTheme({
     palette: {
         type: 'dark',
         primary: {
@@ -33,7 +33,7 @@ const themeDark = createMuiTheme({
 
 const Theme = (props) =>{
     const { children, darkMode } = props;
-    return <ThemeProvider theme={darkMode ? themeDark : theme}>{children}</ThemeProvider>
+    return (<ThemeProvider theme={darkMode ? darkTheme : lightTheme}>{children}</ThemeProvider>)
 }
 
 export const withTheme = (Component) => {
