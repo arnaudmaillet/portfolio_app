@@ -15,9 +15,7 @@ const style = makeStyles(theme =>({
 }))
 
 const Social = () => {
-
     const classes = style()
-
     return (
         <div className='social'>
             <Grid container>
