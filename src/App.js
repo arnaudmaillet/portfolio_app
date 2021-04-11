@@ -53,7 +53,7 @@ function App() {
         }
     },
   })
-  const [darkMode, setDarkMode] =  useState()
+  const [darkMode, setDarkMode] =  useState(false)
   return (
     <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
     <Container className='app-container'>
