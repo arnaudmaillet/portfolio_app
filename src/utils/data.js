@@ -26,6 +26,7 @@ import ImgProjet from './../assets/img/projet.jpg'
 
 
 export default {
+
     profile: {
         name: 'Maillet Arnaud',
         title: 'Developper par passion',
