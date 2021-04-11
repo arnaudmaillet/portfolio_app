@@ -15,16 +15,14 @@ const style = makeStyles(theme => ({
         "&:hover": {
             color: theme.palette.primary.main
         },
+    },
+    active: {
+        color: theme.palette.primary.main
     }
 }))
 
-const MyNavbar = ({ props, onChange, checked }) => {
+const MyNavbar = ({ onChange, checked }) => {
 
-    // Debug navlink
-    // const pathName = props.location.pathName -> error : props & location can be empty
-    // if props exist & location exist
-    //const pathName = props?.location?.pathName
-    //console.log(props);
     const [link, setlink] = useState('accueil')
     const classes = style()
 
@@ -54,7 +52,7 @@ const MyNavbar = ({ props, onChange, checked }) => {
                                 as={NavLink}
                                 to='/'
                                 onClick={() => setlink('accueil')}
-                            ><Typography className={[classes.textDark, 'myNavbar_content_left_section_link'].join(' ')}>Accueil</Typography></Nav.Link>
+                            ><Typography className={[link === 'accueil' ? classes.active : classes.textDark, 'myNavbar_content_left_section_link'].join(' ')}>Accueil</Typography></Nav.Link>
 
                             {/* Formations */}
                             <Nav.Link
@@ -63,7 +61,7 @@ const MyNavbar = ({ props, onChange, checked }) => {
                                 to='/formations'
                                 className='myNavbar_content_left_section_link'
                                 onClick={() => setlink('formations')}
-                                ><Typography className={[classes.textDark, 'myNavbar_content_left_section_link'].join(' ')}>Formations</Typography></Nav.Link>
+                                ><Typography className={[link === 'formations' ? classes.active : classes.textDark, 'myNavbar_content_left_section_link'].join(' ')}>Formations</Typography></Nav.Link>
 
                             {/* Projets */}
                             <Nav.Link
@@ -72,7 +70,7 @@ const MyNavbar = ({ props, onChange, checked }) => {
                                 to='/projets'
                                 className='myNavbar_content_left_section_link'
                                 onClick={() => setlink('projets')}
-                            ><Typography className={[classes.textDark, 'myNavbar_content_left_section_link'].join(' ')}>Projets</Typography></Nav.Link>
+                            ><Typography className={[link === 'projets' ? classes.active : classes.textDark, 'myNavbar_content_left_section_link'].join(' ')}>Projets</Typography></Nav.Link>
 
                             {/* Veilles */}
                             <Nav.Link
@@ -81,7 +79,7 @@ const MyNavbar = ({ props, onChange, checked }) => {
                                 to='/veilles'
                                 className='myNavbar_content_left_section_link'
                                 onClick={() => setlink('veilles')}
-                            ><Typography className={[classes.textDark, 'myNavbar_content_left_section_link'].join(' ')}>Veilles</Typography></Nav.Link>
+                            ><Typography className={[link === 'veilles' ? classes.active : classes.textDark, 'myNavbar_content_left_section_link'].join(' ')}>Veilles</Typography></Nav.Link>
                         </Nav>
                         <div className='myNavbar_content_right_section'>
                             <FormControlLabel

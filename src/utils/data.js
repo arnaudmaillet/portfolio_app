@@ -34,7 +34,7 @@ export default {
 
     profile: {
         name: 'Maillet Arnaud',
-        title: 'Developper par passion',
+        title: 'Developper informatique',
     
         img : ImgProfil,
         age: '20 ans',

@@ -12,7 +12,10 @@ const style = makeStyles(theme => ({
     },
     borderColor: {
         border: '1px solid ' + theme.palette.primary.main,
-    }
+    },
+    active: {
+        color: theme.palette.primary.main
+    },
 }))
 
 const Formations = () => {
@@ -100,7 +103,7 @@ const Formations = () => {
                         indicatorColor='primary'
                         className='self-learning_custom-tabs'
                         onChange={(event, newValue) => setTabValue(newValue)}>
-                        <Tab label='Tous' value='all' className={tabValue === 'all' ? 'self-learning_custom-tabs_item active' : 'self-learning_custom-tabs_item'} />
+                        <Tab label='Tous' value='all' className={tabValue === 'all' ? ['self-learning_custom-tabs_item', classes.active].join(' ') : 'self-learning_custom-tabs_item'} />
 
                         {/* Creating a array that contains a Set which gonna have elements from tag. Element is called only once foreach same tags item
                             exemple of array :
@@ -114,7 +117,7 @@ const Formations = () => {
                                 key={tag}
                                 label={tag}
                                 value={tag}
-                                className={tabValue === tag ? 'self-learning_custom-tabs_item active' : 'self-learning_custom-tabs_item'} />
+                                className={tabValue === tag ? ['self-learning_custom-tabs_item', classes.active].join(' ') : 'self-learning_custom-tabs_item'} />
                         ))}
                     </Tabs>
                 </Grid>
