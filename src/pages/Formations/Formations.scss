@@ -2,7 +2,7 @@
 
 .school-training {
 
-    padding: 0 $main-margin $main-margin $main-margin;
+    padding: $main-margin;
 
     &_title {
         margin-bottom: $main-margin!important;
@@ -17,7 +17,6 @@
         }
 
         &_text {
-            color: $font-text-color;
             font: smaller!important;
             line-height: 25px!important;
             white-space: pre-line;
@@ -37,14 +36,12 @@
 
 
         &_option {
-            color: $font-text-color;
             font: smaller!important;
             line-height: 25px!important;
             white-space: pre-line;
             text-align: justify;
             margin: 0 0 25px 0!important;
             padding: 15px;
-            border: 1px solid $main-color;
             border-radius: $border-main-radius;
             box-shadow: $shadow-main;
         }
@@ -81,7 +78,6 @@
     &_custom-card {
         height: 100%;
         width: 100%;
-        box-shadow: $shadow-main;
         border-radius: $border-main-radius;
         overflow: hidden;
         outline-width: 0!important;
@@ -112,7 +108,6 @@
             }  
             
             &_text {
-                color: $font-text-color;
                 font: smaller!important;
                 line-height: 25px!important;
                 white-space: pre-line;
