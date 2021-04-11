@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Tooltip, FormControlLabel, Switch, Button, Paper } from "@material-ui/core";
+import { FormControlLabel, Switch, Button, Paper, Typography, makeStyles } from "@material-ui/core";
 import './Navbar.scss'
 
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -8,7 +8,11 @@ import { NavLink, withRouter } from 'react-router-dom';
 import MyData from '../../utils/Data.js'
 import CustomButton from "./../Button/Button.js"
 
-
+const style = makeStyles(theme => ({
+    textDark: {
+        color: theme.palette.info.dark
+    }
+}))
 
 const MyNavbar = ({ props, onChange, checked }) => {
 
@@ -16,9 +20,9 @@ const MyNavbar = ({ props, onChange, checked }) => {
     // const pathName = props.location.pathName -> error : props & location can be empty
     // if props exist & location exist
     //const pathName = props?.location?.pathName
-
+    //console.log(props);
     const [link, setlink] = useState('accueil')
-
+    const classes = style()
 
     return (
         <Paper elevation={MyData.settings.cardElevation}>
@@ -45,9 +49,8 @@ const MyNavbar = ({ props, onChange, checked }) => {
                                 exact
                                 as={NavLink}
                                 to='/'
-                                className='myNavbar_content_left_section_link'
                                 onClick={() => setlink('accueil')}
-                            >Accueil</Nav.Link>
+                            ><Typography className={[classes.textDark, 'myNavbar_content_left_section_link'].join(' ')}>Accueil</Typography></Nav.Link>
 
                             {/* Formations */}
                             <Nav.Link
@@ -56,7 +59,7 @@ const MyNavbar = ({ props, onChange, checked }) => {
                                 to='/formations'
                                 className='myNavbar_content_left_section_link'
                                 onClick={() => setlink('formations')}
-                            >Formations</Nav.Link>
+                                ><Typography className={[classes.textDark, 'myNavbar_content_left_section_link'].join(' ')}>Formations</Typography></Nav.Link>
 
                             {/* Projets */}
                             <Nav.Link
@@ -65,7 +68,7 @@ const MyNavbar = ({ props, onChange, checked }) => {
                                 to='/projets'
                                 className='myNavbar_content_left_section_link'
                                 onClick={() => setlink('projets')}
-                            >Projets</Nav.Link>
+                            ><Typography className={[classes.textDark, 'myNavbar_content_left_section_link'].join(' ')}>Projets</Typography></Nav.Link>
 
                             {/* Veilles */}
                             <Nav.Link
@@ -74,7 +77,7 @@ const MyNavbar = ({ props, onChange, checked }) => {
                                 to='/veilles'
                                 className='myNavbar_content_left_section_link'
                                 onClick={() => setlink('veilles')}
-                            >Veilles</Nav.Link>
+                            ><Typography className={[classes.textDark, 'myNavbar_content_left_section_link'].join(' ')}>Veilles</Typography></Nav.Link>
                         </Nav>
                         <div className='myNavbar_content_right_section'>
                             <FormControlLabel

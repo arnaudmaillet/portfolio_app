@@ -46,9 +46,9 @@ function App() {
         contrastText: '#000'
       },
       info: {
-        main: '#787878',
+        main: '#CCCCCC',
         light: '#FAFAFA',
-        dark: '#1E1E1E',
+        dark: '#fff',
       }
     },
   })
