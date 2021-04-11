@@ -2,7 +2,7 @@
 
 .about-me {
 
-    padding: 0 $main-margin $main-margin $main-margin;
+    padding: $main-margin;
 
     &_title {
         position: relative;
@@ -85,14 +85,12 @@
 .skills{
 
     padding: $main-margin;
-    background-color: $bg-main-light-color;
     border-bottom-left-radius: $border-main-radius;
     border-bottom-right-radius: $border-main-radius;
     
     &_section {
         border-radius: $border-main-radius;
         padding: 20px;
-        box-shadow: $shadow-main;
         min-height: 186px;
         height: 100%;
 

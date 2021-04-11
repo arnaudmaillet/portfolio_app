@@ -27,6 +27,10 @@ import ImgProjet from './../assets/img/projet.jpg'
 
 export default {
 
+    settings: {
+        cardElevation: 5
+    },
+
     profile: {
         name: 'Maillet Arnaud',
         title: 'Developper par passion',

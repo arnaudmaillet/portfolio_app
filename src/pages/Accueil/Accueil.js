@@ -12,7 +12,7 @@ import TimelineDot from '@material-ui/lab/TimelineDot'
 
 const Accueil = () => {
     return (
-        <>
+        <Paper elevation={MyData.settings.cardElevation}>
             {/* About me */}
             <Grid container className='about-me'>
                 <Title classSection='about-me'>{MyData.home.about.title}</Title>
@@ -88,7 +88,7 @@ const Accueil = () => {
                     <Grid container justify='space-between' spacing={3}>
                         {MyData.home.skills.items.map((item) => (
                             <Grid item xs={12} sm={6} md={3} key={item.id}>
-                                <Paper elevation={0} className='skills_section'>
+                                <Paper elevation={MyData.settings.cardElevation} className='skills_section'>
                                     <Typography variant='h6' className='skills_section_item-title'>{item.title}</Typography>
                                     {item.elements.map((element) => (
                                         <Typography variant='body2' className='skills_section_item-element' key={element}>
@@ -102,7 +102,7 @@ const Accueil = () => {
                     </Grid>
                 </Grid>
             </Grid>
-        </>
+        </Paper>
     )
 }
 

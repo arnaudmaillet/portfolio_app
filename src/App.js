@@ -2,7 +2,6 @@
 import React, { useState } from 'react';
 import { Container, Grid } from '@material-ui/core';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
-// import { withTheme } from "./utils/Theme.js";
 import { ThemeProvider, createMuiTheme, CssBaseline } from "@material-ui/core";
 
 // Import pages files

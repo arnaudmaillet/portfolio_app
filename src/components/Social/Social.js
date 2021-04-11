@@ -1,14 +1,14 @@
 import React from 'react'
-import { Grid, Tooltip } from '@material-ui/core';
+import { Grid, Tooltip, Paper } from '@material-ui/core';
 import MyData from "../../utils/Data.js";
 import { makeStyles } from "@material-ui/core";
 
 import './Social.scss';
 
-const style = makeStyles(theme =>({
-    icon:{
+const style = makeStyles(theme => ({
+    icon: {
         color: theme.palette.info.main,
-        '&:hover' : {
+        '&:hover': {
             color: theme.palette.primary.main
         }
     }
@@ -17,22 +17,23 @@ const style = makeStyles(theme =>({
 const Social = () => {
     const classes = style()
     return (
-        <div className='social'>
-            <Grid container>
-                <Grid item xs={12}>
-                    <Grid container>
-                        {Object.keys(MyData.socials).map((key) => (
-                            <Grid item xs={3}>
-                                <Tooltip arrow title={MyData.socials[key].text} placement="top">
-                                    <a key={key} href={MyData.socials[key].link} target='_blank' rel="noreferrer" className={classes.icon}>{MyData.socials[key].icon}</a>
-                                </Tooltip>                   
-                            </Grid>
-                        ))}
+        <Paper elevation={MyData.settings.cardElevation}>
+            <div className='social'>
+                <Grid container>
+                    <Grid item xs={12}>
+                        <Grid container>
+                            {Object.keys(MyData.socials).map((key) => (
+                                <Grid item xs={3}>
+                                    <Tooltip arrow title={MyData.socials[key].text} placement="top">
+                                        <a key={key} href={MyData.socials[key].link} target='_blank' rel="noreferrer" className={classes.icon}>{MyData.socials[key].icon}</a>
+                                    </Tooltip>
+                                </Grid>
+                            ))}
+                        </Grid>
                     </Grid>
                 </Grid>
-            </Grid>
-        </div>
-
+            </div>
+        </Paper>
     )
 }
 

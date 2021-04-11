@@ -1,5 +1,5 @@
 import React from 'react'
-import { Typography, makeStyles } from '@material-ui/core'
+import { Typography, makeStyles, Paper } from '@material-ui/core'
 import TimelineItem from '@material-ui/lab/TimelineItem'
 import TimelineContent from '@material-ui/lab/TimelineContent';
 
@@ -22,6 +22,7 @@ const style = makeStyles(theme => ({
 const Header = () => {
     const classes = style()
     return (
+        <Paper elevation={MyData.settings.cardElevation}>
         <div className='profile'>
             <div className='profile_name'>
                 <Typography className={[classes.textDark, 'profile_name_text'].join(' ')}>{MyData.profile.name}</Typography>
@@ -55,6 +56,7 @@ const Header = () => {
                 </div>
             </div>
         </div>
+        </Paper>
     )
 }
 

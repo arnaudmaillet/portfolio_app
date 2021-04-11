@@ -21,7 +21,7 @@ const MyNavbar = ({ props, onChange, checked }) => {
 
 
     return (
-        <Paper>
+        <Paper elevation={MyData.settings.cardElevation}>
             <Navbar expand='lg' sticky={MyData.navbar} className='myNavbar'>
                 <Button
                     variant='contained'
