@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Tooltip, FormControlLabel, Switch, Button } from "@material-ui/core";
+import { Tooltip, FormControlLabel, Switch, Button, Paper } from "@material-ui/core";
 import './Navbar.scss'
 
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -23,7 +23,8 @@ const MyNavbar = ({ props, onChange, checked }) => {
     const [arrowTop, setArrowTop] = useState(false)
 
     return (
-        <Navbar expand='lg' sticky={MyData.navbar} className='myNavbar'>
+        <Paper>
+        <Navbar expand='lg' className='myNavbar'>
             <Tooltip arrow title='Remonter en haut de page' placement="bottom">
                 <Button
                     variant='contained'
@@ -46,8 +47,8 @@ const MyNavbar = ({ props, onChange, checked }) => {
             <Navbar.Collapse>
                 <div className='myNavbar_content'>
                     <Nav className='myNavbar_content_left_section'>
-                        {/* Accueil */}
 
+                        {/* Accueil */}
                         <Nav.Link
                             exact
                             as={NavLink}
@@ -85,6 +86,7 @@ const MyNavbar = ({ props, onChange, checked }) => {
                     </Nav>
                     <div className='myNavbar_content_right_section'>
                         <FormControlLabel
+                            className='myNavbar_content_right_section_darkmode'
                             control={
                                 <Switch
                                     checked={checked}
@@ -101,6 +103,7 @@ const MyNavbar = ({ props, onChange, checked }) => {
                 </div>
             </Navbar.Collapse>
         </Navbar>
+        </Paper>
     )
 }
 export default withRouter(MyNavbar)

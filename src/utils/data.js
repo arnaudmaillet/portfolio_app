@@ -26,10 +26,6 @@ import ImgProjet from './../assets/img/projet.jpg'
 
 
 export default {
-
-    // values of sticky navbar : none or top
-    navbar: 'top',
-
     profile: {
         name: 'Maillet Arnaud',
         title: 'Developper par passion',

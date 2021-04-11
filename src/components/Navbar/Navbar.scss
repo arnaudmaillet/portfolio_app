@@ -2,7 +2,6 @@
 
 .myNavbar {
     margin-bottom: 30px;
-    background-color: $bg-main-color;
     padding: 0 22px 0 0!important;
     border-radius: $border-main-radius;
     box-shadow: $shadow-main;
@@ -14,9 +13,8 @@
     }
 
     &_home {
-        // background-color: $main-color;
-        height: 65px;
-        width: 65px;
+        height: 66px;
+        width: 66px;
         padding: 22px;
         display: flex!important;
         align-items: center!important;
@@ -33,9 +31,12 @@
         display: flex;
         width: 100%;
         padding: 10px;
+        
 
         &_left_section {
             margin-right: auto;
+            display: flex;
+            align-items: center;
     
             &_link {
                 font-weight: 500;
@@ -53,14 +54,19 @@
         }
     
         
-        &_right_section{
-            display: flex!important;
-            align-items: center!important;
+        &_right_section {
+            display: flex;
+            align-items: center;
+            
     
             > a > .MuiSvgIcon-root {
                 font-size: 20px;
                 margin-right: 12px;
                 color: $icon-main-color;
+            }
+
+            &_darkmode {
+                margin: auto 0;
             }
         }
     }
