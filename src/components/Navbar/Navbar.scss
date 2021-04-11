@@ -39,14 +39,7 @@
             display: flex;
             align-items: center;
     
-            &_link {
-                transition: $transition-duration;
-        
-                &:hover {
-                    color: $main-color;
-                }
-            }
-    
+   
             .active {
                 color: $main-color;
             }

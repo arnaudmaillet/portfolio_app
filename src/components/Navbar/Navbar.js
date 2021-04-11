@@ -10,7 +10,11 @@ import CustomButton from "./../Button/Button.js"
 
 const style = makeStyles(theme => ({
     textDark: {
-        color: theme.palette.info.dark
+        color: theme.palette.info.dark,
+        transition: MyData.settings.transitionEffect,
+        "&:hover": {
+            color: theme.palette.primary.main
+        },
     }
 }))
 

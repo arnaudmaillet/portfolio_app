@@ -28,7 +28,8 @@ import ImgProjet from './../assets/img/projet.jpg'
 export default {
 
     settings: {
-        cardElevation: 8
+        cardElevation: 8,
+        transitionEffect: '0.3s',
     },
 
     profile: {

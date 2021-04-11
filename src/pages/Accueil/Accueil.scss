@@ -12,7 +12,6 @@
     }
 
     &_text {
-        color: $font-text-color;
         font: smaller!important;
         line-height: $main-line-height;
         white-space: pre-line;
@@ -37,12 +36,8 @@
         margin-bottom: 10px; 
     }
 
-    &_item-date {
-        color: $font-text-color;
-    }
 
     &_item-text {
-        color: $font-text-color;
         font-size: smaller;
         margin: 6px 0 20px 0!important;
         text-align: justify;
@@ -69,7 +64,6 @@
     }
 
     &_item-text {
-        color: $font-text-color;
         font-size: smaller;
         margin: 6px 0 20px 0!important;
         text-align: justify;
@@ -103,14 +97,13 @@
         &_item-element {
             display: flex;
             align-items: center;
-            color: $font-text-color;
             font-weight: 400!important;
             line-height: 18px!important;
             line-height: $main-line-height;
 
             .MuiTimelineDot-root {
-                border-color: $main-color;
                 padding: 2px!important;
+                transform: translateY(2px);
                 margin-right: 5px!important;
             }
         }
