@@ -2,7 +2,7 @@
 
 .projects {
 
-    padding: 0 $main-margin $main-margin $main-margin;
+    padding: $main-margin;
 
 
     &_title {
@@ -28,16 +28,11 @@
             font-weight: 400!important;
             outline-width: 0!important;
         }
-
-        .active{
-            color: $main-color;
-        }
     }
 
     &_custom-card {
         height: 100%;
         max-width: 350px;
-        box-shadow: $shadow-main;
         border-radius: $border-main-radius;
         overflow: hidden;
         outline-width: 0!important;
