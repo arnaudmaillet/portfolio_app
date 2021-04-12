@@ -52,7 +52,6 @@
         }
     
         &_text {
-            color: $font-text-color;
             font: smaller!important;
             line-height: 25px!important;
             white-space: pre-line;
@@ -61,7 +60,6 @@
     }
 
     &_dialog-title {
-        background-color: $main-color;
         padding: 10px;
 
         &_text {
@@ -83,7 +81,6 @@
         
         &_content {
             margin-top: 10px!important;
-            color: $font-text-color;
             font: smaller!important;
             line-height: $main-line-height;
             white-space: pre-line;
@@ -99,11 +96,9 @@
         &_icon {
             margin: 0px 12px;
             cursor: pointer;
-            color: $icon-main-color;
             transition: $transition-duration;
 
             &:hover {
-                color: $main-color;
                 transform: $hover-main-transform;
             }
 

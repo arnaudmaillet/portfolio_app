@@ -23,9 +23,9 @@ const Social = () => {
                     <Grid item xs={12}>
                         <Grid container>
                             {Object.keys(MyData.socials).map((key) => (
-                                <Grid item xs={3}>
+                                <Grid item xs={3} key={key}>
                                     <Tooltip arrow title={MyData.socials[key].text} placement="top">
-                                        <a key={key} href={MyData.socials[key].link} target='_blank' rel="noreferrer" className={classes.icon}>{MyData.socials[key].icon}</a>
+                                        <a href={MyData.socials[key].link} target='_blank' rel="noreferrer" className={classes.icon}>{MyData.socials[key].icon}</a>
                                     </Tooltip>
                                 </Grid>
                             ))}

@@ -6,9 +6,21 @@ import Title from '../../components/Title/Title.js'
 import './Projets.scss'
 
 const style = makeStyles(theme => ({
+    color: {
+        color: theme.palette.info.main,
+        "&:hover": {
+            color:theme.palette.primary.main,
+        },
+    },
+    text: {
+        color: theme.palette.info.main
+    },
     active: {
         color: theme.palette.primary.main
-    }
+    },
+    backgroundColor: {
+        backgroundColor: theme.palette.primary.main
+    },
 }))
 
 const Projets = () => {
@@ -16,6 +28,7 @@ const Projets = () => {
     const [tabValue, setTabValue] = useState('all')
     const [projectDialog, setProjectDialog] = useState(false)
     const classes = style();
+    console.log(projectDialog);
 
     return (
         <Paper elevation={MyData.settings.cardElevation}>
@@ -64,7 +77,7 @@ const Projets = () => {
                                                     <CardMedia className='projects_custom-card_img' image={project.img} title={project.title} />
                                                     <CardContent>
                                                         <Typography className='projects_custom-card_title'>{project.title}</Typography>
-                                                        <Typography variant='body2' className='projects_custom-card_text'>{project.description}</Typography>
+                                                        <Typography variant='body2' className={['projects_custom-card_text', classes.text].join(' ')}>{project.description}</Typography>
                                                     </CardContent>
                                                 </CardActionArea>
                                             </Card>
@@ -85,18 +98,18 @@ const Projets = () => {
                     <img src={projectDialog.img} alt='' className='projects_dialog-image'></img>
                     <DialogActions className='projects_dialog-action'>
                         {projectDialog?.links?.map(link => (
-                            <a href={link.link} rel="noreferrer" target='_blank' key={link.id} className='projects_dialog-action_icon'>
+                            <a href={link.link} rel="noreferrer" target='_blank' key={link.id} className={['projects_dialog-action_icon', classes.color].join(' ')}>
                                 {link.icon}
                             </a>
                         ))}
                     </DialogActions>
-                    <DialogTitle className='projects_dialog-title'>
+                    <DialogTitle className={['projects_dialog-title', classes.backgroundColor].join(' ')}>
                         <Typography className='projects_dialog-title_text'>
                             {projectDialog.title}
                         </Typography>
                     </DialogTitle>
                     <DialogContent className='projects_dialog-text'>
-                        <Typography className='projects_dialog-text_content'>{projectDialog.text}</Typography>
+                        <Typography className={['projects_dialog-text_content', classes.text].join(' ')}>{projectDialog.text}</Typography>
                     </DialogContent>
                 </Dialog>
             </Grid>
