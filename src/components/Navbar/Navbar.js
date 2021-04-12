@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { FormControlLabel, Switch, Button, Paper, Typography, makeStyles, Tooltip } from "@material-ui/core";
+import { FormControlLabel, Switch, Button, Paper, Typography, makeStyles } from "@material-ui/core";
 import './Navbar.scss'
 
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -18,7 +18,13 @@ const style = makeStyles(theme => ({
     },
     active: {
         color: theme.palette.primary.main
-    }
+    },
+    DisabledDarkMode: {
+        color: theme.palette.info.main
+    },
+    EnabledDarkMode: {
+        color: theme.palette.primary.main
+    } 
 }))
 
 const MyNavbar = ({ onChange, checked }) => {
@@ -83,25 +89,26 @@ const MyNavbar = ({ onChange, checked }) => {
                             ><Typography className={[link === 'veilles' ? classes.active : classes.textDark, 'myNavbar_content_left_section_link'].join(' ')}>Veilles</Typography></Nav.Link>
                         </Nav>
                         <div className='myNavbar_content_right_section'>
-                            <Tooltip title={darkMode ? 'Mode Jour' : 'Mode Nuit'} placement="left">
-                                <FormControlLabel
-                                    className='myNavbar_content_right_section_darkmode'
-                                    control={
-
-                                        <Switch
-                                            checked={checked}
-                                            onChange={onChange}
-                                            onClick={() => setDarkMode(!darkMode)}
-                                            color="primary"
-                                        />
-
-                                    }
-                                />
-                            </Tooltip>
                             <CustomButton
                                 color='primary'
                                 text='Contactez-moi'
                                 icon={MyData.icons.btn_contact} />
+                        </div>
+                        <FormControlLabel
+                            className='myNavbar_content_right_section_darkmode'
+                            control={
+                                <Switch
+                                    checked={checked}
+                                    onChange={onChange}
+                                    onClick={() => setDarkMode(!darkMode)}
+                                    color="primary"
+                                />
+
+                            }
+                        />
+                        <div className='myNavbar_content_right_section_icons'>
+                            <div className={darkMode ? classes.DisabledDarkMode : classes.EnabledDarkMode}>{MyData.icons.nav_darkmode_light}</div>
+                            <div className={darkMode ? classes.EnabledDarkMode : classes.DisabledDarkMode}>{MyData.icons.nav_darkmode_dark}</div>
                         </div>
                     </div>
                 </Navbar.Collapse>

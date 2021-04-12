@@ -18,6 +18,8 @@ import DnsOutlinedIcon from '@material-ui/icons/DnsOutlined';
 import DescriptionRoundedIcon from '@material-ui/icons/DescriptionRounded';
 import LanguageRoundedIcon from '@material-ui/icons/LanguageRounded';
 import SlowMotionVideoRoundedIcon from '@material-ui/icons/SlowMotionVideoRounded';
+import Brightness4RoundedIcon from '@material-ui/icons/Brightness4Rounded';
+import BrightnessLowRoundedIcon from '@material-ui/icons/BrightnessLowRounded';
 
 
 // Import profile image
@@ -51,6 +53,8 @@ export default {
         nav_item2: <SchoolRoundedIcon/>,
         nav_item3: <DvrRoundedIcon/>,
         nav_item4: <NewReleasesRoundedIcon/>,
+        nav_darkmode_light: <BrightnessLowRoundedIcon/>,
+        nav_darkmode_dark: <Brightness4RoundedIcon/>,
         nav_top: <PublishRoundedIcon/>,
 
         header_timeline: <AccountCircleRoundedIcon/>,

@@ -14,17 +14,18 @@
     }
 
     &_home {
-        height: 66px;
-        width: 66px;
+        height: 70px;
+        width: 70px;
         padding: 22px;
         display: flex!important;
-        align-items: center!important;
         border-top-left-radius: $border-main-radius;
         border-bottom-left-radius: $border-main-radius;
+        align-items: center;
 
         .MuiSvgIcon-root {
             font-size: $main-icon-size;
             color: $icon-main-color;
+            transform: translateX(4.5px);
         }
     }
 
@@ -57,8 +58,15 @@
                 color: $icon-main-color;
             }
 
+            &_icons {
+                display: flex;
+                flex-direction: column;
+                transform: translateX(15px);
+            }
+
             &_darkmode {
                 margin: auto 0;
+                transform: rotateZ(90deg) translateY(-40px);
             }
         }
     }
