@@ -1,12 +1,14 @@
 import React, { useState } from 'react'
 import { FormControlLabel, Switch, Button, Paper, Typography, makeStyles, IconButton, Tooltip, TextField, Dialog, DialogActions, DialogContent, DialogTitle } from "@material-ui/core";
-import './Navbar.scss'
+import Axios from 'axios'
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Nav, Navbar } from "react-bootstrap";
 import { NavLink, withRouter } from 'react-router-dom';
 import MyData from '../../utils/Data.js'
 import CustomButton from "./../Button/Button.js"
+
+import './Navbar.scss'
 
 const style = makeStyles(theme => ({
     textDark: {
@@ -31,6 +33,18 @@ const style = makeStyles(theme => ({
 }))
 
 const MyNavbar = ({ onChange, checked }) => {
+
+    const [username, setUsername] = useState('')
+    const [password, setPassword] = useState('')
+
+    const register = () => {
+        Axios.post('http://localhost:3003/register', {
+            username: username,
+            password: password,
+        }).then((res) => {
+            console.log(res);
+        })
+    }
 
     const [create, setCreate] = useState(false)
     const [dialog, setDialog] = useState(false)
@@ -139,6 +153,7 @@ const MyNavbar = ({ onChange, checked }) => {
                         label="Nom d'utilisateur"
                         type='text'
                         fullWidth
+                        onChange={(e) => setUsername(e.target.value)}
                     />
                     <TextField
                         margin='dense'
@@ -146,6 +161,7 @@ const MyNavbar = ({ onChange, checked }) => {
                         label='Mot de passe'
                         type='password'
                         fullWidth
+                        onChange={(e) => setPassword(e.target.value)}
                     />
                     {create ? (
                         <TextField
@@ -154,12 +170,21 @@ const MyNavbar = ({ onChange, checked }) => {
                         label='Confirmer le mot de passe'
                         type='password'
                         fullWidth
+                        onChange={(e) => setPassword(e.target.value)}
                     />
                     ) : null}
                 </DialogContent>
                 <DialogActions className='myNavbar_dialog_actions'>
-                    <a className={['myNavbar_dialog_actions_create', classes.textDark].join(' ')} onClick={() => setCreate(!create)}>{create ? 'Retour à la connexion' : 'Créer un compte'}</a>
-                    <CustomButton color='primary' text={create ? 'S\'enregistrer' : 'Connexion'} icon={create ? MyData.icons.dialog_authentication_create : MyData.icons.dialog_authentication_connection}/>
+                    <a 
+                        className={['myNavbar_dialog_actions_create', classes.textDark].join(' ')} 
+                        onClick={() => setCreate(!create)}>
+                            {create ? 'Retour à la connexion' : 'Créer un compte'}
+                    </a>
+                    <CustomButton 
+                        color='primary' 
+                        text={create ? 'S\'enregistrer' : 'Connexion'} 
+                        icon={create ? MyData.icons.dialog_authentication_create : MyData.icons.dialog_authentication_connection}
+                        onClick={create ? null : () => register}/>
                 </DialogActions>
             </Dialog>
         </Paper>
