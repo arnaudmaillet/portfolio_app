@@ -20,6 +20,7 @@ import LanguageRoundedIcon from '@material-ui/icons/LanguageRounded';
 import SlowMotionVideoRoundedIcon from '@material-ui/icons/SlowMotionVideoRounded';
 import Brightness4RoundedIcon from '@material-ui/icons/Brightness4Rounded';
 import BrightnessLowRoundedIcon from '@material-ui/icons/BrightnessLowRounded';
+import AssignmentIndRoundedIcon from '@material-ui/icons/AssignmentIndRounded';
 
 
 // Import profile image
@@ -58,7 +59,7 @@ export default {
         nav_darkmode_dark: <Brightness4RoundedIcon/>,
         nav_top: <PublishRoundedIcon/>,
 
-        header_timeline: <AccountCircleRoundedIcon/>,
+        header_timeline: <AssignmentIndRoundedIcon/>,
         work_timeline: <WorkRoundedIcon/>,
         education_timeline: <SchoolRoundedIcon/>,
         btn_download: <GetAppRoundedIcon/>,
