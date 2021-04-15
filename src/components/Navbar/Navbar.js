@@ -32,7 +32,8 @@ const style = makeStyles(theme => ({
 
 const MyNavbar = ({ onChange, checked }) => {
 
-    const [BtnLogin, setBtnLogin] = useState(false)
+    const [create, setCreate] = useState(false)
+    const [dialog, setDialog] = useState(false)
     const [darkMode, setDarkMode] = useState(MyData.settings.darkmodeDefault)
     const [link, setlink] = useState('accueil')
     const classes = style()
@@ -96,7 +97,7 @@ const MyNavbar = ({ onChange, checked }) => {
                             <IconButton
                                 className='myNavbar_content_right_section_authentication'
                                 aria-label="Authentication"
-                                onClick={() => setBtnLogin(!BtnLogin)}>
+                                onClick={() => setDialog(!dialog)}>
                                 {MyData.icons.nav_authentication}
                             </IconButton>
                         </Tooltip>
@@ -125,28 +126,40 @@ const MyNavbar = ({ onChange, checked }) => {
                     </div>
                 </Navbar.Collapse>
             </Navbar>
-            <Dialog open={BtnLogin} onClose={() => setBtnLogin(false)} aria-labelledby="form-dialog-title">
-                <DialogTitle id="dialog-authentication" className={classes.DialogBG}>Se connecter</DialogTitle>
+            <Dialog open={dialog} onClose={() => setDialog(false)} aria-labelledby='form-dialog'>
+                <DialogTitle id='dialog-authentication' className={classes.DialogBG}>
+                    <div>{create ? 'S\'enregistrer' : 'Se connecter'}</div>
+                    <IconButton className='myNavbar_dialog_title_close' onClick={() => setDialog(false)}>{MyData.icons.dialog_authentication_close}</IconButton>
+                </DialogTitle>
                 <DialogContent className='myNavbar_dialog_content'>
                     <TextField
                         autoFocus
-                        margin="dense"
-                        id="username"
+                        margin='dense'
+                        id='username'
                         label="Nom d'utilisateur"
-                        type="text"
+                        type='text'
                         fullWidth
                     />
                     <TextField
-                        margin="dense"
-                        id="password"
-                        label="Mot de passe"
-                        type="password"
+                        margin='dense'
+                        id='password'
+                        label='Mot de passe'
+                        type='password'
                         fullWidth
                     />
+                    {create ? (
+                        <TextField
+                        margin='dense'
+                        id='passwordCheck'
+                        label='Confirmer le mot de passe'
+                        type='password'
+                        fullWidth
+                    />
+                    ) : null}
                 </DialogContent>
                 <DialogActions className='myNavbar_dialog_actions'>
-                    <a className={['myNavbar_dialog_actions_create', classes.textDark].join(' ')}>Créer un compte</a>
-                    <CustomButton color='primary' text='Connexion' icon={MyData.icons.dialog_authentication_btn}/>
+                    <a className={['myNavbar_dialog_actions_create', classes.textDark].join(' ')} onClick={() => setCreate(!create)}>{create ? 'Retour à la connexion' : 'Créer un compte'}</a>
+                    <CustomButton color='primary' text={create ? 'S\'enregistrer' : 'Connexion'} icon={create ? MyData.icons.dialog_authentication_create : MyData.icons.dialog_authentication_connection}/>
                 </DialogActions>
             </Dialog>
         </Paper>

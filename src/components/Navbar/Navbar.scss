@@ -77,6 +77,14 @@
 
     &_dialog {
 
+        &_title {
+            &_close {
+                position: absolute!important;
+                right: 20px;
+                top: 10px;
+            }
+        }
+
         &_content {
             padding: 20px!important;
         }

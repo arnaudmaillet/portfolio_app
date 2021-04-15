@@ -22,6 +22,8 @@ import Brightness4RoundedIcon from '@material-ui/icons/Brightness4Rounded';
 import BrightnessLowRoundedIcon from '@material-ui/icons/BrightnessLowRounded';
 import AssignmentIndRoundedIcon from '@material-ui/icons/AssignmentIndRounded';
 import ExitToAppRoundedIcon from '@material-ui/icons/ExitToAppRounded';
+import AddCircleOutlineRoundedIcon from '@material-ui/icons/AddCircleOutlineRounded';
+import HighlightOffRoundedIcon from '@material-ui/icons/HighlightOffRounded';
 
 
 // Import profile image
@@ -61,7 +63,9 @@ export default {
         nav_darkmode_dark: <Brightness4RoundedIcon/>,
         nav_top: <PublishRoundedIcon/>,
 
-        dialog_authentication_btn : <ExitToAppRoundedIcon/>,
+        dialog_authentication_close: <HighlightOffRoundedIcon/>,
+        dialog_authentication_connection: <ExitToAppRoundedIcon/>,
+        dialog_authentication_create: <AddCircleOutlineRoundedIcon/>,
 
         header_timeline: <AssignmentIndRoundedIcon/>,
         work_timeline: <WorkRoundedIcon/>,
