@@ -21,6 +21,7 @@ import SlowMotionVideoRoundedIcon from '@material-ui/icons/SlowMotionVideoRounde
 import Brightness4RoundedIcon from '@material-ui/icons/Brightness4Rounded';
 import BrightnessLowRoundedIcon from '@material-ui/icons/BrightnessLowRounded';
 import AssignmentIndRoundedIcon from '@material-ui/icons/AssignmentIndRounded';
+import ExitToAppRoundedIcon from '@material-ui/icons/ExitToAppRounded';
 
 
 // Import profile image
@@ -55,9 +56,12 @@ export default {
         nav_item2: <SchoolRoundedIcon/>,
         nav_item3: <DvrRoundedIcon/>,
         nav_item4: <NewReleasesRoundedIcon/>,
+        nav_authentication: <AccountCircleRoundedIcon/>,
         nav_darkmode_light: <BrightnessLowRoundedIcon/>,
         nav_darkmode_dark: <Brightness4RoundedIcon/>,
         nav_top: <PublishRoundedIcon/>,
+
+        dialog_authentication_btn : <ExitToAppRoundedIcon/>,
 
         header_timeline: <AssignmentIndRoundedIcon/>,
         work_timeline: <WorkRoundedIcon/>,

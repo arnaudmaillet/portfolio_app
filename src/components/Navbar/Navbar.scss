@@ -68,6 +68,30 @@
                 margin: auto 0;
                 transform: rotateZ(90deg) translateY(-40px);
             }
+
+            &_authentication {
+                margin-right: 40px!important;
+            }
+        }
+    }
+
+    &_dialog {
+
+        &_content {
+            padding: 20px!important;
+        }
+
+        &_actions {
+            display: flex!important;
+            justify-content: space-between!important;
+            padding: 20px!important;
+
+            &_create {
+                &:hover{
+                    text-decoration: underline;
+                    cursor: pointer;
+                }
+            }
         }
     }
 }

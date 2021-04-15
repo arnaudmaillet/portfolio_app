@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { FormControlLabel, Switch, Button, Paper, Typography, makeStyles } from "@material-ui/core";
+import { FormControlLabel, Switch, Button, Paper, Typography, makeStyles, IconButton, Tooltip, TextField, Dialog, DialogActions, DialogContent, DialogTitle } from "@material-ui/core";
 import './Navbar.scss'
 
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -24,11 +24,15 @@ const style = makeStyles(theme => ({
     },
     EnabledDarkMode: {
         color: theme.palette.primary.main
-    } 
+    },
+    DialogBG: {
+        backgroundColor: theme.palette.primary.main
+    }
 }))
 
 const MyNavbar = ({ onChange, checked }) => {
 
+    const [BtnLogin, setBtnLogin] = useState(false)
     const [darkMode, setDarkMode] = useState(MyData.settings.darkmodeDefault)
     const [link, setlink] = useState('accueil')
     const classes = style()
@@ -88,6 +92,14 @@ const MyNavbar = ({ onChange, checked }) => {
                                 onClick={() => setlink('veilles')}
                             ><Typography className={[link === 'veilles' ? classes.active : classes.textDark, 'myNavbar_content_left_section_link'].join(' ')}>Veilles</Typography></Nav.Link>
                         </Nav>
+                        <Tooltip title='Se connecter' placement="left">
+                            <IconButton
+                                className='myNavbar_content_right_section_authentication'
+                                aria-label="Authentication"
+                                onClick={() => setBtnLogin(!BtnLogin)}>
+                                {MyData.icons.nav_authentication}
+                            </IconButton>
+                        </Tooltip>
                         <div className='myNavbar_content_right_section'>
                             <CustomButton
                                 color='primary'
@@ -113,6 +125,30 @@ const MyNavbar = ({ onChange, checked }) => {
                     </div>
                 </Navbar.Collapse>
             </Navbar>
+            <Dialog open={BtnLogin} onClose={() => setBtnLogin(false)} aria-labelledby="form-dialog-title">
+                <DialogTitle id="dialog-authentication" className={classes.DialogBG}>Se connecter</DialogTitle>
+                <DialogContent className='myNavbar_dialog_content'>
+                    <TextField
+                        autoFocus
+                        margin="dense"
+                        id="username"
+                        label="Nom d'utilisateur"
+                        type="text"
+                        fullWidth
+                    />
+                    <TextField
+                        margin="dense"
+                        id="password"
+                        label="Mot de passe"
+                        type="password"
+                        fullWidth
+                    />
+                </DialogContent>
+                <DialogActions className='myNavbar_dialog_actions'>
+                    <a className={['myNavbar_dialog_actions_create', classes.textDark].join(' ')}>Créer un compte</a>
+                    <CustomButton color='primary' text='Connexion' icon={MyData.icons.dialog_authentication_btn}/>
+                </DialogActions>
+            </Dialog>
         </Paper>
     )
 }
