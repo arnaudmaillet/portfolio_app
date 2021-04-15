@@ -136,10 +136,16 @@ const Formations = () => {
                                                 <CardContent className='self-learning_custom-card_content'>
                                                     <Grid container>
                                                         <Grid item xs={12} className='self-learning_custom-card_content_item'>
-                                                            <Typography className='self-learning_custom-card_content_item_title'>{learning.title}</Typography>
-                                                            <div className='self-learning_custom-card_content_item_progress'>
-                                                                <LinearWithValueLabel value={learning.progress} />
-                                                            </div>
+                                                            <Grid container>
+                                                                <Grid item xs={12} md={6}>
+                                                                    <Typography className='self-learning_custom-card_content_item_title'>{learning.title}</Typography>
+                                                                </Grid>
+                                                                <Grid item xs={12} md={6}>
+                                                                    <div className='self-learning_custom-card_content_item_progress'>
+                                                                        <LinearWithValueLabel value={learning.progress} />
+                                                                    </div>
+                                                                </Grid>
+                                                            </Grid>
                                                         </Grid>
                                                     </Grid>
                                                     <Typography variant='body2' className={['self-learning_custom-card_content_text', classes.text].join(' ')}>{learning.description}</Typography>

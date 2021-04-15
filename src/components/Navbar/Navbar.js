@@ -29,7 +29,7 @@ const style = makeStyles(theme => ({
 
 const MyNavbar = ({ onChange, checked }) => {
 
-    const [darkMode, setDarkMode] = useState(false)
+    const [darkMode, setDarkMode] = useState(MyData.settings.darkmodeDefault)
     const [link, setlink] = useState('accueil')
     const classes = style()
 

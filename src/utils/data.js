@@ -30,6 +30,7 @@ import ImgProjet from './../assets/img/projet.jpg'
 export default {
 
     settings: {
+        darkmodeDefault: false,
         cardElevation: 8,
         transitionEffect: '0.3s',
     },

@@ -22,6 +22,10 @@ import Footer from './components/Footer/Footer.js'
 // Import style
 import './App.scss';
 
+// Import Data
+import MyData from './utils/Data.js'
+
+
 function App() {
   const lightTheme = createMuiTheme({
     palette: {
@@ -52,7 +56,7 @@ function App() {
       }
     },
   })
-  const [darkMode, setDarkMode] = useState(false)
+  const [darkMode, setDarkMode] = useState(MyData.settings.darkmodeDefault)
   return (
     <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
       <CssBaseline>

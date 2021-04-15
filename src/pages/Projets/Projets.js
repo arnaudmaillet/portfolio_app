@@ -28,7 +28,6 @@ const Projets = () => {
     const [tabValue, setTabValue] = useState('all')
     const [projectDialog, setProjectDialog] = useState(false)
     const classes = style();
-    console.log(projectDialog);
 
     return (
         <Paper elevation={MyData.settings.cardElevation}>

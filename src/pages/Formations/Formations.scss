@@ -50,7 +50,11 @@
 
 .self-learning {
 
-    padding: 0 $main-margin $main-margin $main-margin;
+    padding: $main-margin;
+
+    &_title{
+        margin-bottom: $second-margin;
+    }
 
     &_custom-tabs {
 
@@ -88,18 +92,17 @@
 
             &_item {
                 
-                display: flex;
-
                 &_title {
-                    width: 150px;
+                    width: 100%;
                     font-size: 16px!important;
                     font-weight: 600!important;
                     margin: 0 0 15px 0!important;
                 }
                 
                 &_progress{
-                    width: calc(100% - 150px);
+                    width: 100%;
                     padding-top: 7px;
+                    justify-content: flex-end;
                 }
             }  
             
