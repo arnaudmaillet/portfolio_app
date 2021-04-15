@@ -36,13 +36,24 @@ const MyNavbar = ({ onChange, checked }) => {
 
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
+    const [loginStatus, setLoginStatus] = useState('')
+    const [loginStatusMsg, setLoginStatusMsg] = useState('')
 
     const register = () => {
-        Axios.post('http://localhost:3003/register', {
+        Axios.post("http://localhost:3003/register", {
             username: username,
             password: password,
-        }).then((res) => {
-            console.log(res);
+        }).then((response) => {
+            console.log(response.data);
+        })
+    }
+
+    const login = () => {
+        Axios.post("http://localhost:3003/login", {
+            username: username,
+            password: password,
+        }).then((response) => {
+            response.data.message ? setLoginStatusMsg(response.data.message) : setLoginStatusMsg("Bienvenue " + response.data.result[0].username[0].toUpperCase() + response.data.result[0].username.slice(1).toLowerCase() + " !")
         })
     }
 
@@ -173,6 +184,7 @@ const MyNavbar = ({ onChange, checked }) => {
                         onChange={(e) => setPassword(e.target.value)}
                     />
                     ) : null}
+                    <Typography className='myNavbar_dialog_content_login-msg'>{loginStatusMsg}</Typography>
                 </DialogContent>
                 <DialogActions className='myNavbar_dialog_actions'>
                     <a 
@@ -184,7 +196,7 @@ const MyNavbar = ({ onChange, checked }) => {
                         color='primary' 
                         text={create ? 'S\'enregistrer' : 'Connexion'} 
                         icon={create ? MyData.icons.dialog_authentication_create : MyData.icons.dialog_authentication_connection}
-                        onClick={create ? null : () => register}/>
+                        onClick={create ? register : login}/>
                 </DialogActions>
             </Dialog>
         </Paper>

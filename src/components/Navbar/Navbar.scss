@@ -87,6 +87,11 @@
 
         &_content {
             padding: 20px!important;
+
+            &_login-msg {
+                text-align: center;
+                margin-top: 10px!important;
+            }
         }
 
         &_actions {
