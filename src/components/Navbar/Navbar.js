@@ -167,7 +167,7 @@ const MyNavbar = ({ onChange, checked }) => {
                                     to='/login'
                                     onClick={() => setlink('login')}>
                                 <CustomButton
-                                    outlined
+                                    outlined={link === 'login' ? false : true}
                                     color='primary'
                                     text='Se connecter'
                                     icon={MyData.icons.nav_authentication} />

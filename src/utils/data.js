@@ -45,7 +45,9 @@ export default {
             title: 'Se connecter',
             usernameField: 'Nom d\'utilisateur',
             passwordField: 'Mot de passe',
-        }
+            textBtnLogin: 'Se connecter',
+            textBtnCreateAccount: 'Créer un compte',
+        },
     },
 
     profile: {

@@ -2,11 +2,50 @@
 
 .authentication {
     padding: $main-margin;
+    max-width: 500px;
+    margin: 0 auto;
 
-    &_title {
-        position: relative;
-        display: inline-block;
-        padding: 0 3px;  
-        margin-bottom: $second-margin; 
+    &_login {
+
+        &_username {
+            padding: 10px;
+            text-align: center;
+        }
+
+        &_password {
+            padding: 10px;
+            text-align: center;
+        }
+
+        &_btn {
+
+            display: flex;
+            justify-content: center;
+            padding: 10px;
+            margin-top: 20px!important;
+
+            &_create {
+                text-decoration: none;
+                padding: 10px 15px;
+
+                &:hover{
+                    text-decoration: underline;
+                    cursor: pointer;
+                }
+            }
+
+            &_login {
+                width: 50%;
+                text-align: center;
+            }
+        }
+
+        &_icon {
+            margin: auto 10px auto 0!important;
+        }
+
+        &_textField {
+            width: 300px;
+        }
     }
 }
