@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { FormControlLabel, Switch, Button, Paper, Typography, makeStyles, IconButton, Tooltip, TextField, Dialog, DialogActions, DialogContent, DialogTitle } from "@material-ui/core";
+import { FormControlLabel, Switch, Button, Paper, Typography, makeStyles } from "@material-ui/core";
 import Axios from 'axios'
 
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -37,41 +37,12 @@ const MyNavbar = ({ onChange, checked }) => {
     // Je ne sais pas a quoi ca sert mais ne marche pas si il n'est pas présent
     Axios.defaults.withCredentials = true
 
-    const [create, setCreate] = useState(false)
-    const [dialogIn, setDialogIn] = useState(false)
-    const [dialogOut, setDialogOut] = useState(false)
     const [darkMode, setDarkMode] = useState(MyData.settings.darkmodeDefault)
     const [link, setlink] = useState('accueil')
     const classes = style()
 
-    // Authentication states & functions
-    const [username, setUsername] = useState('')
-    const [password, setPassword] = useState('')
     const [loginStatus, setLoginStatus] = useState(false)
-    const [loginStatusMsg, setLoginStatusMsg] = useState('')
 
-    const register = () => {
-        Axios.post("http://localhost:3003/register", {
-            username: username,
-            password: password,
-        }).then((response) => {
-            setLoginStatusMsg(response.data.message)
-            setCreate(false)
-        })
-    }
-
-    const login = () => {
-        Axios.post("http://localhost:3003/login", {
-            username: username,
-            password: password,
-        }).then((response) => {
-            if (response.data.message) {
-                setLoginStatusMsg(response.data.message)
-            } else {
-                setLoginStatus(true)
-            }
-        })
-    }
 
     const logout = () => {
         Axios.get("http://localhost:3003/logout").then((response) => {
@@ -86,13 +57,6 @@ const MyNavbar = ({ onChange, checked }) => {
             }
         })
     }, [])
-
-    const handleClickLogout = () => {
-        setLoginStatus(false); 
-        setDialogOut(false)
-        setUsername('');
-        setPassword('')
-    }
 
     return (
         <Paper elevation={MyData.settings.cardElevation}>
@@ -150,16 +114,6 @@ const MyNavbar = ({ onChange, checked }) => {
                                 onClick={() => setlink('veilles')}
                             ><Typography className={[link === 'veilles' ? classes.active : classes.textDark, 'myNavbar_content_left_section_link'].join(' ')}>Veilles</Typography></Nav.Link>
                         </Nav>
-                        <Tooltip title={loginStatus ? 'Se déconnecter' : 'Se connecter'} placement="left">
-                            <IconButton
-                                color={loginStatus ? 'primary' : ''}
-                                className='myNavbar_content_right_section_authentication'
-                                aria-label="Authentication"
-                                onClick={loginStatus ? () => setDialogOut(!dialogOut) : () => setDialogIn(!dialogIn)}
-                                >
-                                {MyData.icons.nav_authentication}
-                            </IconButton>
-                        </Tooltip>
                         <div className='myNavbar_content_right_section'>
                             <Nav.Link
                                     exact
@@ -167,9 +121,9 @@ const MyNavbar = ({ onChange, checked }) => {
                                     to='/login'
                                     onClick={() => setlink('login')}>
                                 <CustomButton
-                                    outlined={link === 'login' ? false : true}
+                                    outlined={loginStatus ? false : true}
                                     color='primary'
-                                    text='Se connecter'
+                                    text={ loginStatus ? 'Dashboard' : 'Se connecter'}
                                     icon={MyData.icons.nav_authentication} />
                             </Nav.Link>
                         </div>
@@ -192,74 +146,6 @@ const MyNavbar = ({ onChange, checked }) => {
                     </div>
                 </Navbar.Collapse>
             </Navbar>
-
-            {loginStatus ? (
-                <Dialog open={dialogOut} onClose={() => setDialogOut(false)} aria-labelledby='form-dialogout'>
-                    <DialogActions className='myNavbar_dialog_logout'>
-                        <CustomButton
-                            outlined
-                            color='primary'
-                            text='Annuler'
-                            onClick={() => setDialogOut(false)} />
-                        <CustomButton
-                            color='primary'
-                            text='Se déconnecter'
-                            icon={MyData.icons.dialog_authentication_logout}
-                            onClick={logout, handleClickLogout} />
-                    </DialogActions>
-                </Dialog>
-            ) : (
-                <Dialog open={dialogIn} onClose={() => setDialogIn(false)} aria-labelledby='form-dialogin'>
-                    <DialogTitle id='dialog-authentication' className={classes.DialogBG}>
-                        <div>{create ? 'S\'enregistrer' : 'Se connecter'}</div>
-                        <IconButton className='myNavbar_dialog_title_close' onClick={() => setDialogIn(false)}>{MyData.icons.dialog_close}</IconButton>
-                    </DialogTitle>
-                    <DialogContent className='myNavbar_dialog_content'>
-                        <TextField
-                            autoFocus
-                            margin='dense'
-                            id='username'
-                            label="Nom d'utilisateur"
-                            type='text'
-                            fullWidth
-                            onChange={(e) => setUsername(e.target.value)}
-                        />
-                        <TextField
-                            margin='dense'
-                            id='password'
-                            label='Mot de passe'
-                            type='password'
-                            fullWidth
-                            onChange={(e) => setPassword(e.target.value)}
-                        />
-                        {create ? (
-                            <TextField
-                                margin='dense'
-                                id='passwordCheck'
-                                label='Confirmer le mot de passe'
-                                type='password'
-                                fullWidth
-                                onChange={(e) => setPassword(e.target.value)}
-                            />
-                        ) : null}
-                        <Typography className='myNavbar_dialog_content_login-msg'>{loginStatusMsg}</Typography>
-                    </DialogContent>
-                    <DialogActions className='myNavbar_dialog_actions'>
-                        <a
-                            className={['myNavbar_dialog_actions_create', classes.textDark].join(' ')}
-                            onClick={() => {
-                                setCreate(!create)
-                                setLoginStatusMsg('')}}>
-                            {create ? 'Retour à la connexion' : 'Créer un compte'}
-                        </a>
-                        <CustomButton
-                            color='primary'
-                            text={create ? 'S\'enregistrer' : 'Connexion'}
-                            icon={create ? MyData.icons.dialog_authentication_create : MyData.icons.dialog_authentication_login}
-                            onClick={create ? register : login} />
-                    </DialogActions>
-                </Dialog>
-            )}
         </Paper>
     )
 }

@@ -28,18 +28,30 @@ const Login = () => {
     const [password, setPassword] = useState('')
     const [msg, setMsg] = useState('')
     const [alertOpen, setAlertOpen] = useState(false)
+    const [alertType, setAlertType] = useState('')
 
     const login = () => {
-        Axios.post("http://localhost:3003/login", {
-            username: username,
-            password: password,
-        }).then((response) => {
-            if (response.data.message) {
-                setMsg(response.data.message)
-            } else {
-                setMsg('Erreur')
-            }
-        })
+        if(username === '' || password ===''){
+            setMsg('Erreur : Veuillez remplir les champs demandés !')
+            setAlertType('error')
+            setAlertOpen(true)
+        } else {
+            Axios.post("http://localhost:3003/login", {
+                username: username,
+                password: password,
+            }).then((response) => {
+                if (response.data.message) {
+                    setMsg(response.data.message)
+                    setAlertType('success')
+                    setAlertOpen(true)
+                }
+                if (response.data.messageErr)  {
+                    setMsg(response.data.messageErr)
+                    setAlertType('error')
+                    setAlertOpen(true)
+                }
+            })
+        }
     }
 
     return (
@@ -90,7 +102,7 @@ const Login = () => {
                 </Grid>
             </Grid>
             <Snackbar open={alertOpen} autoHideDuration={6000} onClose={() => setAlertOpen(false)}>
-                <Alert onClose={() => setAlertOpen(false)} severity="success">
+                <Alert onClose={() => setAlertOpen(false)} severity={alertType === 'success' ? 'success' : 'error'}>
                     {msg}
                 </Alert>
             </Snackbar>
