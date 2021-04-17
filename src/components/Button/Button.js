@@ -1,16 +1,22 @@
 import React from 'react'
-import { Button } from '@material-ui/core'
+import { Button, makeStyles } from '@material-ui/core'
 
 import "./Button.scss";
 
-const CustomButton = ({ text, icon, width, color, textDisplay, justifyText, isDownload, href, onClick}) => {
+const style = makeStyles(theme => ({
+    color: {
+        color: theme.palette.info.light
+    }
+}))
 
+const CustomButton = ({ text, icon, width, color, outlined, textDisplay, justifyText, isDownload, href, onClick}) => {
+    const classes = style()
     return (
         <>
             {isDownload ?
                 (<Button
                     onClick={onClick}
-                    variant="contained"
+                    variant={outlined ? 'outlined' : 'contained'}
                     color={color}
                     href={href}
                     download
@@ -18,20 +24,20 @@ const CustomButton = ({ text, icon, width, color, textDisplay, justifyText, isDo
                     style={{ width: width }}
                     endIcon={
                         icon ? (
-                            <div className='my_custom_btn_icon'>{icon}</div>
+                            <div className={outlined ? 'my_custom_btn_icon' : ['my_custom_btn_icon', classes.color].join(' ')}>{icon}</div>
                         ) : (
                             null
                         )
                     }>
                     <div
-                        className='my_custom_btn_text'
+                        className={['my_custom_btn_text', classes.color].join(' ')}
                         style={{ display: textDisplay, justifyContent: justifyText }}>
                         {text}</div>
                 </Button>)
                 :
                 (<Button
                     onClick={onClick}
-                    variant="contained"
+                    variant={outlined ? 'outlined' : 'contained'}
                     color={color}
                     className='my_custom_btn'
                     href={href}
@@ -39,13 +45,13 @@ const CustomButton = ({ text, icon, width, color, textDisplay, justifyText, isDo
                     style={{ width: width }}
                     endIcon={
                         icon ? (
-                            <div className='my_custom_btn_icon'>{icon}</div>
+                            <div className={outlined ? 'my_custom_btn_icon' : ['my_custom_btn_icon', classes.color].join(' ')}>{icon}</div>
                         ) : (
                             null
                         )
                     }>
                     <div
-                        className='my_custom_btn_text'
+                        className={['my_custom_btn_text', classes.color].join(' ')}
                         style={{ display: textDisplay, justifyContent: justifyText}}>
                         {text}</div>
                 </Button>)
