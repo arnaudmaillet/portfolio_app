@@ -50,7 +50,8 @@
         &_right_section {
             display: flex;
             align-items: center;
-            
+            height: 40px;
+            margin: auto 0;
     
             > a > .MuiSvgIcon-root {
                 font-size: 20px;
@@ -105,6 +106,10 @@
                     cursor: pointer;
                 }
             }
+        }
+
+        &_logout {
+            padding: 20px!important;
         }
     }
 }

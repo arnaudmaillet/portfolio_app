@@ -24,6 +24,7 @@ import AssignmentIndRoundedIcon from '@material-ui/icons/AssignmentIndRounded';
 import ExitToAppRoundedIcon from '@material-ui/icons/ExitToAppRounded';
 import AddCircleOutlineRoundedIcon from '@material-ui/icons/AddCircleOutlineRounded';
 import HighlightOffRoundedIcon from '@material-ui/icons/HighlightOffRounded';
+import LockIcon from '@material-ui/icons/Lock';
 
 
 // Import profile image
@@ -37,6 +38,14 @@ export default {
         darkmodeDefault: false,
         cardElevation: 8,
         transitionEffect: '0.3s',
+    },
+
+    authentication: {
+        login: {
+            title: 'Se connecter',
+            usernameField: 'Nom d\'utilisateur',
+            passwordField: 'Mot de passe',
+        }
     },
 
     profile: {
@@ -54,6 +63,10 @@ export default {
     },
 
     icons: {
+
+        authentication_username: <AccountCircleRoundedIcon/>,
+        authentication_password: <LockIcon/>,
+
         nav_item1: <HomeRoundedIcon/>,
         nav_item2: <SchoolRoundedIcon/>,
         nav_item3: <DvrRoundedIcon/>,
@@ -63,8 +76,9 @@ export default {
         nav_darkmode_dark: <Brightness4RoundedIcon/>,
         nav_top: <PublishRoundedIcon/>,
 
-        dialog_authentication_close: <HighlightOffRoundedIcon/>,
-        dialog_authentication_connection: <ExitToAppRoundedIcon/>,
+        dialog_close: <HighlightOffRoundedIcon/>,
+        dialog_authentication_login: <SlowMotionVideoRoundedIcon/>,
+        dialog_authentication_logout: <ExitToAppRoundedIcon/>,
         dialog_authentication_create: <AddCircleOutlineRoundedIcon/>,
 
         header_timeline: <AssignmentIndRoundedIcon/>,

@@ -53,15 +53,38 @@
             }
         }
         
-        &_btn_container {
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            margin-top: 20px;
+        &_btn {
+            
+            &_CV {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                margin-top: 20px;
 
-            .MuiSvgIcon-root{
-                text-decoration: none;
-                color: $font-main-color;
+                .MuiButtonBase-root {
+                    width: 180px;
+                }
+    
+                .MuiSvgIcon-root{
+                    text-decoration: none;
+                    color: $font-main-color;
+                }
+            }
+
+            &_contact {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                margin-top: 20px;
+
+                .MuiButtonBase-root {
+                    width: 180px;
+                }
+    
+                .MuiSvgIcon-root{
+                    text-decoration: none;
+                    color: $font-main-color;
+                }
             }
         }
     }

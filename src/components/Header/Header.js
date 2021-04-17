@@ -23,39 +23,45 @@ const Header = () => {
     const classes = style()
     return (
         <Paper elevation={MyData.settings.cardElevation}>
-        <div className='profile'>
-            <div className='profile_name'>
-                <Typography className={[classes.textDark, 'profile_name_text'].join(' ')}>{MyData.profile.name}</Typography>
-                <Typography className={[classes.text, 'profile_name_title'].join(' ')}>{MyData.profile.title}</Typography>
-            </div>
-            <div className='profile_img'>
-                <img src={MyData.profile.img} alt='picture' />
-            </div>
-            <div className='profile_information'>
-                <MyTimeline icon={MyData.icons.header_timeline}>
-                    <CustomTimelineItem
-                        title='Nom'
-                        text={MyData.profile.name} />
-                    <CustomTimelineItem
-                        title='Age'
-                        text={MyData.profile.age} />
-                    <CustomTimelineItem
-                        title='Email'
-                        text={MyData.profile.email} />
-                    <CustomTimelineItem
-                        title='Adresse'
-                        text={MyData.profile.adress} />
-                </MyTimeline>
-                <div className='profile_information_btn_container'>
-                    <CustomButton
-                        color='primary'
-                        isDownload
-                        href={pdf}
-                        text='Télécharger CV'
-                        icon={MyData.icons.btn_download} />
+            <div className='profile'>
+                <div className='profile_name'>
+                    <Typography className={[classes.textDark, 'profile_name_text'].join(' ')}>{MyData.profile.name}</Typography>
+                    <Typography className={[classes.text, 'profile_name_title'].join(' ')}>{MyData.profile.title}</Typography>
+                </div>
+                <div className='profile_img'>
+                    <img src={MyData.profile.img} alt='picture' />
+                </div>
+                <div className='profile_information'>
+                    <MyTimeline icon={MyData.icons.header_timeline}>
+                        <CustomTimelineItem
+                            title='Nom'
+                            text={MyData.profile.name} />
+                        <CustomTimelineItem
+                            title='Age'
+                            text={MyData.profile.age} />
+                        <CustomTimelineItem
+                            title='Email'
+                            text={MyData.profile.email} />
+                        <CustomTimelineItem
+                            title='Adresse'
+                            text={MyData.profile.adress} />
+                    </MyTimeline>
+                    <div className='profile_information_btn_CV'>
+                        <CustomButton
+                            color='primary'
+                            isDownload
+                            href={pdf}
+                            text='Télécharger CV'
+                            icon={MyData.icons.btn_download} />
+                    </div>
+                    <div className='profile_information_btn_contact'>
+                        <CustomButton
+                            color='primary'
+                            text='Contactez-moi'
+                            icon={MyData.icons.btn_contact} />
+                    </div>
                 </div>
             </div>
-        </div>
         </Paper>
     )
 }

@@ -10,6 +10,7 @@ import Formations from './pages/Formations/Formations.js'
 import Projets from './pages/Projets/Projets.js'
 import Contact from './pages/Contact/Contact.js'
 import Veilles from './pages/Veilles/Veilles.js'
+import Login from './components/Login/Login.js';
 
 
 // Import components files
@@ -26,6 +27,7 @@ import './App.scss';
 import MyData from './utils/Data.js'
 
 
+
 function App() {
   const lightTheme = createMuiTheme({
     palette: {
@@ -36,7 +38,7 @@ function App() {
       },
       info: {
         main: '#787878',
-        light: '#FAFAFA',
+        light: '#000000',
         dark: '#1E1E1E',
       }
     },
@@ -99,6 +101,15 @@ function App() {
                     </Route>
                     <Route exact path='/veilles'>
                       <Veilles />
+                    </Route>
+                    <Route exact path='/login'>
+                      <Login/>
+                    </Route>
+                    <Route exact path='/register'>
+                      {console.log('register')}
+                    </Route>
+                    <Route exact path='/logout'>
+                      {console.log('logout')}
                     </Route>
                   </Switch>
                 </div>
