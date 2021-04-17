@@ -11,6 +11,7 @@ import Projets from './pages/Projets/Projets.js'
 import Contact from './pages/Contact/Contact.js'
 import Veilles from './pages/Veilles/Veilles.js'
 import Login from './components/Login/Login.js';
+import Register from './components/Register/Register.js';
 
 
 // Import components files
@@ -25,6 +26,7 @@ import './App.scss';
 
 // Import Data
 import MyData from './utils/Data.js'
+
 
 
 
@@ -106,7 +108,7 @@ function App() {
                       <Login/>
                     </Route>
                     <Route exact path='/register'>
-                      {console.log('register')}
+                      <Register/>
                     </Route>
                     <Route exact path='/logout'>
                       {console.log('logout')}

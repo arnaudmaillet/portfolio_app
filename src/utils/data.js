@@ -25,6 +25,8 @@ import ExitToAppRoundedIcon from '@material-ui/icons/ExitToAppRounded';
 import AddCircleOutlineRoundedIcon from '@material-ui/icons/AddCircleOutlineRounded';
 import HighlightOffRoundedIcon from '@material-ui/icons/HighlightOffRounded';
 import LockIcon from '@material-ui/icons/Lock';
+import VisibilityIcon from '@material-ui/icons/Visibility';
+import VisibilityOffIcon from '@material-ui/icons/VisibilityOff';
 
 
 // Import profile image
@@ -42,11 +44,18 @@ export default {
 
     authentication: {
         login: {
-            title: 'Se connecter',
             usernameField: 'Nom d\'utilisateur',
             passwordField: 'Mot de passe',
             textBtnLogin: 'Se connecter',
             textBtnCreateAccount: 'Créer un compte',
+        },
+
+        register: {
+            usernameField: 'Nom d\'utilisateur',
+            passwordField: 'Mot de passe',
+            passwordConfirmField: 'Confirmer le mot de passe',
+            textBtnLogin: 'S\'enregistrer',
+            textBtnLeft: 'Retour',
         },
     },
 
@@ -68,6 +77,8 @@ export default {
 
         authentication_username: <AccountCircleRoundedIcon/>,
         authentication_password: <LockIcon/>,
+        authentication_register_showPassword: <VisibilityIcon/>,
+        authentication_register_hidePassword: <VisibilityOffIcon/>,
 
         nav_item1: <HomeRoundedIcon/>,
         nav_item2: <SchoolRoundedIcon/>,

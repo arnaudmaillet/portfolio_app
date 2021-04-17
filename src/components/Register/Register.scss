@@ -5,7 +5,7 @@
     max-width: 500px;
     margin: 0 auto;
 
-    &_login {
+    &_register {
 
         &_username {
             padding: 10px;
@@ -24,7 +24,7 @@
             padding: 10px;
             margin-top: 20px!important;
 
-            &_create {
+            &_left {
                 text-decoration: none;
                 padding: 10px 15px;
                 width: 200px;
@@ -36,7 +36,7 @@
                 }
             }
 
-            &_login {
+            &_register {
                 width: 50%;
                 text-align: center;
             }
@@ -44,6 +44,11 @@
 
         &_icon {
             margin: auto 10px auto 0!important;
+
+            &_right {
+                margin: auto 0 auto 10px!important;
+                cursor: pointer;
+            }
         }
 
         &_textField {
