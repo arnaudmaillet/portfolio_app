@@ -111,7 +111,7 @@ function App() {
                       <Register/>
                     </Route>
                     <Route exact path='/logout'>
-                      {console.log('logout')}
+
                     </Route>
                   </Switch>
                 </div>
