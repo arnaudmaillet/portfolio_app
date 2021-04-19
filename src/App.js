@@ -61,6 +61,8 @@ function App() {
     },
   })
   const [darkMode, setDarkMode] = useState(MyData.settings.darkmodeDefault)
+  const [isLogged, setIsLogged] = useState(false)
+  console.log(isLogged);
   return (
     <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
       <CssBaseline>
@@ -86,7 +88,11 @@ function App() {
               md
               lg>
               <Router>
-                <MyNavbar onChange={() => setDarkMode(!darkMode)} checked={darkMode} />
+                <MyNavbar 
+                  onChange={() => setDarkMode(!darkMode)} 
+                  checked={darkMode} 
+                  logStatus={ isLogged ? true : false} 
+                  logOut={val=> setIsLogged(val)}/>
                 <div className='main-content'>
                   <Switch>
                     <Route exact path='/'>
@@ -105,7 +111,8 @@ function App() {
                       <Veilles />
                     </Route>
                     <Route exact path='/login'>
-                      <Login/>
+                      <Login
+                        logIn={val => setIsLogged(val)}/>
                     </Route>
                     <Route exact path='/register'>
                       <Register/>

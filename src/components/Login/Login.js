@@ -17,7 +17,7 @@ const style = makeStyles(theme => ({
     }
 }))
 
-const Login = () => {
+const Login = (props) => {
 
     // Je ne sais pas a quoi ca sert mais ne marche pas si il n'est pas présent
     Axios.defaults.withCredentials = true
@@ -44,6 +44,7 @@ const Login = () => {
                     setMsg(response.data.message)
                     setAlertType('success')
                     setAlertOpen(true)
+                    props.logIn(true)
                 }
                 if (response.data.messageErr)  {
                     setMsg(response.data.messageErr)

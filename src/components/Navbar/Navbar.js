@@ -32,8 +32,7 @@ const style = makeStyles(theme => ({
     }
 }))
 
-const MyNavbar = ({ onChange, checked }) => {
-
+const MyNavbar = (props) => {
     // Je ne sais pas a quoi ca sert mais ne marche pas si il n'est pas présent
     Axios.defaults.withCredentials = true
 
@@ -47,17 +46,18 @@ const MyNavbar = ({ onChange, checked }) => {
     const logout = () => {
         Axios.post("http://localhost:3003/logout").then((response) => {
             setLoginStatus(false)
+            props.logOut(false)
         })
     }
 
     useEffect(() => {
         Axios.get('http://localhost:3003/login').then((response) => {
-            console.log(response.data.loggedIn);
             if (response.data.loggedIn == true) {
                 setLoginStatus(true)
             }
         })
     }, [])
+
 
     return (
         <Paper elevation={MyData.settings.cardElevation}>
@@ -122,21 +122,21 @@ const MyNavbar = ({ onChange, checked }) => {
                                     to='/login'
                                     onClick={() => setlink('login')}>
                                 <CustomButton
-                                    outlined={loginStatus ? false : true}
+                                    outlined={loginStatus || props.logStatus ? false : true}
                                     color='primary'
-                                    text={ loginStatus ? 'Dashboard' : 'Se connecter'}
+                                    text={ loginStatus || props.logStatus ? 'Dashboard' : 'Se connecter'}
                                     icon={MyData.icons.nav_authentication} />
                             </Nav.Link>
-                            {loginStatus ? (
-                                <CustomButton text='Se déconnecter' onClick={logout}/>
+                            {loginStatus || props.logStatus ? (
+                                <CustomButton text='Se déconnecter' onClick={logout} color='primary' outlined/>
                             ) : <div></div>}
                         </div>
                         <FormControlLabel
                             className='myNavbar_content_right_section_darkmode'
                             control={
                                 <Switch
-                                    checked={checked}
-                                    onChange={onChange}
+                                    checked={props.checked}
+                                    onChange={props.onChange}
                                     onClick={() => setDarkMode(!darkMode)}
                                     color="primary"
                                 />
