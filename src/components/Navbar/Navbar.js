@@ -42,8 +42,8 @@ const MyNavbar = (props) => {
     // Je ne sais pas a quoi ca sert mais ne marche pas si il n'est pas présent
     Axios.defaults.withCredentials = true
 
+    const currentRoute = props.location.pathname 
     const [darkMode, setDarkMode] = useState(MyData.settings.darkmodeDefault)
-    const [link, setlink] = useState('accueil')
     const [msg, setMsg] = useState('')
     const [alertOpen, setAlertOpen] = useState(false)
     const [alertType, setAlertType] = useState('')
@@ -80,11 +80,11 @@ const MyNavbar = (props) => {
                     className='header_navlink'>
                     <AnimatePresence exitBeforeEnter>
                             <Navbar.Brand className='myNavbar_home'>
-                                {link === 'accueil' ? <motion.div exit={{ opacity: 0 }} animate={{ opacity: 1 }} initial={{ opacity: 0 }} transition={{duration: 1.2}}> {MyData.icons.nav_item1} </motion.div>: null}
-                                {link === 'formations' ? <motion.div exit={{ opacity: 0 }} animate={{ opacity: 1 }} initial={{ opacity: 0 }} transition={{duration: 1.2}}> {MyData.icons.nav_item2} </motion.div> : null}
-                                {link === 'projets' ? <motion.div exit={{ opacity: 0 }} animate={{ opacity: 1 }} initial={{ opacity: 0 }} transition={{duration: 1.2}}> {MyData.icons.nav_item3} </motion.div> : null}
-                                {link === 'veilles' ? <motion.div exit={{ opacity: 0 }} animate={{ opacity: 1 }} initial={{ opacity: 0 }} transition={{duration: 1.2}}> {MyData.icons.nav_item4} </motion.div>: null}
-                                {link === 'login' ? <motion.div exit={{ opacity: 0 }} animate={{ opacity: 1 }} initial={{ opacity: 0 }} transition={{duration: 1.2}}> {MyData.icons.nav_authentication} </motion.div>: null}
+                                {currentRoute === '/' ? <motion.div exit={{ opacity: 0 }} animate={{ opacity: 1 }} initial={{ opacity: 0 }} transition={{duration: 1.2}}> {MyData.icons.nav_item1} </motion.div>: null}
+                                {currentRoute === '/formations' ? <motion.div exit={{ opacity: 0 }} animate={{ opacity: 1 }} initial={{ opacity: 0 }} transition={{duration: 1.2}}> {MyData.icons.nav_item2} </motion.div> : null}
+                                {currentRoute === '/projets' ? <motion.div exit={{ opacity: 0 }} animate={{ opacity: 1 }} initial={{ opacity: 0 }} transition={{duration: 1.2}}> {MyData.icons.nav_item3} </motion.div> : null}
+                                {currentRoute === '/veilles' ? <motion.div exit={{ opacity: 0 }} animate={{ opacity: 1 }} initial={{ opacity: 0 }} transition={{duration: 1.2}}> {MyData.icons.nav_item4} </motion.div>: null}
+                                {currentRoute === '/login' ? <motion.div exit={{ opacity: 0 }} animate={{ opacity: 1 }} initial={{ opacity: 0 }} transition={{duration: 1.2}}> {MyData.icons.nav_authentication} </motion.div>: null}
                             </Navbar.Brand>
                     </AnimatePresence>
                 </Button>
@@ -99,39 +99,34 @@ const MyNavbar = (props) => {
                                 exact
                                 to='/'
                                 className='myNavbar_content_left_section_link'
-                                onClick={() => setlink('accueil')}
-                            ><Typography className={link === 'accueil' ? classes.active : classes.textDark}>Accueil</Typography></NavLink>
+                            ><Typography className={currentRoute === '/' ? classes.active : classes.textDark}>Accueil</Typography></NavLink>
 
                             {/* Formations */}
                             <NavLink
                                 exact
                                 to='/formations'
                                 className='myNavbar_content_left_section_link'
-                                onClick={() => setlink('formations')}
-                            ><Typography className={link === 'formations' ? classes.active : classes.textDark}>Formations</Typography></NavLink>
+                            ><Typography className={currentRoute === '/formations' ? classes.active : classes.textDark}>Formations</Typography></NavLink>
 
                             {/* Projets */}
                             <NavLink
                                 exact
                                 to='/projets'
                                 className='myNavbar_content_left_section_link'
-                                onClick={() => setlink('projets')}
-                            ><Typography className={link === 'projets' ? classes.active : classes.textDark}>Projets</Typography></NavLink>
+                            ><Typography className={currentRoute === '/projets' ? classes.active : classes.textDark}>Projets</Typography></NavLink>
 
                             {/* Veilles */}
                             <NavLink
                                 exact
                                 to='/veilles'
                                 className='myNavbar_content_left_section_link'
-                                onClick={() => setlink('veilles')}
-                            ><Typography className={link === 'veilles' ? classes.active : classes.textDark}>Veilles</Typography></NavLink>
+                            ><Typography className={currentRoute === '/veilles' ? classes.active : classes.textDark}>Veilles</Typography></NavLink>
                         </Nav>
                         <div className='myNavbar_content_right_section'>
                             <NavLink
                                 className='myNavbar_content_right_section_btn'
                                 exact
-                                to='/login'
-                                onClick={() => setlink('login')}>
+                                to='/login'>
                                 <CustomButton
                                     outlined={loginStatus || props.logStatus ? false : true}
                                     color='primary'
