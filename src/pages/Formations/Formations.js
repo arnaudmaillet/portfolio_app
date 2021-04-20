@@ -16,6 +16,9 @@ const style = makeStyles(theme => ({
     active: {
         color: theme.palette.primary.main
     },
+    notActive: {
+        color: theme.palette.info.dark
+    }
 }))
 
 const Formations = () => {
@@ -44,7 +47,7 @@ const Formations = () => {
                                         className='school-training_item_btn_content'
                                         onClick={() => setoption(0)}>
                                         <CustomButton
-                                            color={option === 0 ? 'primary' : ''}
+                                            color={option === 0 ? 'primary' : 'inherit'}
                                             text={MyData.learning.schoolTraining.btsSio.options[0].title}
                                             icon={option === 0 ? MyData.icons.btn_sio : null}
                                             width='160px'
@@ -56,7 +59,7 @@ const Formations = () => {
                                         className='school-training_item_btn_content'
                                         onClick={() => setoption(1)}>
                                         <CustomButton
-                                            color={option === 1 ? 'primary' : ''}
+                                            color={option === 1 ? 'primary' : 'inherit'}
                                             text={MyData.learning.schoolTraining.btsSio.options[1].title}
                                             icon={option === 1 ? MyData.icons.btn_sio : null}
                                             width='160px'
@@ -64,22 +67,6 @@ const Formations = () => {
                                     </div>
                                 </Grid>
                             </Grid>
-
-                            {/* {MyData.learning.schoolTraining.btsSio.options.map((item) => (
-                            <div 
-                                key={item.id} 
-                                className={option === 1 ? 'school-training_item_btn' : 'school-training_item_btn_active'}
-                                onClick={()=> {
-                                    if(item.id !== option){
-                                        setoption(item.id)
-                                    }
-                                }}>
-                                <CustomButton 
-                                    text={item.title} 
-                                    icon={MyData.icons.btn_sio} 
-                                    width='160px'/>
-                            </div>
-                        ))} */}
                         </Grid>
                         <Grid item xs={12} md={9}>
                             {option === 1 ? (

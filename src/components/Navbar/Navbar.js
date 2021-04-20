@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
-import { FormControlLabel, Switch, Button, Paper, Typography, makeStyles } from "@material-ui/core";
+import { FormControlLabel, Switch, Button, Paper, Typography, makeStyles, Snackbar } from "@material-ui/core";
+import { Alert } from '@material-ui/lab';
 import Axios from 'axios'
 
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -38,6 +39,9 @@ const MyNavbar = (props) => {
 
     const [darkMode, setDarkMode] = useState(MyData.settings.darkmodeDefault)
     const [link, setlink] = useState('accueil')
+    const [msg, setMsg] = useState('')
+    const [alertOpen, setAlertOpen] = useState(false)
+    const [alertType, setAlertType] = useState('')
     const classes = style()
 
     const [loginStatus, setLoginStatus] = useState(false)
@@ -47,6 +51,9 @@ const MyNavbar = (props) => {
         Axios.post("http://localhost:3003/logout").then((response) => {
             setLoginStatus(false)
             props.logOut(false)
+            setMsg(response.data.message)
+            setAlertType('success')
+            setAlertOpen(true)
         })
     }
 
@@ -81,44 +88,40 @@ const MyNavbar = (props) => {
                         <Nav className='myNavbar_content_left_section'>
 
                             {/* Accueil */}
-                            <Nav.Link
+                            <NavLink
                                 exact
-                                as={NavLink}
                                 to='/'
+                                className='myNavbar_content_left_section_link'
                                 onClick={() => setlink('accueil')}
-                            ><Typography className={[link === 'accueil' ? classes.active : classes.textDark, 'myNavbar_content_left_section_link'].join(' ')}>Accueil</Typography></Nav.Link>
+                            ><Typography className={link === 'accueil' ? classes.active : classes.textDark}>Accueil</Typography></NavLink>
 
                             {/* Formations */}
-                            <Nav.Link
+                            <NavLink
                                 exact
-                                as={NavLink}
                                 to='/formations'
                                 className='myNavbar_content_left_section_link'
                                 onClick={() => setlink('formations')}
-                            ><Typography className={[link === 'formations' ? classes.active : classes.textDark, 'myNavbar_content_left_section_link'].join(' ')}>Formations</Typography></Nav.Link>
+                            ><Typography className={link === 'formations' ? classes.active : classes.textDark}>Formations</Typography></NavLink>
 
                             {/* Projets */}
-                            <Nav.Link
+                            <NavLink
                                 exact
-                                as={NavLink}
                                 to='/projets'
                                 className='myNavbar_content_left_section_link'
                                 onClick={() => setlink('projets')}
-                            ><Typography className={[link === 'projets' ? classes.active : classes.textDark, 'myNavbar_content_left_section_link'].join(' ')}>Projets</Typography></Nav.Link>
+                            ><Typography className={link === 'projets' ? classes.active : classes.textDark}>Projets</Typography></NavLink>
 
                             {/* Veilles */}
-                            <Nav.Link
+                            <NavLink
                                 exact
-                                as={NavLink}
                                 to='/veilles'
                                 className='myNavbar_content_left_section_link'
                                 onClick={() => setlink('veilles')}
-                            ><Typography className={[link === 'veilles' ? classes.active : classes.textDark, 'myNavbar_content_left_section_link'].join(' ')}>Veilles</Typography></Nav.Link>
+                            ><Typography className={link === 'veilles' ? classes.active : classes.textDark}>Veilles</Typography></NavLink>
                         </Nav>
                         <div className='myNavbar_content_right_section'>
-                            <Nav.Link
+                            <NavLink
                                     exact
-                                    as={NavLink}
                                     to='/login'
                                     onClick={() => setlink('login')}>
                                 <CustomButton
@@ -126,7 +129,7 @@ const MyNavbar = (props) => {
                                     color='primary'
                                     text={ loginStatus || props.logStatus ? 'Dashboard' : 'Se connecter'}
                                     icon={MyData.icons.nav_authentication} />
-                            </Nav.Link>
+                            </NavLink>
                             {loginStatus || props.logStatus ? (
                                 <CustomButton text='Se déconnecter' onClick={logout} color='primary' outlined/>
                             ) : <div></div>}
@@ -150,6 +153,11 @@ const MyNavbar = (props) => {
                     </div>
                 </Navbar.Collapse>
             </Navbar>
+            <Snackbar open={alertOpen} autoHideDuration={6000} onClose={() => setAlertOpen(false)}>
+                <Alert onClose={() => setAlertOpen(false)} severity={alertType === 'success' ? 'success' : 'error'}>
+                    {msg}
+                </Alert>
+            </Snackbar>
         </Paper>
     )
 }

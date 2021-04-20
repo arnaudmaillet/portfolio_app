@@ -24,7 +24,6 @@
 
         .MuiSvgIcon-root {
             font-size: $main-icon-size;
-            color: $icon-main-color;
             transform: translateX(3.3px);
         }
     }
@@ -39,10 +38,16 @@
             margin-right: auto;
             display: flex;
             align-items: center;
-    
-   
-            .active {
-                color: $main-color;
+            margin-left: 10px;
+
+            &_link {
+                margin: 0 10px;
+                width: auto;
+                text-align: center;
+
+                &:hover{
+                    text-decoration: none;
+                }
             }
         }
     
@@ -56,7 +61,6 @@
             > a > .MuiSvgIcon-root {
                 font-size: 20px;
                 margin-right: 12px;
-                color: $icon-main-color;
             }
 
             &_icons {

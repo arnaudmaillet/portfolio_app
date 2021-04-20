@@ -1,8 +1,9 @@
 // Import dependances
 import React, { useState } from 'react';
 import { Container, Grid } from '@material-ui/core';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import { ThemeProvider, createMuiTheme, CssBaseline } from "@material-ui/core";
+import { CSSTransition, TransitionGroup } from 'react-transition-group'
 
 // Import pages files
 import Accueil from './pages/Accueil/Accueil.js'
@@ -62,7 +63,6 @@ function App() {
   })
   const [darkMode, setDarkMode] = useState(MyData.settings.darkmodeDefault)
   const [isLogged, setIsLogged] = useState(false)
-  console.log(isLogged);
   return (
     <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
       <CssBaseline>
@@ -87,42 +87,37 @@ function App() {
               sm
               md
               lg>
-              <Router>
-                <MyNavbar 
-                  onChange={() => setDarkMode(!darkMode)} 
-                  checked={darkMode} 
-                  logStatus={ isLogged ? true : false} 
-                  logOut={val=> setIsLogged(val)}/>
+              <BrowserRouter>
+                <MyNavbar
+                  onChange={() => setDarkMode(!darkMode)}
+                  checked={darkMode}
+                  logStatus={isLogged ? true : false}
+                  logOut={val => setIsLogged(val)} />
                 <div className='main-content'>
-                  <Switch>
-                    <Route exact path='/'>
-                      <Accueil />
-                    </Route>
-                    <Route exact path='/formations'>
-                      <Formations />
-                    </Route>
-                    <Route exact path='/projets'>
-                      <Projets />
-                    </Route>
-                    <Route exact path='/contact'>
-                      <Contact />
-                    </Route>
-                    <Route exact path='/veilles'>
-                      <Veilles />
-                    </Route>
-                    <Route exact path='/login'>
-                      <Login
-                        logIn={val => setIsLogged(val)}/>
-                    </Route>
-                    <Route exact path='/register'>
-                      <Register/>
-                    </Route>
-                    <Route exact path='/logout'>
-
-                    </Route>
-                  </Switch>
+                  <Route render={({location}) => (
+                    <TransitionGroup>
+                    <CSSTransition 
+                      key={location.key} 
+                      timeout={30000} 
+                      classNames='fade'>
+                      <Switch location={location}>
+                        <Route exact path='/' component={Accueil}/>
+                        <Route exact path='/formations' component={Formations}/>
+                        <Route exact path='/projets' component={Projets}/>
+                        <Route exact path='/contact' component={Contact}/>
+                        <Route exact path='/veilles' component={Veilles}/>
+                        <Route exact path='/register' component={Register}/>
+                        <Route exact path='/login'>
+                          <Login
+                            logIn={val => setIsLogged(val)} />
+                        </Route>
+                        <Route exact path='/logout'></Route>
+                      </Switch>
+                    </CSSTransition>
+                  </TransitionGroup>
+                  )}/>
                 </div>
-              </Router>
+              </BrowserRouter>
               <Footer />
             </Grid>
           </Grid>
