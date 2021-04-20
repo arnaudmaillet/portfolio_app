@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { Container, Grid } from '@material-ui/core';
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import { ThemeProvider, createMuiTheme, CssBaseline } from "@material-ui/core";
-import { CSSTransition, TransitionGroup } from 'react-transition-group'
+import { AnimatePresence } from "framer-motion";
 
 // Import pages files
 import Accueil from './pages/Accueil/Accueil.js'
@@ -94,13 +94,9 @@ function App() {
                   logStatus={isLogged ? true : false}
                   logOut={val => setIsLogged(val)} />
                 <div className='main-content'>
-                  <Route render={({location}) => (
-                    <TransitionGroup>
-                    <CSSTransition 
-                      key={location.key} 
-                      timeout={30000} 
-                      classNames='fade'>
-                      <Switch location={location}>
+                <AnimatePresence exitBeforeEnter>
+                  <Route render={({location}) =>(
+                    <Switch location={location} key={location.pathname}>
                         <Route exact path='/' component={Accueil}/>
                         <Route exact path='/formations' component={Formations}/>
                         <Route exact path='/projets' component={Projets}/>
@@ -113,9 +109,8 @@ function App() {
                         </Route>
                         <Route exact path='/logout'></Route>
                       </Switch>
-                    </CSSTransition>
-                  </TransitionGroup>
                   )}/>
+                  </AnimatePresence>
                 </div>
               </BrowserRouter>
               <Footer />

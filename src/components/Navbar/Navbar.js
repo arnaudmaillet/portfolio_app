@@ -1,14 +1,17 @@
+// Import dependances
 import React, { useState, useEffect } from 'react'
 import { FormControlLabel, Switch, Button, Paper, Typography, makeStyles, Snackbar } from "@material-ui/core";
 import { Alert } from '@material-ui/lab';
 import Axios from 'axios'
-
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Nav, Navbar } from "react-bootstrap";
 import { NavLink, withRouter } from 'react-router-dom';
 import MyData from '../../utils/Data.js'
+
+// Import components
 import CustomButton from "./../Button/Button.js"
 
+// Import style
 import './Navbar.scss'
 
 const style = makeStyles(theme => ({
@@ -59,7 +62,7 @@ const MyNavbar = (props) => {
 
     useEffect(() => {
         Axios.get('http://localhost:3003/login').then((response) => {
-            if (response.data.loggedIn == true) {
+            if (response.data.loggedIn === true) {
                 setLoginStatus(true)
             }
         })
@@ -121,6 +124,7 @@ const MyNavbar = (props) => {
                         </Nav>
                         <div className='myNavbar_content_right_section'>
                             <NavLink
+                                    className='myNavbar_content_right_section_btn'
                                     exact
                                     to='/login'
                                     onClick={() => setlink('login')}>

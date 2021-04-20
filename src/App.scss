@@ -27,28 +27,3 @@
         font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
     }
 } 
-
-
-/* Transitions routes*/
-
-.fade-appear
-.fade-enter {
-    opacity: 0!important;
-    z-index: 1!important;
-    ;
-}
-
-.fade-appear-active
-.fade-enter.fade-enter-active {
-    opacity: 1!important;
-    transition: opacity 300ms linear 150ms!important;
-}
-
-.fade-exit {
-    opacity: 1!important;
-}
-
-.fade-exit.fade-exit-active {
-    opacity: 0!important;
-    transition: opacity 300ms linear!important;
-}
