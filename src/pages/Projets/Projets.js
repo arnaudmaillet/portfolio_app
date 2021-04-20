@@ -27,7 +27,7 @@ const style = makeStyles(theme => ({
 const Projets = () => {
 
     const [tabValue, setTabValue] = useState('all')
-    const [projectDialog, setProjectDialog] = useState(false)
+    const [projectDialog, setProjectDialog] = useState(null)
     const classes = style();
 
     return (
@@ -91,11 +91,12 @@ const Projets = () => {
                     </Grid>
 
                     {/* generating dialog(modal like) */}
-                    <Dialog
+                    {projectDialog ? (
+                        <Dialog
                         fullWidth
                         maxWidth='sm'
-                        open={projectDialog}
-                        onClose={() => setProjectDialog(false)}>
+                        open={true}
+                        onClose={() => setProjectDialog(null)}>
                         <img src={projectDialog.img} alt='' className='projects_dialog-image'></img>
                         <DialogActions className='projects_dialog-action'>
                             {projectDialog?.links?.map(link => (
@@ -113,6 +114,7 @@ const Projets = () => {
                             <Typography className={['projects_dialog-text_content', classes.text].join(' ')}>{projectDialog.text}</Typography>
                         </DialogContent>
                     </Dialog>
+                    ) : <div></div>}
                 </Grid>
             </motion.div>
         </Paper>

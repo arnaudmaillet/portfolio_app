@@ -7,12 +7,14 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Nav, Navbar } from "react-bootstrap";
 import { NavLink, withRouter } from 'react-router-dom';
 import MyData from '../../utils/Data.js'
+import { AnimatePresence, motion } from "framer-motion";
 
 // Import components
 import CustomButton from "./../Button/Button.js"
 
 // Import style
 import './Navbar.scss'
+import { MicTwoTone } from '@material-ui/icons';
 
 const style = makeStyles(theme => ({
     textDark: {
@@ -76,13 +78,15 @@ const MyNavbar = (props) => {
                     variant='contained'
                     color='primary'
                     className='header_navlink'>
-                    <Navbar.Brand className='myNavbar_home'>
-                        {link === 'accueil' ? MyData.icons.nav_item1 : null}
-                        {link === 'formations' ? MyData.icons.nav_item2 : null}
-                        {link === 'projets' ? MyData.icons.nav_item3 : null}
-                        {link === 'veilles' ? MyData.icons.nav_item4 : null}
-                        {link === 'login' ? MyData.icons.nav_authentication : null}
-                    </Navbar.Brand>
+                    <AnimatePresence exitBeforeEnter>
+                            <Navbar.Brand className='myNavbar_home'>
+                                {link === 'accueil' ? <motion.div exit={{ opacity: 0 }} animate={{ opacity: 1 }} initial={{ opacity: 0 }} transition={{duration: 1.2}}> {MyData.icons.nav_item1} </motion.div>: null}
+                                {link === 'formations' ? <motion.div exit={{ opacity: 0 }} animate={{ opacity: 1 }} initial={{ opacity: 0 }} transition={{duration: 1.2}}> {MyData.icons.nav_item2} </motion.div> : null}
+                                {link === 'projets' ? <motion.div exit={{ opacity: 0 }} animate={{ opacity: 1 }} initial={{ opacity: 0 }} transition={{duration: 1.2}}> {MyData.icons.nav_item3} </motion.div> : null}
+                                {link === 'veilles' ? <motion.div exit={{ opacity: 0 }} animate={{ opacity: 1 }} initial={{ opacity: 0 }} transition={{duration: 1.2}}> {MyData.icons.nav_item4} </motion.div>: null}
+                                {link === 'login' ? <motion.div exit={{ opacity: 0 }} animate={{ opacity: 1 }} initial={{ opacity: 0 }} transition={{duration: 1.2}}> {MyData.icons.nav_authentication} </motion.div>: null}
+                            </Navbar.Brand>
+                    </AnimatePresence>
                 </Button>
 
                 <Navbar.Toggle />
@@ -124,18 +128,18 @@ const MyNavbar = (props) => {
                         </Nav>
                         <div className='myNavbar_content_right_section'>
                             <NavLink
-                                    className='myNavbar_content_right_section_btn'
-                                    exact
-                                    to='/login'
-                                    onClick={() => setlink('login')}>
+                                className='myNavbar_content_right_section_btn'
+                                exact
+                                to='/login'
+                                onClick={() => setlink('login')}>
                                 <CustomButton
                                     outlined={loginStatus || props.logStatus ? false : true}
                                     color='primary'
-                                    text={ loginStatus || props.logStatus ? 'Dashboard' : 'Se connecter'}
+                                    text={loginStatus || props.logStatus ? 'Dashboard' : 'Se connecter'}
                                     icon={MyData.icons.nav_authentication} />
                             </NavLink>
                             {loginStatus || props.logStatus ? (
-                                <CustomButton text='Se déconnecter' onClick={logout} color='primary' outlined/>
+                                <CustomButton text='Se déconnecter' onClick={logout} color='primary' outlined />
                             ) : <div></div>}
                         </div>
                         <FormControlLabel

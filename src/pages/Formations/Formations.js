@@ -49,7 +49,8 @@ const Formations = () => {
                                             className='school-training_item_btn_content'
                                             onClick={() => setoption(0)}>
                                             <CustomButton
-                                                color={option === 0 ? 'primary' : 'inherit'}
+                                                outlined = {option === 0 ? false : true}
+                                                color='primary'
                                                 text={MyData.learning.schoolTraining.btsSio.options[0].title}
                                                 icon={option === 0 ? MyData.icons.btn_sio : null}
                                                 width='160px'
@@ -61,7 +62,8 @@ const Formations = () => {
                                             className='school-training_item_btn_content'
                                             onClick={() => setoption(1)}>
                                             <CustomButton
-                                                color={option === 1 ? 'primary' : 'inherit'}
+                                                outlined = {option === 1 ? false : true}
+                                                color='primary'
                                                 text={MyData.learning.schoolTraining.btsSio.options[1].title}
                                                 icon={option === 1 ? MyData.icons.btn_sio : null}
                                                 width='160px'
