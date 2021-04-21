@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Grid, Tabs, Tab, Grow, Card, CardMedia, CardContent, Typography, makeStyles, Paper } from '@material-ui/core'
+import { Grid, Tabs, Tab, Grow, Card, CardMedia, CardContent, Typography, makeStyles, Paper, Dialog, DialogContent, DialogContentText, Button, AppBar, Toolbar, IconButton } from '@material-ui/core'
 import './Formations.scss'
 import Title from '../../components/Title/Title'
 import MyData from "../../utils/Data.js"
@@ -19,7 +19,14 @@ const style = makeStyles(theme => ({
     },
     notActive: {
         color: theme.palette.info.dark
-    }
+    },
+    appBar: {
+        position: 'relative',
+    },
+    title: {
+        marginLeft: theme.spacing(2),
+        flex: 1,
+    },
 }))
 
 const Formations = () => {
@@ -28,16 +35,21 @@ const Formations = () => {
 
     const [option, setoption] = useState(0)
 
+    const [openSkillArray, setOpenSkillArray] = useState(false)
+
     const classes = style()
 
     return (
         <Paper elevation={MyData.settings.cardElevation}>
-            <motion.div exit={{ opacity: 0 }} animate={{ opacity: 1 }} initial={{ opacity: 0 }} transition={{duration: 1.2}}>
+            <motion.div exit={{ opacity: 0 }} animate={{ opacity: 1 }} initial={{ opacity: 0 }} transition={{ duration: 1.2 }}>
                 {/* School training */}
                 <Grid container className='school-training'>
                     <Title classSection='school-training'>{MyData.learning.schoolTraining.title}</Title>
                     <Grid item xs={12}>
-                        <Typography className='school-training_item_title'>{MyData.learning.schoolTraining.btsSio.title}</Typography>
+                        <div className='school-training_item'>
+                            <Typography className='school-training_item_title'>{MyData.learning.schoolTraining.btsSio.title}</Typography>
+                            <CustomButton text='Tableau des compétences' color='primary' onClick={() => setOpenSkillArray(true)} />
+                        </div>
                         <div>
                             <Typography className={['school-training_item_text', classes.text].join(' ')}>{MyData.learning.schoolTraining.btsSio.text}</Typography>
                         </div>
@@ -49,7 +61,7 @@ const Formations = () => {
                                             className='school-training_item_btn_content'
                                             onClick={() => setoption(0)}>
                                             <CustomButton
-                                                outlined = {option === 0 ? false : true}
+                                                outlined={option === 0 ? false : true}
                                                 color='primary'
                                                 text={MyData.learning.schoolTraining.btsSio.options[0].title}
                                                 icon={option === 0 ? MyData.icons.btn_sio : null}
@@ -62,7 +74,7 @@ const Formations = () => {
                                             className='school-training_item_btn_content'
                                             onClick={() => setoption(1)}>
                                             <CustomButton
-                                                outlined = {option === 1 ? false : true}
+                                                outlined={option === 1 ? false : true}
                                                 color='primary'
                                                 text={MyData.learning.schoolTraining.btsSio.options[1].title}
                                                 icon={option === 1 ? MyData.icons.btn_sio : null}
@@ -73,10 +85,19 @@ const Formations = () => {
                                 </Grid>
                             </Grid>
                             <Grid item xs={12} md={9}>
-                                {option === 1 ? (
-                                    <Typography className={['school-training_item_option', classes.borderColor, classes.text].join(' ')}>{MyData.learning.schoolTraining.btsSio.options[1].text}</Typography>
-                                ) : (
-                                    <Typography className={['school-training_item_option', classes.borderColor, classes.text].join(' ')}>{MyData.learning.schoolTraining.btsSio.options[0].text}</Typography>
+                                {option === 1 && (
+                                    <motion.div exit={{ opacity: 0 }} animate={{ opacity: 1 }} initial={{ opacity: 0 }} transition={{ duration: 1 }}>
+                                        <Typography className={['school-training_item_option', classes.borderColor, classes.text].join(' ')}>{
+                                            MyData.learning.schoolTraining.btsSio.options[1].text
+                                        }</Typography>
+                                    </motion.div>
+                                )}
+                                {option === 0 && (
+                                    <motion.div exit={{ opacity: 0 }} animate={{ opacity: 1 }} initial={{ opacity: 0 }} transition={{ duration: 1 }}>
+                                        <Typography className={['school-training_item_option', classes.borderColor, classes.text].join(' ')}>{
+                                            MyData.learning.schoolTraining.btsSio.options[0].text
+                                        }</Typography>
+                                    </motion.div>
                                 )}
                             </Grid>
                         </Grid>
@@ -159,6 +180,33 @@ const Formations = () => {
                     </Grid>
                 </Grid>
             </motion.div>
+            <Dialog
+                fullScreen
+                open={openSkillArray}
+                onClose={() => setOpenSkillArray(false)}
+                aria-labelledby="alert-dialog-title"
+                aria-describedby="alert-dialog-description"
+            >
+                <AppBar className={classes.appBar}>
+                    <Toolbar>
+                        <IconButton edge="start" color="inherit" onClick={() => setOpenSkillArray(false)} aria-label="close">
+                            {MyData.icons.dialog_close}
+                        </IconButton>
+                        <Typography variant="h6" className={classes.title}>
+                            {MyData.skillsArray.title}
+                        </Typography>
+                        <Button autoFocus color="inherit" onClick={() => setOpenSkillArray(false)}>
+                            Enregistrer
+                        </Button>
+                    </Toolbar>
+                </AppBar>
+                <DialogContent>
+                    <DialogContentText id="alert-dialog-description">
+                        Let Google help apps determine location. This means sending anonymous location data to
+                        Google, even when no apps are running.
+                    </DialogContentText>
+                </DialogContent>
+            </Dialog>
         </Paper>
     )
 }

@@ -80,11 +80,11 @@ const MyNavbar = (props) => {
                     className='header_navlink'>
                     <AnimatePresence exitBeforeEnter>
                             <Navbar.Brand className='myNavbar_home'>
-                                {currentRoute === '/' ? <motion.div exit={{ opacity: 0 }} animate={{ opacity: 1 }} initial={{ opacity: 0 }} transition={{duration: 1.2}}> {MyData.icons.nav_item1} </motion.div>: null}
-                                {currentRoute === '/formations' ? <motion.div exit={{ opacity: 0 }} animate={{ opacity: 1 }} initial={{ opacity: 0 }} transition={{duration: 1.2}}> {MyData.icons.nav_item2} </motion.div> : null}
-                                {currentRoute === '/projets' ? <motion.div exit={{ opacity: 0 }} animate={{ opacity: 1 }} initial={{ opacity: 0 }} transition={{duration: 1.2}}> {MyData.icons.nav_item3} </motion.div> : null}
-                                {currentRoute === '/veilles' ? <motion.div exit={{ opacity: 0 }} animate={{ opacity: 1 }} initial={{ opacity: 0 }} transition={{duration: 1.2}}> {MyData.icons.nav_item4} </motion.div>: null}
-                                {currentRoute === '/login' ? <motion.div exit={{ opacity: 0 }} animate={{ opacity: 1 }} initial={{ opacity: 0 }} transition={{duration: 1.2}}> {MyData.icons.nav_authentication} </motion.div>: null}
+                                {currentRoute === '/' ? <motion.div animate={{x: 0 }} initial={{x: "100px" }} transition={{duration: 0.5}}> {MyData.icons.nav_item1} </motion.div>: null}
+                                {currentRoute === '/formations' ? <motion.div animate={{x: 0 }} initial={{x: "100px" }} transition={{duration: 0.5}}> {MyData.icons.nav_item2} </motion.div> : null}
+                                {currentRoute === '/projets' ? <motion.div animate={{x: 0 }} initial={{x: "100px" }} transition={{duration: 0.5}}> {MyData.icons.nav_item3} </motion.div> : null}
+                                {currentRoute === '/veilles' ? <motion.div animate={{x: 0 }} initial={{x: "100px" }} transition={{duration: 0.5}}> {MyData.icons.nav_item4} </motion.div>: null}
+                                {currentRoute === '/login' ? <motion.div animate={{x: 0 }} initial={{x: "100px" }} transition={{duration: 0.5}}> {MyData.icons.nav_authentication} </motion.div>: null}
                             </Navbar.Brand>
                     </AnimatePresence>
                 </Button>
@@ -134,7 +134,7 @@ const MyNavbar = (props) => {
                                     icon={MyData.icons.nav_authentication} />
                             </NavLink>
                             {loginStatus || props.logStatus ? (
-                                <CustomButton text='Se déconnecter' onClick={logout} color='primary' outlined />
+                                <div className='myNavbar_content_right_section_logout'><CustomButton text='Se déconnecter' onClick={logout} color='primary' outlined /></div>
                             ) : <div></div>}
                         </div>
                         <FormControlLabel

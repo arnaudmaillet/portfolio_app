@@ -391,6 +391,10 @@ export default {
         ],
     },
 
+    skillsArray : {
+        title: 'Tableau des compétences'
+    },
+
     tech: {
         title: 'Veilles technologiques',
     },

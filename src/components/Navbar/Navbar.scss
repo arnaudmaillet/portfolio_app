@@ -11,20 +11,20 @@
         width: 65px;
         border: none;
         cursor: default!important;
+        overflow: hidden;
     }
 
     &_home {
         height: 70px;
-        width: 70px;
         padding: 22px;
         display: flex!important;
         border-top-left-radius: $border-main-radius;
         border-bottom-left-radius: $border-main-radius;
         align-items: center;
-
+    
         .MuiSvgIcon-root {
             font-size: $main-icon-size;
-            transform: translateX(3.3px);
+            transform: translateX(8.8px);
         }
     }
 
@@ -80,6 +80,10 @@
 
             &_btn:hover {
                 text-decoration: none;
+            }
+
+            &_logout {
+                margin-left: 20px;
             }
         }
     }
