@@ -24,12 +24,13 @@ const Login = (props) => {
     Axios.defaults.withCredentials = true
 
     const classes = style()
+    const initialState = ''
 
-    const [username, setUsername] = useState('')
-    const [password, setPassword] = useState('')
-    const [msg, setMsg] = useState('')
+    const [username, setUsername] = useState(initialState)
+    const [password, setPassword] = useState(initialState)
+    const [msg, setMsg] = useState(initialState)
+    const [alertType, setAlertType] = useState(initialState)
     const [alertOpen, setAlertOpen] = useState(false)
-    const [alertType, setAlertType] = useState('')
 
     const login = () => {
         if (username === '' || password === '') {
@@ -46,6 +47,8 @@ const Login = (props) => {
                     setAlertType('success')
                     setAlertOpen(true)
                     props.logIn(true)
+                    setUsername(initialState)
+                    setPassword(initialState)
                 }
                 if (response.data.messageErr) {
                     setMsg(response.data.messageErr)
@@ -67,6 +70,7 @@ const Login = (props) => {
                             </Grid>
                             <Grid item>
                                 <TextField
+                                    value={username}
                                     className='authentication_login_textField'
                                     id="login"
                                     label={MyData.authentication.login.usernameField}
@@ -82,6 +86,7 @@ const Login = (props) => {
                             </Grid>
                             <Grid item>
                                 <TextField
+                                    value={password}
                                     type='password'
                                     className='authentication_login_textField'
                                     id="password"
