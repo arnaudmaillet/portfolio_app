@@ -1,11 +1,16 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Grid, Tabs, Tab, Grow, Card, CardMedia, CardContent, Typography, makeStyles, Paper, Dialog, DialogContent, DialogContentText, Button, AppBar, Toolbar, IconButton } from '@material-ui/core'
-import './Formations.scss'
+
 import Title from '../../components/Title/Title'
 import MyData from "../../utils/Data.js"
 import LinearWithValueLabel from './../../components/LinearProgress/LinearWithValueLabel.js'
 import CustomButton from "./../../components/Button/Button.js";
 import { motion } from "framer-motion";
+
+import './Formations.scss'
+
+import Axios from 'axios'
+import SkillsArray from '../../components/SkillsArray/SkillsArray'
 
 const style = makeStyles(theme => ({
     text: {
@@ -31,13 +36,32 @@ const style = makeStyles(theme => ({
 
 const Formations = () => {
 
+    const classes = style()
+
+    const handleOpenDialog = () => {
+        // getSkills();
+        setOpenDialog(true);
+    }
+
+    // const getSkills = () => {
+    //     Axios.get('http://localhost:3003/skillsArray').then((response)=>{
+    //         response ? setSkillsArray(response.data.data) : console.log('error');
+    //     })
+    // }
+
+    useEffect(() => {
+        Axios.get('http://localhost:3003/skillsArray').then((response) => {
+            response ? setSkillsArray(response.data.data) : console.log('error'); 
+        })
+    }, [])
+
+    const [skillsArray, setSkillsArray] = useState(null)
+
     const [tabValue, setTabValue] = useState('all')
 
     const [option, setoption] = useState(0)
 
-    const [openSkillArray, setOpenSkillArray] = useState(false)
-
-    const classes = style()
+    const [openDialog, setOpenDialog] = useState(false)
 
     return (
         <Paper elevation={MyData.settings.cardElevation}>
@@ -48,7 +72,7 @@ const Formations = () => {
                     <Grid item xs={12}>
                         <div className='school-training_item'>
                             <Typography className='school-training_item_title'>{MyData.learning.schoolTraining.btsSio.title}</Typography>
-                            <CustomButton text='Tableau des compétences' color='primary' onClick={() => setOpenSkillArray(true)} />
+                            <CustomButton text='Tableau des compétences' color='primary' onClick={handleOpenDialog} />
                         </div>
                         <div>
                             <Typography className={['school-training_item_text', classes.text].join(' ')}>{MyData.learning.schoolTraining.btsSio.text}</Typography>
@@ -182,28 +206,27 @@ const Formations = () => {
             </motion.div>
             <Dialog
                 fullScreen
-                open={openSkillArray}
-                onClose={() => setOpenSkillArray(false)}
-                aria-labelledby="alert-dialog-title"
-                aria-describedby="alert-dialog-description"
+                open={openDialog}
+                onClose={() => setOpenDialog(false)}
+                aria-labelledby="skillsDialog-title"
+                aria-describedby="skillsDialog-description"
             >
                 <AppBar className={classes.appBar}>
                     <Toolbar>
-                        <IconButton edge="start" color="inherit" onClick={() => setOpenSkillArray(false)} aria-label="close">
+                        <IconButton edge="start" color="inherit" onClick={() => setOpenDialog(false)} aria-label="close">
                             {MyData.icons.dialog_close}
                         </IconButton>
                         <Typography variant="h6" className={classes.title}>
                             {MyData.skillsArray.title}
                         </Typography>
-                        <Button autoFocus color="inherit" onClick={() => setOpenSkillArray(false)}>
+                        <Button autoFocus color="inherit" onClick={() => setOpenDialog(false)}>
                             Enregistrer
                         </Button>
                     </Toolbar>
                 </AppBar>
                 <DialogContent>
-                    <DialogContentText id="alert-dialog-description">
-                        Let Google help apps determine location. This means sending anonymous location data to
-                        Google, even when no apps are running.
+                    <DialogContentText id="skillsDialog-description">
+                       <SkillsArray array={skillsArray}/>
                     </DialogContentText>
                 </DialogContent>
             </Dialog>
