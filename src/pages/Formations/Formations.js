@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { Grid, Tabs, Tab, Grow, Card, CardMedia, CardContent, Typography, makeStyles, Paper, Dialog, DialogContent, DialogContentText, Button, AppBar, Toolbar, IconButton } from '@material-ui/core'
 
 import Title from '../../components/Title/Title'
@@ -8,8 +8,6 @@ import CustomButton from "./../../components/Button/Button.js";
 import { motion } from "framer-motion";
 
 import './Formations.scss'
-
-import Axios from 'axios'
 import SkillsArray from '../../components/SkillsArray/SkillsArray'
 
 const style = makeStyles(theme => ({
@@ -39,23 +37,8 @@ const Formations = () => {
     const classes = style()
 
     const handleOpenDialog = () => {
-        // getSkills();
         setOpenDialog(true);
     }
-
-    // const getSkills = () => {
-    //     Axios.get('http://localhost:3003/skillsArray').then((response)=>{
-    //         response ? setSkillsArray(response.data.data) : console.log('error');
-    //     })
-    // }
-
-    useEffect(() => {
-        Axios.get('http://localhost:3003/skillsArray').then((response) => {
-            response ? setSkillsArray(response.data.data) : console.log('error'); 
-        })
-    }, [])
-
-    const [skillsArray, setSkillsArray] = useState(null)
 
     const [tabValue, setTabValue] = useState('all')
 
@@ -225,9 +208,7 @@ const Formations = () => {
                     </Toolbar>
                 </AppBar>
                 <DialogContent>
-                    <DialogContentText id="skillsDialog-description">
-                       <SkillsArray array={skillsArray}/>
-                    </DialogContentText>
+                    <SkillsArray/>
                 </DialogContent>
             </Dialog>
         </Paper>
