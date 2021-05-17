@@ -27,7 +27,8 @@ import HighlightOffRoundedIcon from '@material-ui/icons/HighlightOffRounded';
 import LockIcon from '@material-ui/icons/Lock';
 import VisibilityIcon from '@material-ui/icons/Visibility';
 import VisibilityOffIcon from '@material-ui/icons/VisibilityOff';
-
+import KeyboardArrowUpRoundedIcon from '@material-ui/icons/KeyboardArrowUpRounded';
+import KeyboardArrowDownRoundedIcon from '@material-ui/icons/KeyboardArrowDownRounded';
 
 // Import profile image
 import ImgProfil from './../assets/img/profil.jpg';
@@ -93,6 +94,9 @@ export default {
         dialog_authentication_login: <SlowMotionVideoRoundedIcon/>,
         dialog_authentication_logout: <ExitToAppRoundedIcon/>,
         dialog_authentication_create: <AddCircleOutlineRoundedIcon/>,
+
+        array_row_close: <KeyboardArrowUpRoundedIcon/>,
+        array_row_open: <KeyboardArrowDownRoundedIcon/>,
 
         header_timeline: <AssignmentIndRoundedIcon/>,
         work_timeline: <WorkRoundedIcon/>,

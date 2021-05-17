@@ -13,7 +13,7 @@ import TimelineDot from '@material-ui/lab/TimelineDot'
 const style = makeStyles(theme => ({
     color: {
         color: theme.palette.info.main,
-    }
+    },
 }))
 
 const Accueil = () => {
