@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { makeStyles, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, Checkbox, CircularProgress, IconButton, Collapse, Box, Typography } from '@material-ui/core';
+import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, Checkbox, IconButton, Collapse, Typography } from '@material-ui/core';
 import './SkillsArray.scss'
 import Axios from 'axios'
 import MyData from '../../utils/Data.js'
@@ -9,7 +9,7 @@ const SkillsArray = () => {
 
     const [data, setData] = useState(null)
     const [projects, setProjects] = useState(null)
-
+    const [valide, setValide] = useState(null)
 
     useEffect(() => {
         Axios.get('http://localhost:3003/skillsArray').then((response) => {
@@ -23,11 +23,12 @@ const SkillsArray = () => {
         })
     }, [])
 
+    useEffect(() => {
+        Axios.get('http://localhost:3003/estValide').then((response) => {
+            response ? setValide(response.data.data) : console.log('error');
+        })
+    }, [])
 
-    const handleClick = (id) => {
-        // setChecked(!checked);
-        // !checked ? console.log(id) : console.log('error');
-    }
 
     const array = (data) => {
         let result = []
@@ -60,10 +61,15 @@ const SkillsArray = () => {
         setData(result)
     }
 
+    // const estValide = (el1, el2, el3) => {
+    //     let array = [].push(valide)
+    //     valide.map((item) => (
+
+    //     ))
+    // }
+
     const Processus = (props) => {
-
         const [open, setOpen] = useState(true)
-
         return (
             <>
                 <TableRow>
@@ -80,7 +86,7 @@ const SkillsArray = () => {
                             <Table size='small'>
                                 <TableBody>
                                     {props.proc.domaines.map((dom) => (
-                                        <Domaine key={dom.numDom} proc={props.proc} dom={dom}/>
+                                        <Domaine key={dom.numDom} proc={props.proc} dom={dom} />
                                     ))}
                                 </TableBody>
                             </Table>
@@ -93,7 +99,6 @@ const SkillsArray = () => {
 
     const Domaine = (props) => {
         const [open, setOpen] = useState(true)
-        //console.log(props.status);
         return (
             <>
                 <TableRow>
@@ -110,19 +115,7 @@ const SkillsArray = () => {
                             <Table size='small'>
                                 <TableBody>
                                     {props.dom.activites.map((act) => (
-                                        <TableRow key={act.numAct}>
-                                            <TableCell style={{ border: 'none' }} width='70px' />
-                                            <TableCell>{props.proc.numProc}.{props.dom.numDom}.{act.numAct}. {act.libAct}</TableCell>
-                                            <TableCell width='400px'>
-                                                <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'flex-end'}}>
-                                                    {projects && projects.map((proj) => (
-                                                        <div key={proj.id} style={{ width: '80px', textAlign: 'center'}}>
-                                                            <Checkbox color='primary'></Checkbox>
-                                                        </div>
-                                                    ))}
-                                                </div>
-                                            </TableCell>
-                                        </TableRow>
+                                        <Activite key={act.numAct} proc={props.proc} dom={props.dom} act={act} />
                                     ))}
                                 </TableBody>
                             </Table>
@@ -133,6 +126,44 @@ const SkillsArray = () => {
         )
     }
 
+    const Activite = (props) => {
+        return (
+            <TableRow>
+                <TableCell style={{ border: 'none' }} width='70px' />
+                <TableCell>{props.proc.numProc}.{props.dom.numDom}.{props.act.numAct}. {props.act.libAct}</TableCell>
+                <TableCell width='400px'>
+                    <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'flex-end' }}>
+                        {projects && projects.map((proj) => (
+                            <CustomCheckbox key={proj.id} proc={props.proc} dom={props.dom} act={props.act} proj={proj}/>
+                        ))}
+                    </div>
+                </TableCell>
+            </TableRow>
+        )
+    }
+
+    const CustomCheckbox = (props) => {
+        const [checked, setChecked] = useState(false)
+
+        const handleClick = () => {
+            setChecked(!checked)
+            if (checked === true){
+                console.log('insert');
+            } else{
+                console.log('delete');
+            }
+        }
+
+        return (
+            <div style={{ width: '80px', textAlign: 'center' }}>
+                {valide && valide.some(element => element.numProc === props.proc.numProc && element.numDom === props.dom.numDom && element.numAct === props.act.numAct && element.idProjet === props.proj.id) === true ?
+                    <Checkbox color='primary' onClick={handleClick} checked></Checkbox>
+                :
+                    <Checkbox color='primary' onClick={handleClick}></Checkbox>
+                }
+            </div>
+        )
+    }
 
     return (
         <TableContainer component={Paper}>
@@ -142,9 +173,9 @@ const SkillsArray = () => {
                         <TableCell />
                         <TableCell />
                         <TableCell width='400px'>
-                            <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'flex-end'}}>
+                            <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'flex-end' }}>
                                 {projects && projects.map((proj) => (
-                                    <Typography key={proj.id} style={{ width: '80px', textAlign: 'center'}}>{proj.libelle}</Typography>
+                                    <Typography key={proj.id} style={{ width: '80px', textAlign: 'center' }}>{proj.libelle}</Typography>
                                 ))}
                             </div>
                         </TableCell>
