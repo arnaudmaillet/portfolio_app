@@ -143,17 +143,27 @@ const SkillsArray = () => {
     }
 
     const CustomCheckbox = (props) => {
-        const [checked, setChecked] = useState(false)
-
-        const handleClick = () => {
-            setChecked(!checked)
-            if (checked === true){
-                console.log('insert');
-            } else{
-                console.log('delete');
-            }
+        let initValue;
+        if(valide && valide.some(element => element.numProc === props.proc.numProc && element.numDom === props.dom.numDom && element.numAct === props.act.numAct && element.idProjet === props.proj.id) === true ){
+            initValue = true
+        } else {
+            initValue = false
         }
 
+        
+        const [checked, setChecked] = useState(initValue)
+        
+
+        const handleClick = () => {
+            if (checked === true){
+                setValide(valide.filter(element => element.numProc !== props.proc.numProc || element.numDom !== props.dom.numDom || element.numAct !== props.act.numAct || element.idProjet !== props.proj.id))
+                setChecked(false)
+            } else {
+                setValide([...valide, {numProc : props.proc.numProc, numDom : props.dom.numDom, numAct : props.act.numAct, idProjet : props.proj.id, libelle : props.proj.libelle}])
+                setChecked(true)
+            }
+        }
+        
         return (
             <div style={{ width: '80px', textAlign: 'center' }}>
                 {valide && valide.some(element => element.numProc === props.proc.numProc && element.numDom === props.dom.numDom && element.numAct === props.act.numAct && element.idProjet === props.proj.id) === true ?
@@ -164,7 +174,7 @@ const SkillsArray = () => {
             </div>
         )
     }
-
+    console.log(valide)
     return (
         <TableContainer component={Paper}>
             <Table aria-label="collapsible table">
