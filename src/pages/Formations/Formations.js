@@ -22,29 +22,22 @@ const style = makeStyles(theme => ({
     },
     notActive: {
         color: theme.palette.info.dark
-    },
-    appBar: {
-        position: 'relative',
-    },
-    title: {
-        marginLeft: theme.spacing(2),
-        flex: 1,
-    },
+    }
 }))
 
 const Formations = () => {
 
     const classes = style()
 
-    const handleOpenDialog = () => {
-        setOpenDialog(true);
-    }
-
     const [tabValue, setTabValue] = useState('all')
 
     const [option, setoption] = useState(0)
 
     const [openDialog, setOpenDialog] = useState(false)
+
+    const handleClose = () =>{
+        setOpenDialog(false)
+    }
 
     return (
         <Paper elevation={MyData.settings.cardElevation}>
@@ -55,7 +48,7 @@ const Formations = () => {
                     <Grid item xs={12}>
                         <div className='school-training_item'>
                             <Typography className='school-training_item_title'>{MyData.learning.schoolTraining.btsSio.title}</Typography>
-                            <CustomButton text='Tableau des compétences' color='primary' onClick={handleOpenDialog} />
+                            <CustomButton text='Tableau des compétences' color='primary' onClick={()=>setOpenDialog(true)} />
                         </div>
                         <div>
                             <Typography className={['school-training_item_text', classes.text].join(' ')}>{MyData.learning.schoolTraining.btsSio.text}</Typography>
@@ -187,30 +180,7 @@ const Formations = () => {
                     </Grid>
                 </Grid>
             </motion.div>
-            <Dialog
-                fullScreen
-                open={openDialog}
-                onClose={() => setOpenDialog(false)}
-                aria-labelledby="skillsDialog-title"
-                aria-describedby="skillsDialog-description"
-            >
-                <AppBar className={classes.appBar}>
-                    <Toolbar>
-                        <IconButton edge="start" color="inherit" onClick={() => setOpenDialog(false)} aria-label="close">
-                            {MyData.icons.dialog_close}
-                        </IconButton>
-                        <Typography variant="h6" className={classes.title}>
-                            {MyData.skillsArray.title}
-                        </Typography>
-                        <Button autoFocus color="inherit" onClick={() => setOpenDialog(false)}>
-                            Enregistrer
-                        </Button>
-                    </Toolbar>
-                </AppBar>
-                <DialogContent>
-                    <SkillsArray/>
-                </DialogContent>
-            </Dialog>
+            <SkillsArray open={openDialog} close={val => setOpenDialog(val)}/> 
         </Paper>
     )
 }

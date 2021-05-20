@@ -1,15 +1,31 @@
 import React, { useState, useEffect } from 'react'
-import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, Checkbox, IconButton, Collapse, Typography } from '@material-ui/core';
+import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, Checkbox, IconButton, Collapse, Typography, Dialog, DialogContent, Button, Toolbar, AppBar, makeStyles } from '@material-ui/core';
 import './SkillsArray.scss'
 import Axios from 'axios'
 import MyData from '../../utils/Data.js'
 
+const style = makeStyles(theme => ({
+    appBar: {
+        position: 'relative',
+    },
+    title: {
+        marginLeft: theme.spacing(2),
+        flex: 1,
+    },
+    primaryBg: {
+        backgroundColor: theme.palette.primary.main
+    }
+}))
 
-const SkillsArray = () => {
-
+const SkillsArray = (props) => {
+    const classes = style()
     const [data, setData] = useState(null)
     const [projects, setProjects] = useState(null)
     const [valide, setValide] = useState(null)
+
+    const handleSave = () => {
+        
+    }
 
     useEffect(() => {
         Axios.get('http://localhost:3003/skillsArray').then((response) => {
@@ -28,7 +44,6 @@ const SkillsArray = () => {
             response ? setValide(response.data.data) : console.log('error');
         })
     }, [])
-
 
     const array = (data) => {
         let result = []
@@ -61,20 +76,14 @@ const SkillsArray = () => {
         setData(result)
     }
 
-    // const estValide = (el1, el2, el3) => {
-    //     let array = [].push(valide)
-    //     valide.map((item) => (
-
-    //     ))
-    // }
 
     const Processus = (props) => {
         const [open, setOpen] = useState(true)
         return (
             <>
                 <TableRow>
-                    <TableCell width='50px'>
-                        <IconButton color='primary' aria-label="domaines" size="small" onClick={() => setOpen(!open)}>
+                    <TableCell style={{width:'5px'}} className={classes.primaryBg}>
+                        <IconButton aria-label="domaines" size="small" onClick={() => setOpen(!open)}>
                             {open ? MyData.icons.array_row_close : MyData.icons.array_row_open}
                         </IconButton>
                     </TableCell>
@@ -103,7 +112,7 @@ const SkillsArray = () => {
             <>
                 <TableRow>
                     <TableCell width='50px'>
-                        <IconButton aria-label="activites" size="small" onClick={() => setOpen(!open)}>
+                        <IconButton color='primary' aria-label="activites" size="small" onClick={() => setOpen(!open)}>
                             {open ? MyData.icons.array_row_close : MyData.icons.array_row_open}
                         </IconButton>
                     </TableCell>
@@ -134,7 +143,7 @@ const SkillsArray = () => {
                 <TableCell width='400px'>
                     <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'flex-end' }}>
                         {projects && projects.map((proj) => (
-                            <CustomCheckbox key={proj.id} proc={props.proc} dom={props.dom} act={props.act} proj={proj}/>
+                            <CustomCheckbox key={proj.id} proc={props.proc} dom={props.dom} act={props.act} proj={proj} />
                         ))}
                     </div>
                 </TableCell>
@@ -143,65 +152,89 @@ const SkillsArray = () => {
     }
 
     const CustomCheckbox = (props) => {
+
         let initValue;
-        if(valide && valide.some(element => element.numProc === props.proc.numProc && element.numDom === props.dom.numDom && element.numAct === props.act.numAct && element.idProjet === props.proj.id) === true ){
+        if (valide && valide.some(element => element.numProc === props.proc.numProc && element.numDom === props.dom.numDom && element.numAct === props.act.numAct && element.idProjet === props.proj.id) === true) {
             initValue = true
         } else {
             initValue = false
         }
 
-        
         const [checked, setChecked] = useState(initValue)
-        
 
         const handleClick = () => {
-            if (checked === true){
+            if (checked === true) {
                 setValide(valide.filter(element => element.numProc !== props.proc.numProc || element.numDom !== props.dom.numDom || element.numAct !== props.act.numAct || element.idProjet !== props.proj.id))
                 setChecked(false)
             } else {
-                setValide([...valide, {numProc : props.proc.numProc, numDom : props.dom.numDom, numAct : props.act.numAct, idProjet : props.proj.id, libelle : props.proj.libelle}])
+                setValide([...valide, { numProc: props.proc.numProc, numDom: props.dom.numDom, numAct: props.act.numAct, idProjet: props.proj.id, libelle: props.proj.libelle }])
                 setChecked(true)
             }
         }
-        
+
         return (
             <div style={{ width: '80px', textAlign: 'center' }}>
                 {valide && valide.some(element => element.numProc === props.proc.numProc && element.numDom === props.dom.numDom && element.numAct === props.act.numAct && element.idProjet === props.proj.id) === true ?
                     <Checkbox color='primary' onClick={handleClick} checked></Checkbox>
-                :
+                    :
                     <Checkbox color='primary' onClick={handleClick}></Checkbox>
                 }
             </div>
         )
     }
-    console.log(valide)
+
     return (
-        <TableContainer component={Paper}>
-            <Table aria-label="collapsible table">
-                <TableHead>
-                    <TableRow>
-                        <TableCell />
-                        <TableCell />
-                        <TableCell width='400px'>
-                            <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'flex-end' }}>
-                                {projects && projects.map((proj) => (
-                                    <Typography key={proj.id} style={{ width: '80px', textAlign: 'center' }}>{proj.libelle}</Typography>
-                                ))}
-                            </div>
-                        </TableCell>
-                    </TableRow>
-                </TableHead>
-                <TableBody>
-                    {data ?
-                        data.map((proc) => (
-                            <Processus key={proc.numProc} proc={proc} />
-                        ))
-                        :
-                        <TableRow></TableRow>
-                    }
-                </TableBody>
-            </Table>
-        </TableContainer>
+        <>
+        <Dialog
+            fullScreen
+            open={props.open}
+            onClose={() => props.close(false)}
+            aria-labelledby="skillsDialog-title"
+            aria-describedby="skillsDialog-description"
+        >
+            <AppBar className={classes.appBar}>
+                <Toolbar>
+                    <IconButton edge="start" color="inherit" onClick={() => props.close(false)} aria-label="close">
+                        {MyData.icons.dialog_close}
+                    </IconButton>
+                    <Typography variant="h6" className={classes.title}>
+                        {MyData.skillsArray.title}
+                    </Typography>
+                    <Button autoFocus color="inherit" onClick={handleSave}>
+                        Enregistrer
+                    </Button>
+                </Toolbar>
+            </AppBar>
+            <DialogContent>
+                <TableContainer component={Paper}>
+                    <Table aria-label="collapsible table">
+                        <TableHead>
+                            <TableRow>
+                                <TableCell />
+                                <TableCell />
+                                <TableCell width='400px'>
+                                    <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'flex-end'}}>
+                                        {projects && projects.map((proj) => (
+                                            <Typography key={proj.id} style={{ width: '80px', textAlign: 'center' }}>{proj.libelle}</Typography>
+                                        ))}
+                                    </div>
+                                </TableCell>
+                            </TableRow>
+                        </TableHead>
+                        <TableBody>
+                            {data ?
+                                data.map((proc) => (
+                                    <Processus key={proc.numProc} proc={proc} />
+                                ))
+                                :
+                                <TableRow></TableRow>
+                            }
+                        </TableBody>
+                    </Table>
+                </TableContainer>
+            </DialogContent>
+        </Dialog>
+        </>
     )
 }
 
