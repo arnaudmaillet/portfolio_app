@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
-import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, Checkbox, IconButton, Collapse, Typography, Dialog, DialogContent, Button, Toolbar, AppBar, makeStyles } from '@material-ui/core';
+import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, Checkbox, IconButton, Collapse, Typography, Dialog, DialogContent, Button, Toolbar, AppBar, makeStyles, Snackbar } from '@material-ui/core';
+import { Alert } from '@material-ui/lab';
 import './SkillsArray.scss'
 import Axios from 'axios'
 import MyData from '../../utils/Data.js'
@@ -23,8 +24,24 @@ const SkillsArray = (props) => {
     const [projects, setProjects] = useState(null)
     const [valide, setValide] = useState(null)
 
+    const [msg, setMsg] = useState('')
+    const [alertOpen, setAlertOpen] = useState(false)
+    const [alertType, setAlertType] = useState('')
+
     const handleSave = () => {
-        
+        Axios.post("http://localhost:3003/setSkills", {
+            skills : valide
+        }).then((response) => {
+            if (response) {
+                setMsg(response.data.message)
+                setAlertType('success')
+                setAlertOpen(true)
+            } else {
+                setMsg(response.data.err)
+                setAlertType('error')
+                setAlertOpen(true)
+            }
+        })
     }
 
     useEffect(() => {
@@ -233,6 +250,11 @@ const SkillsArray = (props) => {
                     </Table>
                 </TableContainer>
             </DialogContent>
+            <Snackbar open={alertOpen} autoHideDuration={6000} onClose={() => setAlertOpen(false)}>
+                <Alert onClose={() => setAlertOpen(false)} severity={alertType === 'success' ? 'success' : 'error'}>
+                    {msg}
+                </Alert>
+            </Snackbar>
         </Dialog>
         </>
     )
