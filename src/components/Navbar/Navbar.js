@@ -14,7 +14,6 @@ import CustomButton from "./../Button/Button.js"
 
 // Import style
 import './Navbar.scss'
-import { MicTwoTone } from '@material-ui/icons';
 
 const style = makeStyles(theme => ({
     textDark: {

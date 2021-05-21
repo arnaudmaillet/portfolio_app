@@ -91,10 +91,10 @@
     &_dialog-action {
         justify-content: start!important;
         margin: 5px 0 5px 0;
-        justify-content: flex-end!important;
+        justify-content: space-between!important;
         
         &_icon {
-            margin: 0px 12px;
+            margin: 0 8px;
             cursor: pointer;
             transition: $transition-duration;
 

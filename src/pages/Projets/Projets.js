@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import MyData from '../../utils/Data.js'
-import { Grid, Typography, Tabs, Tab, Card, CardActionArea, CardMedia, CardContent, Grow, Dialog, DialogTitle, DialogContent, DialogActions, Paper, makeStyles } from '@material-ui/core'
+import { Grid, Typography, Tabs, Tab, Card, CardActionArea, CardMedia, CardContent, Grow, Dialog, DialogTitle, DialogContent, DialogActions, Paper, makeStyles, Divider } from '@material-ui/core'
 import Title from '../../components/Title/Title.js'
 import { motion } from "framer-motion";
 
@@ -99,11 +99,16 @@ const Projets = () => {
                         onClose={() => setProjectDialog(null)}>
                         <img src={projectDialog.img} alt='' className='projects_dialog-image'></img>
                         <DialogActions className='projects_dialog-action'>
-                            {projectDialog?.links?.map(link => (
-                                <a href={link.link} rel="noreferrer" target='_blank' key={link.id} className={['projects_dialog-action_icon', classes.color].join(' ')}>
-                                    {link.icon}
-                                </a>
-                            ))}
+                            <div style={{marginLeft: '10px'}} className={['projects_dialog-action_icon', classes.color].join(' ')} onClick={() => setProjectDialog(null)}>
+                                {MyData.icons.dialog_close}
+                            </div>
+                            <div>
+                                {projectDialog?.links?.map(link => (
+                                    <a href={link.link} rel="noreferrer" target='_blank' key={link.id} className={['projects_dialog-action_icon', classes.color].join(' ')}>
+                                        {link.icon}
+                                    </a>
+                                ))}
+                            </div>
                         </DialogActions>
                         <DialogTitle className={['projects_dialog-title', classes.backgroundColor].join(' ')}>
                             <Typography className='projects_dialog-title_text'>

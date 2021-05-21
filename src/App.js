@@ -98,7 +98,7 @@ function App() {
                   <Route render={({location}) =>(
                     <Switch location={location} key={location.pathname}>
                         <Route exact path='/' component={Accueil}/>
-                        <Route exact path='/formations' component={Formations}/>
+                        <Route exact path='/formations' component={Formations} logStatus={isLogged ? true : false}/>
                         <Route exact path='/projets' component={Projets}/>
                         <Route exact path='/contact' component={Contact}/>
                         <Route exact path='/veilles' component={Veilles}/>

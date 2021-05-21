@@ -37,8 +37,8 @@ const Header = () => {
                             title='Nom'
                             text={MyData.profile.name} />
                         <CustomTimelineItem
-                            title='Age'
-                            text={MyData.profile.age} />
+                            title='Prénom'
+                            text={MyData.profile.firstName} />
                         <CustomTimelineItem
                             title='Email'
                             text={MyData.profile.email} />

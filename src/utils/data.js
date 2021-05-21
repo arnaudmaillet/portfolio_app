@@ -61,13 +61,13 @@ export default {
     },
 
     profile: {
-        name: 'Maillet Arnaud',
+        name: 'Maillet',
+        firstName : 'Arnaud',
         title: 'Developper informatique',
     
         img : ImgProfil,
-        age: '20 ans',
-        email: 'arnaud@arnaud.com',
-        adress: '12 rue de la rue',
+        email: 'arnaud.maillet.pro@gmail.com',
+        adress: '14 rue des Rinchevaux 8000 Amiens',
         job: 'etudiant',
         phone: '0101010101',
 
@@ -239,7 +239,7 @@ export default {
                 {
                     id: 2,
                     title: 'Back-end',
-                    elements: ['NodeJS', 'PHP'],
+                    elements: ['ExpressJS', 'PHP'],
                 },
                 {
                     id: 3,

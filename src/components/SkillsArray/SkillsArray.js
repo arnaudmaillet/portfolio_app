@@ -23,6 +23,7 @@ const SkillsArray = (props) => {
     const [data, setData] = useState(null)
     const [projects, setProjects] = useState(null)
     const [valide, setValide] = useState(null)
+    const [loginStatus, setLoginStatus] = useState(false)
 
     const [msg, setMsg] = useState('')
     const [alertOpen, setAlertOpen] = useState(false)
@@ -59,6 +60,14 @@ const SkillsArray = (props) => {
     useEffect(() => {
         Axios.get('http://localhost:3003/estValide').then((response) => {
             response ? setValide(response.data.data) : console.log('error');
+        })
+    }, [])
+
+    useEffect(() => {
+        Axios.get('http://localhost:3003/login').then((response) => {
+            if (response.data.loggedIn === true) {
+                setLoginStatus(true)
+            }
         })
     }, [])
 
@@ -192,9 +201,9 @@ const SkillsArray = (props) => {
         return (
             <div style={{ width: '80px', textAlign: 'center' }}>
                 {valide && valide.some(element => element.numProc === props.proc.numProc && element.numDom === props.dom.numDom && element.numAct === props.act.numAct && element.idProjet === props.proj.id) === true ?
-                    <Checkbox color='primary' onClick={handleClick} checked></Checkbox>
+                    <Checkbox color='primary' disabled={loginStatus ? false : true} onClick={handleClick} checked></Checkbox>
                     :
-                    <Checkbox color='primary' onClick={handleClick}></Checkbox>
+                    <Checkbox color='primary' disabled={loginStatus ? false : true} onClick={handleClick}></Checkbox>
                 }
             </div>
         )
@@ -217,9 +226,14 @@ const SkillsArray = (props) => {
                     <Typography variant="h6" className={classes.title}>
                         {MyData.skillsArray.title}
                     </Typography>
-                    <Button autoFocus color="inherit" onClick={handleSave}>
-                        Enregistrer
-                    </Button>
+                    {loginStatus ? (
+                        <Button autoFocus color="inherit" onClick={handleSave}>
+                            Enregistrer
+                        </Button>
+                    ) : (
+                        <div></div>
+                    )}
+                    
                 </Toolbar>
             </AppBar>
             <DialogContent>
