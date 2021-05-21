@@ -83,6 +83,12 @@
         border-radius: $border-main-radius;
         overflow: hidden;
         outline-width: 0!important;
+        transition: $transition-duration;
+        
+        &:hover {
+            cursor: pointer;
+            transform: $hover-second-transform!important;
+        }
 
         &_img {
             height: 100%;

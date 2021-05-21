@@ -32,7 +32,16 @@ import KeyboardArrowDownRoundedIcon from '@material-ui/icons/KeyboardArrowDownRo
 
 // Import profile image
 import ImgProfil from './../assets/img/profil.jpg';
-import ImgProjet from './../assets/img/projet.jpg'
+import ImgProjet from './../assets/img/projet.jpg';
+import WordpressForm from './../assets/img/wordpressForm.jpg';
+import ReactForm from './../assets/img/reactForm.jpg';
+import OpenClassroomForm from './../assets/img/Logo_OpenClassrooms.png';
+import BootstrapForm from './../assets/img/bootstrapFrom.jpg';
+import ReactForm_O from './../assets/img/reactForm_O.jpg';
+import JQueryForm_O from './../assets/img/JQueryForm_O.jpg';
+import Javascript_O from './../assets/img/JavascriptForm_O.jpg';
+import SQLForm_O from './../assets/img/SQLForm_O.jpg';
+import SassForm_O from './../assets/img/sassForm_O.jpg'
 
 
 export default {
@@ -104,6 +113,8 @@ export default {
         btn_download: <GetAppRoundedIcon/>,
         btn_contact: <ContactlessRoundedIcon/>,
         btn_sio: <SlowMotionVideoRoundedIcon/>,
+
+        web : <LanguageRoundedIcon/>
     },
 
     // Array of social object.
@@ -269,41 +280,111 @@ export default {
                 {
                     id: 1,
                     tag: 'React',
-                    img: ImgProjet,
-                    title: 'Formation 1',
-                    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.',
-                    progress: 80,
-                    link: 'https://www.google.com',
+                    img: ReactForm,
+                    title: 'REACT 2020 par la pratique, de A à Z',
+                    description: 'Ce cours permet de : Développer des applications avec la librairie, Communiquer avec des serveurs et API REST, Créer des sites internet "Single page" avec le module React-Router, Utiliser Bootstrap avec et sans React-Bootstrap',
+                    progress: 70,
+                    website : 'Udemy',
+                    link: 'https://www.udemy.com/course/react-2020-par-la-pratique-de-a-a-z-evolution-progressive/',
                     projetId: 1,
                 },
                 {
                     id: 2,
-                    tag: 'C#',
-                    img: ImgProjet,
-                    title: 'Formation 2',
-                    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.',
-                    progress: 30,
-                    link: 'https://www.google.com',
+                    tag: 'WordPress',
+                    img: WordpressForm,
+                    title: 'WordPress - Votre site Pro simplement et gratuitement',
+                    description: 'Ce cours permet de connaître : La prise en main générale et son interface, Les différents outils et plugin pour créer un site, Comment acheter son nom de domaine et l’ hébergement, Création d\'un site internet type PORTFOLIO, Création d\'un site internet Business vitrine, Création d\'un site internet général produit de A à Z',
+                    progress: 49,
+                    website : 'Udemy',
+                    link: 'https://www.udemy.com/course/wordpress-votre-site-pro-simplement-et-gratuitement/',
                     projetId: 1,
                 },
                 {
                     id: 3,
-                    tag: 'Java',
-                    img: ImgProjet,
-                    title: 'Formation 3',
-                    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.',
-                    progress: 20,
-                    link: 'https://www.google.com',
+                    tag: 'React',
+                    img: ReactForm_O,
+                    title: 'Réalisez une application web avec React.js',
+                    description: 'Ce cours permet de connaître : Être en mesure d\'expliquer les concepts fondamentaux de React, et ce qui le différencie d\'autres frameworks, Mettre en place un projet avec Create React App, Créer des composants React complets avec la syntaxe JavaScript ES2015 et l\'extension JSX, Gérer des formulaires avec ou sans contrôle de saisie, Tester ses composants React',
+                    progress: 15,
+                    website : 'OpenClassroom',
+                    link: 'https://openclassrooms.com/fr/courses/4664381-realisez-une-application-web-avec-react-js/4664826-decrivez-un-composant-avec-jsx',
                     projetId: 1,
                 },
                 {
                     id: 4,
+                    tag: 'JQuery',
+                    img: JQueryForm_O,
+                    title: 'Introduction à jQuery',
+                    description: 'Ce cours permet de connaître : la différence entre jQuery et JavaScript, les concepts principaux de JavaScript qu\'il faut savoir pour utiliser jQuery, sélectionner des éléments avec jQuery, modifier des éléments avec jQuery, utiliser des évènements pour rendre votre page dynamique et animée',
+                    progress: 100,
+                    website : 'OpenClassroom',
+                    link: 'https://openclassrooms.com/fr/courses/3504441-introduction-a-jquery',
+                    projetId: 1,
+                },
+                {
+                    id: 5,
+                    tag: 'Javascript',
+                    img: Javascript_O,
+                    title: 'Apprenez à coder avec JavaScript',
+                    description: 'Ce cours permet de : Communiquer efficacement en JavaScript en utilisant le vocabulaire approprié, Résoudre des problèmes de base en JavaScript, Écrire un programme en JavaScript',
+                    progress: 100,
+                    website : 'OpenClassroom',
+                    link: 'https://openclassrooms.com/fr/courses/2984401-apprenez-a-coder-avec-javascript',
+                    projetId: 1,
+                },
+                {
+                    id: 6,
+                    tag: 'Bootstrap',
+                    img: BootstrapForm,
+                    title: 'Prenez en main Bootstrap',
+                    description: 'Ce cours permet de : Communiquer efficacement en utilisant les termes spécifiques de Bootstrap, Charger des ressources externes dans une page web avec un Content Delivery Network, Créer un layout responsive avec le système de grille de Bootstrap, Intégrer une maquette de site web responsive avec Bootstrap, Dynamiser une page web avec des plugins Jquery customisés pour Bootstrap',
+                    progress: 100,
+                    website : 'OpenClassroom',
+                    link: 'https://openclassrooms.com/fr/courses/1885491-prenez-en-main-bootstrap',
+                    projetId: 1,
+                },
+                {
+                    id: 7,
                     tag: 'SQL',
-                    img: ImgProjet,
-                    title: 'Formation 4',
-                    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.',
-                    progress: 60,
-                    link: 'https://www.google.com',
+                    img: SQLForm_O,
+                    title: 'Concevez votre site web avec PHP et MySQL',
+                    description: 'Ce cours permet de : installer votre environnement de développement, écrire des instructions en PHP, respecter les conventions d\'écriture de code, programmer des fonctions, enregistrer des données dans un fichier, stocker des données dans les sessions et les cookies, communiquer avec la base de données',
+                    progress: 100,
+                    website : 'OpenClassroom',
+                    link: 'https://openclassrooms.com/fr/courses/918836-concevez-votre-site-web-avec-php-et-mysql',
+                    projetId: 1,
+                },
+                {
+                    id: 8,
+                    tag: 'C#',
+                    img: OpenClassroomForm,
+                    title: 'Apprenez à développer en C#',
+                    description: 'Ce cours permet de :  maîtriserez les bases de la programmation en C# et saurez créer une application capable d\'interagir avec un utilisateur, de lire ses saisies au clavier et d\'afficher des choses à l\'écran via une console. ',
+                    progress: 27,
+                    website : 'OpenClassroom',
+                    link: 'https://openclassrooms.com/fr/courses/1526901-apprenez-a-developper-en-c/2866671-les-methodes',
+                    projetId: 1,
+                },
+                {
+                    id: 9,
+                    tag: 'Sass',
+                    img: SassForm_O,
+                    title: 'Simplifiez-vous le CSS avec Sass',
+                    description: 'Ce cours permet de :  structurer et organiser votre code, créer du code maintenable grâce aux techniques Sass intermédiaires, optimiser votre code en utilisant les techniques avancées de Sass',
+                    progress: 4,
+                    website : 'OpenClassroom',
+                    link: 'https://openclassrooms.com/fr/courses/6106181-simplifiez-vous-le-css-avec-sass/6595695-structurez-votre-css',
+                    projetId: 1,
+                },
+                {
+                    id: 10,
+                    tag: 'HTML',
+                    img: OpenClassroomForm,
+                    title: 'Apprenez à créer votre site web avec HTML5 et CSS3',
+                    description: 'Ce cours permet de :  utiliser du code HTML, structurer une page web, utiliser du code CSS, mettre en forme une page web en CSS, modifier l\'agencement d\'une page HTML, intégrer des formules dans une page web, adapter une page pour les petites résolutions en CSS',
+                    progress: 100,
+                    website : 'OpenClassroom',
+                    link: 'https://openclassrooms.com/fr/courses/1603881-apprenez-a-creer-votre-site-web-avec-html5-et-css3',
                     projetId: 1,
                 }
             ],

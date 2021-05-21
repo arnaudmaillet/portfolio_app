@@ -23,6 +23,12 @@ const style = makeStyles(theme => ({
     },
     notActive: {
         color: theme.palette.info.dark
+    },
+    icon: {
+        color: theme.palette.info.main,
+        "&:hover": {
+            color: theme.palette.primary.main,
+        },
     }
 }))
 
@@ -52,7 +58,7 @@ const Formations = (props) => {
                     <Grid item xs={12}>
                         <div className='school-training_item'>
                             <Typography className='school-training_item_title'>{MyData.learning.schoolTraining.btsSio.title}</Typography>
-                            <CustomButton text='Tableau des compétences' color='primary' onClick={()=>setOpenDialog(true)} />
+                            <CustomButton text='Tableau des compétences' color='primary' onClick={() => setOpenDialog(true)} />
                         </div>
                         <div>
                             <Typography className={['school-training_item_text', classes.text].join(' ')}>{MyData.learning.schoolTraining.btsSio.text}</Typography>
@@ -147,34 +153,33 @@ const Formations = (props) => {
                                     {tabValue === learning.tag || tabValue === 'all' ? (
                                         <Grid item xs={12}>
                                             <Grow in timeout={1000}>
-                                                <Card elevation={MyData.settings.cardElevation} className={'self-learning_custom-card'}>
-                                                    <CardMedia className='self-learning_custom-card_img' image={learning.img} title={learning.title} />
-                                                    <CardContent className='self-learning_custom-card_content'>
-                                                        <Grid container>
-                                                            <Grid item xs={12} className='self-learning_custom-card_content_item'>
-                                                                <Grid container>
-                                                                    <Grid item xs={12} md={6}>
-                                                                        <Typography className='self-learning_custom-card_content_item_title'>{learning.title}</Typography>
-                                                                    </Grid>
-                                                                    <Grid item xs={12} md={6}>
-                                                                        <div className='self-learning_custom-card_content_item_progress'>
-                                                                            <LinearWithValueLabel value={learning.progress} />
-                                                                        </div>
+                                                <a href={learning.link} target='_blank' style={{textDecoration: 'none'}}>
+                                                    <Card elevation={MyData.settings.cardElevation} className={'self-learning_custom-card'}>
+                                                        <CardMedia className='self-learning_custom-card_img' image={learning.img} title={learning.title} />
+                                                        <CardContent className='self-learning_custom-card_content'>
+                                                            <Grid container>
+                                                                <Grid item xs={12} className='self-learning_custom-card_content_item'>
+                                                                    <Grid container>
+                                                                        <Grid item xs={12} md={6}>
+                                                                            <Typography className='self-learning_custom-card_content_item_title'>{learning.title}</Typography>
+                                                                        </Grid>
+                                                                        <Grid item xs={12} md={6}>
+                                                                            <div className='self-learning_custom-card_content_item_progress'>
+                                                                                <LinearWithValueLabel value={learning.progress} />
+                                                                            </div>
+                                                                        </Grid>
                                                                     </Grid>
                                                                 </Grid>
                                                             </Grid>
-                                                        </Grid>
-                                                        <Typography variant='body2' className={['self-learning_custom-card_content_text', classes.text].join(' ')}>{learning.description}</Typography>
-                                                        <div className='self-learning_custom-card_content_button'>
-                                                            <CustomButton
-                                                                color='primary'
-                                                                textDisplay='flex'
-                                                                justifyText='center'
-                                                                href={learning.link}
-                                                                text='Voir' />
-                                                        </div>
-                                                    </CardContent>
-                                                </Card>
+                                                            <Typography variant='body2' className={['self-learning_custom-card_content_text', classes.text].join(' ')}>{learning.description}</Typography>
+                                                            <div className='self-learning_custom-card_content_button'>
+                                                                <div style={{ margin: 'auto 0' }} className={classes.text}>
+                                                                    {learning.website}
+                                                                </div>
+                                                            </div>
+                                                        </CardContent>
+                                                    </Card>
+                                                </a>
                                             </Grow>
                                         </Grid>
                                     ) : null}
@@ -184,7 +189,7 @@ const Formations = (props) => {
                     </Grid>
                 </Grid>
             </motion.div>
-            <SkillsArray open={openDialog} close={val => setOpenDialog(val)} isLogged={loginStatus || props.logStatus ? true : false}/> 
+            <SkillsArray open={openDialog} close={val => setOpenDialog(val)} isLogged={loginStatus || props.logStatus ? true : false} />
         </Paper>
     )
 }

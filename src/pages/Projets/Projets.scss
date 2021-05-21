@@ -36,6 +36,7 @@
         border-radius: $border-main-radius;
         overflow: hidden;
         outline-width: 0!important;
+        transition: $transition-duration;
 
         &:hover {
             transform: $hover-second-transform!important;
