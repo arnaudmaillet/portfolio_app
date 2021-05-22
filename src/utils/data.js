@@ -31,7 +31,6 @@ import KeyboardArrowUpRoundedIcon from '@material-ui/icons/KeyboardArrowUpRounde
 import KeyboardArrowDownRoundedIcon from '@material-ui/icons/KeyboardArrowDownRounded';
 
 // Import profile image
-import ImgProfil from './../assets/img/profil.jpg';
 import ImgProjet from './../assets/img/projet.jpg';
 import WordpressForm from './../assets/img/wordpressForm.jpg';
 import ReactForm from './../assets/img/reactForm.jpg';
@@ -41,7 +40,15 @@ import ReactForm_O from './../assets/img/reactForm_O.jpg';
 import JQueryForm_O from './../assets/img/JQueryForm_O.jpg';
 import Javascript_O from './../assets/img/JavascriptForm_O.jpg';
 import SQLForm_O from './../assets/img/SQLForm_O.jpg';
-import SassForm_O from './../assets/img/sassForm_O.jpg'
+import SassForm_O from './../assets/img/sassForm_O.jpg';
+import GSBProj from './../assets/img/GSBProj.png';
+import VDSProj from './../assets/img/VDSProj.png';
+import ReactPersoProj from './../assets/img/ReactPersoProj.PNG';
+import MeteoremProj from './../assets/img/MeteoremProj.PNG';
+import RoseDesVentsProj from './../assets/img/roseDesVentsProj.PNG';
+import MeteoremAPIProj from './../assets/img/MeteoremAPIProj.png';
+import ADCProj from './../assets/img/ADCProj.PNG';
+import ImgProfil from './../assets/img/2019-12-15_1649088.jpg'
 
 
 export default {
@@ -416,66 +423,101 @@ export default {
     },
 
 
-
     projects: {
 
         title: 'Projets',
         items: [
             {
                 id: 1,
-                tag: 'React',
-                img: ImgProjet,
+                tag: 'BTSsio',
+                img: GSBProj,
                 title: 'React Projet 1',
                 description: 'Voici un projet de blabla concerant les blablabla',
                 text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. \n\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
                 links: [
-                    {id:'1', link: 'https://www.google.com', icon: <DescriptionRoundedIcon/>},
-                    {id:'2', link: 'https://www.google.com', icon: <LanguageRoundedIcon/>},
-                    {id:'3', link: 'https://www.google.com', icon: <GitHubIcon/>},
+                    {id:'1', link: 'https://www.google.com', icon: <DescriptionRoundedIcon/>, text: 'Documentation'},
+                    {id:'2', link: 'https://www.google.com', icon: <LanguageRoundedIcon/>, text: 'Lien'},
+                    {id:'3', link: 'https://www.google.com', icon: <GitHubIcon/>, text: 'Github'},
                 ]
             },
             {
                 id: 2,
-                tag: 'React',
-                img: ImgProjet,
-                title: 'React Projet 2',
-                description: 'Voici un projet de blabla concerant les blablabla',
-                text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. \n\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+                tag: 'Personnel',
+                img: ReactPersoProj,
+                title: 'React App Personnages',
+                description: 'Cette application permet de créer des personnages de jeux',
+                text: 'Cette application React permet de personnaliser un personnage fictif de jeux video. Toutefois l\'application n\'est que visuelle (front-end), les données ne sont donc pas enregistrées dans une base de données. \n\n Principales fonctionalités : \n - Défilement des différents personnages stockées dans un tableau.\n - Attribution des points de compétences du personnage \n - Sélection de l\'arme du personnage. \n\n Ce qui a été appliqué dans ce projet : \n - Les composants et leur propriétés \n - La syntaxe JSX \n - Les évenements \n - Les opérateurs spread \n - Les fonctions fléchées',
                 links: [
-                    {id:'1', link: 'https://www.google.com', icon: <DescriptionRoundedIcon/>},
-                    {id:'2', link: 'https://www.google.com', icon: <LanguageRoundedIcon/>},
-                    {id:'3', link: 'https://www.google.com', icon: <GitHubIcon/>},
+                    {id:'1', link: 'https://github.com/arnaudmaillet/React_App-Personnages', icon: <GitHubIcon/>, text: 'Github'},
                 ]
             },
             {
                 id: 3,
-                tag: 'C#',
-                img: ImgProjet,
-                title: 'C# Projet 1',
-                description: 'Voici un projet de blabla concerant les blablabla',
+                tag: 'Stages',
+                img: MeteoremProj,
+                title: 'Site Web Météorem',
+                description: 'Réalisation d\'un site web type vitrine pour l\'entreprise Météorem',
                 text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. \n\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
                 links: [
-                    {id:'1', link: 'https://www.google.com', icon: <DescriptionRoundedIcon/>},
-                    {id:'2', link: 'https://www.google.com', icon: <LanguageRoundedIcon/>},
-                    {id:'3', link: 'https://www.google.com', icon: <GitHubIcon/>},
+                    {id:'1', link: 'http://meteorem.com/', icon: <LanguageRoundedIcon/>, text: 'Site Web'},
+                    {id:'2', link: 'https://github.com/arnaudmaillet/MeteoremWebSite', icon: <GitHubIcon/>, text: 'Github'},
                 ]
             },
             {
                 id: 4,
-                tag: 'Php',
-                img: ImgProjet,
+                tag: 'BTSsio',
+                img: VDSProj,
                 title: 'Php Projet 1',
                 description: 'Voici un projet de blabla concerant les blablabla',
                 text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. \n\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
                 links: [
-                    {id:'1', link: 'https://www.google.com', icon: <DescriptionRoundedIcon/>},
-                    {id:'2', link: 'https://www.google.com', icon: <LanguageRoundedIcon/>},
-                    {id:'3', link: 'https://www.google.com', icon: <GitHubIcon/>},
+                    {id:'1', link: 'https://www.google.com', icon: <DescriptionRoundedIcon/>, text: 'Documentation'},
+                    {id:'2', link: 'https://www.google.com', icon: <LanguageRoundedIcon/>, text: 'Lien'},
+                    {id:'3', link: 'https://www.google.com', icon: <GitHubIcon/>, text: 'Github'},
+                ],
+            },
+            {
+                id: 5,
+                tag: 'Stages',
+                img: RoseDesVentsProj,
+                title: 'Php Projet 1',
+                description: 'Voici un projet de blabla concerant les blablabla',
+                text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. \n\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+                links: [
+                    {id:'1', link: 'https://www.google.com', icon: <DescriptionRoundedIcon/>, text: 'Documentation'},
+                    {id:'2', link: 'https://www.google.com', icon: <LanguageRoundedIcon/>, text: 'Lien'},
+                    {id:'3', link: 'https://www.google.com', icon: <GitHubIcon/>, text: 'Github'},
+                ],
+            },
+            {
+                id: 6,
+                tag: 'Stages',
+                img: MeteoremAPIProj,
+                title: 'Php Projet 1',
+                description: 'Voici un projet de blabla concerant les blablabla',
+                text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. \n\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+                links: [
+                    {id:'1', link: 'https://www.google.com', icon: <DescriptionRoundedIcon/>, text: 'Documentation'},
+                    {id:'2', link: 'https://www.google.com', icon: <LanguageRoundedIcon/>, text: 'Lien'},
+                    {id:'3', link: 'https://www.google.com', icon: <GitHubIcon/>, text: 'Github'},
+                ],
+            },
+            {
+                id: 7,
+                tag: 'BTSsio',
+                img: ADCProj,
+                title: 'Php Projet 1',
+                description: 'Voici un projet de blabla concerant les blablabla',
+                text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. \n\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+                links: [
+                    {id:'1', link: 'https://www.google.com', icon: <DescriptionRoundedIcon/>, text: 'Documentation'},
+                    {id:'2', link: 'https://www.google.com', icon: <LanguageRoundedIcon/>, text: 'Lien'},
+                    {id:'3', link: 'https://www.google.com', icon: <GitHubIcon/>, text: 'Github'},
                 ],
             },
         ],
     },
-
+    
     skillsArray : {
         title: 'Tableau des compétences'
     },

@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import MyData from '../../utils/Data.js'
-import { Grid, Typography, Tabs, Tab, Card, CardActionArea, CardMedia, CardContent, Grow, Dialog, DialogTitle, DialogContent, DialogActions, Paper, makeStyles, Divider } from '@material-ui/core'
+import { Grid, Typography, Tabs, Tab, Card, CardActionArea, CardMedia, CardContent, Grow, Dialog, DialogTitle, DialogContent, DialogActions, Paper, makeStyles, Divider, Tooltip } from '@material-ui/core'
 import Title from '../../components/Title/Title.js'
 import { motion } from "framer-motion";
 
@@ -105,7 +105,9 @@ const Projets = () => {
                             <div>
                                 {projectDialog?.links?.map(link => (
                                     <a href={link.link} rel="noreferrer" target='_blank' key={link.id} className={['projects_dialog-action_icon', classes.color].join(' ')}>
-                                        {link.icon}
+                                        <Tooltip arrow placement="bottom" title={link.text}>
+                                            {link.icon}
+                                        </Tooltip>
                                     </a>
                                 ))}
                             </div>
