@@ -48,8 +48,11 @@ import MeteoremProj from './../assets/img/MeteoremProj.PNG';
 import RoseDesVentsProj from './../assets/img/roseDesVentsProj.PNG';
 import MeteoremAPIProj from './../assets/img/MeteoremAPIProj.png';
 import ADCProj from './../assets/img/ADCProj.PNG';
-import ImgProfil from './../assets/img/2019-12-15_1649088.jpg'
+import ImgProfil from './../assets/img/2019-12-15_1649088.jpg';
 
+// Import PDF
+import pdf from './../assets/pdf/CV_ArnaudMAILLET.pdf';
+import GSB_pdf from './../assets/pdf/PPE_Documentation.pdf';
 
 export default {
 
@@ -86,6 +89,7 @@ export default {
         adress: '14 rue des Rinchevaux 8000 Amiens',
         job: 'etudiant',
         phone: '0101010101',
+        CV : pdf,
 
         map: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2094.7675155657794!2d2.296521506320683!3d49.89343022524075!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e78438b0abd7c3%3A0xff54500fc939881f!2zTHljw6llIFByaXbDqSBTYWludCBSw6ltaQ!5e0!3m2!1sfr!2sfr!4v1617489467835!5m2!1sfr!2sfr" width="400" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>',
     },
@@ -252,25 +256,20 @@ export default {
                 {
                     id: 1,
                     title: 'Front-end',
-                    elements: ['HTML', 'CSS', 'SCSS', 'JQuery', 'Javascript', 'ReactJS', 'Bootstrap', 'Material UI'],
+                    elements: ['HTML', 'CSS', 'SCSS', 'JQuery', 'Javascript', 'ReactJS', 'Bootstrap', 'Material UI', 'C#', 'Python'],
                 },
                 {
                     id: 2,
                     title: 'Back-end',
-                    elements: ['ExpressJS', 'PHP'],
+                    elements: ['ExpressJS', 'PHP', 'C#'],
                 },
                 {
                     id: 3,
-                    title: 'Applications',
-                    elements: ['C#', 'Python'],
+                    title: 'Database',
+                    elements: ['MySQL'],
                 },
                 {
                     id: 4,
-                    title: 'Database',
-                    elements: ['MySQL', 'Access'],
-                },
-                {
-                    id: 5,
                     title: 'Versioning',
                     elements: ['Git', 'Github'],
                 }
@@ -431,13 +430,12 @@ export default {
                 id: 1,
                 tag: 'BTSsio',
                 img: GSBProj,
-                title: 'React Projet 1',
-                description: 'Voici un projet de blabla concerant les blablabla',
-                text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. \n\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+                title: 'Application GSB',
+                description: 'Application centralisant des comptes rendus de visites',
+                text: 'Cette application représente le 2ème PPE de ma 2ème année de BTS. Ecrite en C#, elle a pour objectif de centraliser les comptes rendus de visites de praticiens pour les visiteurs médicaux.\n\n Principales fonctionalités : \n - Consultation, modification et impression d\'un rendez-vous \n - Bilan, consultation et modification des visites \n - Consultation des médicaments \n - Consultation, modification et suppression d\'un praticien \n\n Ce qui a été appliqué dans ce projet : \n - Les classes : classe métier et classe passerelle \n - Les procédures SQL',
                 links: [
-                    {id:'1', link: 'https://www.google.com', icon: <DescriptionRoundedIcon/>, text: 'Documentation'},
-                    {id:'2', link: 'https://www.google.com', icon: <LanguageRoundedIcon/>, text: 'Lien'},
-                    {id:'3', link: 'https://www.google.com', icon: <GitHubIcon/>, text: 'Github'},
+                    {id:'1', link: GSB_pdf , icon: <DescriptionRoundedIcon/>, text: 'Documentation'},
+                    {id:'2', link: 'https://github.com/arnaudmaillet/SIO-GSB', icon: <GitHubIcon/>, text: 'Github'},
                 ]
             },
             {
@@ -445,7 +443,7 @@ export default {
                 tag: 'Personnel',
                 img: ReactPersoProj,
                 title: 'React App Personnages',
-                description: 'Cette application permet de créer des personnages de jeux',
+                description: 'Application permet de créer des personnages de jeux fictifs',
                 text: 'Cette application React permet de personnaliser un personnage fictif de jeux video. Toutefois l\'application n\'est que visuelle (front-end), les données ne sont donc pas enregistrées dans une base de données. \n\n Principales fonctionalités : \n - Défilement des différents personnages stockées dans un tableau.\n - Attribution des points de compétences du personnage \n - Sélection de l\'arme du personnage. \n\n Ce qui a été appliqué dans ce projet : \n - Les composants et leur propriétés \n - La syntaxe JSX \n - Les évenements \n - Les opérateurs spread \n - Les fonctions fléchées',
                 links: [
                     {id:'1', link: 'https://github.com/arnaudmaillet/React_App-Personnages', icon: <GitHubIcon/>, text: 'Github'},
@@ -456,8 +454,8 @@ export default {
                 tag: 'Stages',
                 img: MeteoremProj,
                 title: 'Site Web Météorem',
-                description: 'Réalisation d\'un site web type vitrine pour l\'entreprise Météorem',
-                text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. \n\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+                description: 'Réalisation d\'un site web de type vitrine pour l\'entreprise Météorem',
+                text: 'Le site web à été réalisé durant ma période de stage du 11/01/2021 au 19/02/2021 lors de ma 2ème année de BTS SIO. Le site avait pour principale contrainte l\'utilisation de l\'outil WordPress. Ce site à ensuite été hébergé sur l\'hébergeur de l\'entreprise (OVH). \n\n Principales fonctionalités : \n - Multilangage \n - Contact de l\'entreprise via un formulaire \n - Présentation de l\'entreprise et de ses offres \n\n Ce qui a été appliqué dans ce projet : \n - La prise en main de l\'outil WordPress \n - L\'utilisation du plugin Elementor Pro, WPMail, GDPR Cookie \n - Hebergement du site via FileZilla et Duplicator',
                 links: [
                     {id:'1', link: 'http://meteorem.com/', icon: <LanguageRoundedIcon/>, text: 'Site Web'},
                     {id:'2', link: 'https://github.com/arnaudmaillet/MeteoremWebSite', icon: <GitHubIcon/>, text: 'Github'},
@@ -467,7 +465,7 @@ export default {
                 id: 4,
                 tag: 'BTSsio',
                 img: VDSProj,
-                title: 'Php Projet 1',
+                title: 'Site Web VDS',
                 description: 'Voici un projet de blabla concerant les blablabla',
                 text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. \n\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
                 links: [
@@ -480,7 +478,7 @@ export default {
                 id: 5,
                 tag: 'Stages',
                 img: RoseDesVentsProj,
-                title: 'Php Projet 1',
+                title: 'Widgets Météorem',
                 description: 'Voici un projet de blabla concerant les blablabla',
                 text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. \n\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
                 links: [
@@ -493,7 +491,7 @@ export default {
                 id: 6,
                 tag: 'Stages',
                 img: MeteoremAPIProj,
-                title: 'Php Projet 1',
+                title: 'API Météorem',
                 description: 'Voici un projet de blabla concerant les blablabla',
                 text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. \n\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
                 links: [
@@ -506,7 +504,7 @@ export default {
                 id: 7,
                 tag: 'BTSsio',
                 img: ADCProj,
-                title: 'Php Projet 1',
+                title: 'Site Web Administration des comptes',
                 description: 'Voici un projet de blabla concerant les blablabla',
                 text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. \n\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
                 links: [

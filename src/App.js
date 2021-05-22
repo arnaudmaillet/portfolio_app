@@ -9,7 +9,6 @@ import { AnimatePresence } from "framer-motion";
 import Accueil from './pages/Accueil/Accueil.js'
 import Formations from './pages/Formations/Formations.js'
 import Projets from './pages/Projets/Projets.js'
-import Contact from './pages/Contact/Contact.js'
 import Veilles from './pages/Veilles/Veilles.js'
 import Login from './components/Login/Login.js';
 import Register from './components/Register/Register.js';
@@ -100,7 +99,6 @@ function App() {
                         <Route exact path='/' component={Accueil}/>
                         <Route exact path='/formations' component={Formations} logStatus={isLogged ? true : false}/>
                         <Route exact path='/projets' component={Projets}/>
-                        <Route exact path='/contact' component={Contact}/>
                         <Route exact path='/veilles' component={Veilles}/>
                         <Route exact path='/register' component={Register}/>
                         <Route exact path='/login'>

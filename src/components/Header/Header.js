@@ -8,7 +8,7 @@ import MyTimeline, { CustomTimelineSeparator } from './../Timeline/Timeline.js'
 import CustomButton from "./../Button/Button.js";
 
 import './Header.scss'
-import pdf from './../../assets/pdf/CV_ArnaudMAILLET.pdf'
+
 
 const style = makeStyles(theme => ({
     text: {
@@ -50,15 +50,9 @@ const Header = () => {
                         <CustomButton
                             color='primary'
                             isDownload
-                            href={pdf}
+                            href={MyData.profile.CV}
                             text='Télécharger CV'
                             icon={MyData.icons.btn_download} />
-                    </div>
-                    <div className='profile_information_btn_contact'>
-                        <CustomButton
-                            color='primary'
-                            text='Contactez-moi'
-                            icon={MyData.icons.btn_contact} />
                     </div>
                 </div>
             </div>
