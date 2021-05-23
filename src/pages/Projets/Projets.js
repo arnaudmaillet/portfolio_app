@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import MyData from '../../utils/Data.js'
-import { Grid, Typography, Tabs, Tab, Card, CardActionArea, CardMedia, CardContent, Grow, Dialog, DialogTitle, DialogContent, DialogActions, Paper, makeStyles, Divider, Tooltip } from '@material-ui/core'
+import { Grid, Typography, Tabs, Tab, Card, CardActionArea, CardMedia, CardContent, Grow, Dialog, DialogTitle, DialogContent, DialogActions, Paper, makeStyles, Tooltip } from '@material-ui/core'
 import Title from '../../components/Title/Title.js'
 import { motion } from "framer-motion";
 

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Grid, Tabs, Tab, Grow, Card, CardMedia, CardContent, Typography, makeStyles, Paper, Dialog, DialogContent, DialogContentText, Button, AppBar, Toolbar, IconButton } from '@material-ui/core'
+import { Grid, Tabs, Tab, Grow, Card, CardMedia, CardContent, Typography, makeStyles, Paper } from '@material-ui/core'
 import Axios from 'axios'
 
 import Title from '../../components/Title/Title'
@@ -153,7 +153,7 @@ const Formations = (props) => {
                                     {tabValue === learning.tag || tabValue === 'all' ? (
                                         <Grid item xs={12}>
                                             <Grow in timeout={1000}>
-                                                <a href={learning.link} target='_blank' style={{textDecoration: 'none'}}>
+                                                <a href={learning.link} target='_blank' style={{textDecoration: 'none'}} rel='noreferrer'>
                                                     <Card elevation={MyData.settings.cardElevation} className={'self-learning_custom-card'}>
                                                         <CardMedia className='self-learning_custom-card_img' image={learning.img} title={learning.title} />
                                                         <CardContent className='self-learning_custom-card_content'>

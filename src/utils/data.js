@@ -31,7 +31,6 @@ import KeyboardArrowUpRoundedIcon from '@material-ui/icons/KeyboardArrowUpRounde
 import KeyboardArrowDownRoundedIcon from '@material-ui/icons/KeyboardArrowDownRounded';
 
 // Import profile image
-import ImgProjet from './../assets/img/projet.jpg';
 import WordpressForm from './../assets/img/wordpressForm.jpg';
 import ReactForm from './../assets/img/reactForm.jpg';
 import OpenClassroomForm from './../assets/img/Logo_OpenClassrooms.png';
@@ -53,6 +52,15 @@ import ImgProfil from './../assets/img/2019-12-15_1649088.jpg';
 // Import PDF
 import pdf from './../assets/pdf/CV_ArnaudMAILLET.pdf';
 import GSB_pdf from './../assets/pdf/PPE_Documentation.pdf';
+import GSB_Cahier_Des_Charges from './../assets/pdf/Cahier des charges_GSB.pdf';
+import VDS_Cahier_Des_Charges from './../assets/pdf/Cahier des charges_VDS.pdf';
+import VDS_Fiche_Tech_Membre from './../assets/pdf/Fiche_technique_membre_VDS.pdf';
+import VDS_Guide_Admin from './../assets/pdf/Guide_Utilisateur_Administrateur_VDS.pdf';
+import VDS_Fiche_Profil from './../assets/pdf/Fiche_technique_profil_VDS.pdf';
+import VDS_Modules from './../assets/pdf/Fiche_presentation_modules_VDS.pdf';
+import ADC_Cahier_Des_Charges from './../assets/pdf/Cahier des charges_ADC.pdf';
+import ADC_Guide_Utilisateur from './../assets/pdf/Guide_Utilisateur_ADC.pdf';
+import ADC_Base_Donnees from './../assets/pdf/Descriptif_base_de_donnees_ADC.pdf';
 
 export default {
 
@@ -171,7 +179,7 @@ export default {
         // About me
         about: {
             title: 'Présentation',
-            text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. \n\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+            text: 'Actuellement sur Amiens, j\'ai acquis ces dernières années un interêt non négligeable pour l\'informatique. J\'ai principalement commencé en développant des modules web ce qui m\'a permis d\'apprendre les bases de la programmation. Par curiosité, j\'ai pu découvrir l\'étendue des domaines informatiques et étant donné la variété de métiers, je verrai au fur et à mesure de mes études, dans quel domaine je me spécialiserai. \n\n L\'informatique ne fait tout chez moi. Je suis aussi attiré par l\'univers musical. En effet je pratique le piano, la guitare et je compose des projets musicaux grâce à des logiciels dédiés sur ordinateur. Je m\'interesse aussi beaucoup aux cultures étrangères, je trouve cela important, surtout quand le contraste avec nos standards est important.',
         },
 
 
@@ -182,42 +190,36 @@ export default {
             work: [
                 {
                     id: 1,
-                    title: 'Entreprise 1',
-                    date: '1900-1914',
-                    text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+                    title: 'Aviabag Météorem',
+                    date: '2021',
+                    text: 'Stage chez Aviabag Météorem dans le cadre de ma 2ème année de BTS SIO.'
                 },
                 {
                     id: 2,
-                    title: 'Entreprise 2',
-                    date: '1880-1890',
-                    text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
-                },
-                {
-                    id: 3,
-                    title: 'Entreprise 3',
-                    date: '1860-1866',
-                    text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+                    title: 'Aérolia Méaulte (Aérospace)',
+                    date: '2014',
+                    text: 'Stage de découverte dans le cadre de mon année de 3ème au collège'
                 },
             ],
 
             education: [
                 {
                     id: 1,
-                    title: 'Ecole 1',
-                    date: '1900-1914',
-                    text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+                    title: 'BTS SIO',
+                    date: '2020-2021',
+                    text: '2ème année de BTS SIO en option SLAM (Développement informatique)'
                 },
                 {
                     id: 2,
-                    title: 'Ecole 2',
-                    date: '1880-1890',
-                    text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+                    title: 'BTS SIO',
+                    date: '2019-2020',
+                    text: '1ère année de BTS SIO. Mi-année, J\'ai choisi de prendre l\'option SLAM (Développement informatique)'
                 },
                 {
                     id: 3,
-                    title: 'Ecole 3',
-                    date: '1860-1866',
-                    text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+                    title: 'Licence Informatique',
+                    date: '2018-2019',
+                    text: '1ère année de fac en licence informatique. Je n\'ai pas continué le cursus car les mathématiques étaient trop présents'
                 },
             ],
         },
@@ -231,19 +233,16 @@ export default {
                     id: 1,
                     title: 'Developpement d\'interfaces web',
                     icon: <WebOutlinedIcon/>,
-                    text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.'
                 },
                 {
                     id: 2,
                     title: 'Developpement d\'applications',
                     icon: <DeveloperModeOutlinedIcon/>,
-                    text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.'
                 },
                 {
                     id: 3,
                     title: 'Maintenance informatique',
                     icon: <DnsOutlinedIcon/>,
-                    text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.'
                 },
             ],   
         },
@@ -261,7 +260,7 @@ export default {
                 {
                     id: 2,
                     title: 'Back-end',
-                    elements: ['ExpressJS', 'PHP', 'C#'],
+                    elements: ['ExpressJS', 'PHP', 'C#', 'JSON'],
                 },
                 {
                     id: 3,
@@ -428,14 +427,15 @@ export default {
         items: [
             {
                 id: 1,
-                tag: 'BTSsio',
+                tag: 'BTS',
                 img: GSBProj,
                 title: 'Application GSB',
                 description: 'Application centralisant des comptes rendus de visites',
                 text: 'Cette application représente le 2ème PPE de ma 2ème année de BTS. Ecrite en C#, elle a pour objectif de centraliser les comptes rendus de visites de praticiens pour les visiteurs médicaux.\n\n Principales fonctionalités : \n - Consultation, modification et impression d\'un rendez-vous \n - Bilan, consultation et modification des visites \n - Consultation des médicaments \n - Consultation, modification et suppression d\'un praticien \n\n Ce qui a été appliqué dans ce projet : \n - Les classes : classe métier et classe passerelle \n - Les procédures SQL',
                 links: [
-                    {id:'1', link: GSB_pdf , icon: <DescriptionRoundedIcon/>, text: 'Documentation'},
-                    {id:'2', link: 'https://github.com/arnaudmaillet/SIO-GSB', icon: <GitHubIcon/>, text: 'Github'},
+                    {id:'1', link: GSB_Cahier_Des_Charges , icon: <DescriptionRoundedIcon/>, text: 'Cahier des charges'},
+                    {id:'2', link: GSB_pdf , icon: <DescriptionRoundedIcon/>, text: 'Documentation'},
+                    {id:'3', link: 'https://github.com/arnaudmaillet/SIO-GSB', icon: <GitHubIcon/>, text: 'Github'},
                 ]
             },
             {
@@ -455,7 +455,7 @@ export default {
                 img: MeteoremProj,
                 title: 'Site Web Météorem',
                 description: 'Réalisation d\'un site web de type vitrine pour l\'entreprise Météorem',
-                text: 'Le site web à été réalisé durant ma période de stage du 11/01/2021 au 19/02/2021 lors de ma 2ème année de BTS SIO. Le site avait pour principale contrainte l\'utilisation de l\'outil WordPress. Ce site à ensuite été hébergé sur l\'hébergeur de l\'entreprise (OVH). \n\n Principales fonctionalités : \n - Multilangage \n - Contact de l\'entreprise via un formulaire \n - Présentation de l\'entreprise et de ses offres \n\n Ce qui a été appliqué dans ce projet : \n - La prise en main de l\'outil WordPress \n - L\'utilisation du plugin Elementor Pro, WPMail, GDPR Cookie \n - Hebergement du site via FileZilla et Duplicator',
+                text: 'Le site web a été réalisé durant ma période de stage du 11/01/2021 au 19/02/2021 lors de ma 2ème année de BTS SIO. Le site avait pour principale contrainte l\'utilisation de l\'outil WordPress. Ce site à ensuite été hébergé sur l\'hébergeur de l\'entreprise (OVH). \n\n Principales fonctionalités : \n - Multilangage \n - Contact de l\'entreprise via un formulaire \n - Présentation de l\'entreprise et de ses offres \n\n Ce qui a été appliqué dans ce projet : \n - La prise en main de l\'outil WordPress \n - L\'utilisation du plugin Elementor Pro, WPMail, GDPR Cookie \n - Hebergement du site via FileZilla et Duplicator',
                 links: [
                     {id:'1', link: 'http://meteorem.com/', icon: <LanguageRoundedIcon/>, text: 'Site Web'},
                     {id:'2', link: 'https://github.com/arnaudmaillet/MeteoremWebSite', icon: <GitHubIcon/>, text: 'Github'},
@@ -463,15 +463,18 @@ export default {
             },
             {
                 id: 4,
-                tag: 'BTSsio',
+                tag: 'BTS',
                 img: VDSProj,
                 title: 'Site Web VDS',
-                description: 'Voici un projet de blabla concerant les blablabla',
-                text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. \n\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+                description: 'Refonte du site Web Amicale du Val de Somme',
+                text: 'Ce site a été réalisé lors de mon 1er PPE de ma deuxième année de BTS. Les membres du conseil de l\'association sportive Amical du Val de Somme ont décidé de redévelopper la totalité du site web suite au départ de l\'informaticien. Chaques membres de la classe est chargé de réaliser une fonctionnalité du site qui lui sera attribué. \n\n Fonctionalités attribuées : \n - Modification d\'un membre \n - Consultation des membres \n - Ajout d\'un membre \n\n Ce qui a été appliqué dans ce projet : \n - Bases de Javascript \n - Liaison à la base de données via PHP \n - Variables de session',
                 links: [
-                    {id:'1', link: 'https://www.google.com', icon: <DescriptionRoundedIcon/>, text: 'Documentation'},
-                    {id:'2', link: 'https://www.google.com', icon: <LanguageRoundedIcon/>, text: 'Lien'},
-                    {id:'3', link: 'https://www.google.com', icon: <GitHubIcon/>, text: 'Github'},
+                    {id:'1', link: VDS_Cahier_Des_Charges, icon: <DescriptionRoundedIcon/>, text: 'Cahier des charges'},
+                    {id:'2', link: VDS_Modules, icon: <DescriptionRoundedIcon/>, text: 'Fiche modules'},
+                    {id:'3', link: VDS_Fiche_Profil, icon: <DescriptionRoundedIcon/>, text: 'Fiche technique profil'},
+                    {id:'4', link: VDS_Fiche_Tech_Membre, icon: <DescriptionRoundedIcon/>, text: 'Fiche technique membre'},
+                    {id:'5', link: VDS_Guide_Admin, icon: <DescriptionRoundedIcon/>, text: 'Documentation admin'},
+                    {id:'6', link: 'https://github.com/arnaudmaillet/SIO-VDS', icon: <GitHubIcon/>, text: 'Github'},
                 ],
             },
             {
@@ -479,12 +482,10 @@ export default {
                 tag: 'Stages',
                 img: RoseDesVentsProj,
                 title: 'Widgets Météorem',
-                description: 'Voici un projet de blabla concerant les blablabla',
-                text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. \n\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+                description: 'Conception de widgets intégrables dans une page web',
+                text: 'Ce composant a été réalisé durant ma période de stage du 11/01/2021 au 19/02/2021 lors de ma 2ème année de BTS SIO. Sous forme de fichiers, ce composant web permet d\'intégrer un widget météo sur n\'importe quelle page web. Les données sont alimentées via une API. Pour intégrer le widget, il suffit de copier le dossier contenant les fichiers à la racine du site web puis d\'insérer la balise <rose-des-vents/>  en renseignant les attributs vent-ville (id de la station) et vent-taille (taille du widget). \n\n Fonctionalités attribuées : \n - Choix de la station à afficher \n - Dimensions du widget \n\n Ce qui a été appliqué dans ce projet : \n - Composants web \n - La fonction fetch',
                 links: [
-                    {id:'1', link: 'https://www.google.com', icon: <DescriptionRoundedIcon/>, text: 'Documentation'},
-                    {id:'2', link: 'https://www.google.com', icon: <LanguageRoundedIcon/>, text: 'Lien'},
-                    {id:'3', link: 'https://www.google.com', icon: <GitHubIcon/>, text: 'Github'},
+                    {id:'1', link: 'https://github.com/arnaudmaillet/rosedesventsMeteoremWidget', icon: <GitHubIcon/>, text: 'Github'},
                 ],
             },
             {
@@ -492,25 +493,24 @@ export default {
                 tag: 'Stages',
                 img: MeteoremAPIProj,
                 title: 'API Météorem',
-                description: 'Voici un projet de blabla concerant les blablabla',
-                text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. \n\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+                description: 'API Rest alimentant les données des widgets Météorem',
+                text: 'Cette API a été réalisé durant ma période de stage du 11/01/2021 au 19/02/2021 lors de ma 2ème année de BTS SIO. Elle renvoie sous forme d\'un tableau JSON les données des différentes stations météorologiques. Les données sont ensuite mises en forme dans lors de l\'affichage des widgets \n\n Fonctionalités attribuées : \n - Consultation des données sous forme d\'un tableau JSON \n\n Ce qui a été appliqué dans ce projet : \n - ExpressJS (controllers, routes, liaison avec la base de données ...)',
                 links: [
-                    {id:'1', link: 'https://www.google.com', icon: <DescriptionRoundedIcon/>, text: 'Documentation'},
-                    {id:'2', link: 'https://www.google.com', icon: <LanguageRoundedIcon/>, text: 'Lien'},
-                    {id:'3', link: 'https://www.google.com', icon: <GitHubIcon/>, text: 'Github'},
+                    {id:'1', link: 'https://github.com/arnaudmaillet/rosedesventsMeteoremAPI2', icon: <GitHubIcon/>, text: 'Github'},
                 ],
             },
             {
                 id: 7,
-                tag: 'BTSsio',
+                tag: 'BTS',
                 img: ADCProj,
-                title: 'Site Web Administration des comptes',
-                description: 'Voici un projet de blabla concerant les blablabla',
-                text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. \n\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+                title: 'Gestion des comptes',
+                description: 'Module gérant les comptes utilisateurs d\'un site en ligne',
+                text: 'Ce module a été réalisé lors de mon 1er PPE de ma permière année de BTS. L\'objectif est de créer deux interfaces, une pour l\'utilisateur permettant de modifier ses coordonnées et l\'autre pour l\'administrateur permettant de changer ses coordonnées et celles des autres utilisateurs. Un système de messagerie a été intégré par la suite. \n\n Fonctionalités attribuées : \n - Consultation, modification et suppression des données de l\'utilisateur \n - Consultation, modification et suppression des données des utilisateurs (admin) \n - Consultation, modification et suppression des messages \n - Création de comptes utilisateurs \n - Contrôle des données renseignées \n - Récupération du mot de passe \n\n Ce qui a été appliqué dans ce projet : \n - Expressions régulières \n - Evènements javascript',
                 links: [
-                    {id:'1', link: 'https://www.google.com', icon: <DescriptionRoundedIcon/>, text: 'Documentation'},
-                    {id:'2', link: 'https://www.google.com', icon: <LanguageRoundedIcon/>, text: 'Lien'},
-                    {id:'3', link: 'https://www.google.com', icon: <GitHubIcon/>, text: 'Github'},
+                    {id:'1', link: ADC_Cahier_Des_Charges, icon: <DescriptionRoundedIcon/>, text: 'Cahier des charges'},
+                    {id:'2', link: ADC_Guide_Utilisateur, icon: <DescriptionRoundedIcon/>, text: 'Guide utilisateur'},
+                    {id:'3', link: ADC_Base_Donnees, icon: <DescriptionRoundedIcon/>, text: 'Descriptif base de données'},
+                    {id:'4', link: 'https://github.com/arnaudmaillet/projetSI6', icon: <GitHubIcon/>, text: 'Github'},
                 ],
             },
         ],

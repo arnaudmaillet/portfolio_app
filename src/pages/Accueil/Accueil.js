@@ -73,14 +73,13 @@ const Accueil = () => {
                 {/* Services */}
                 <Grid container className='services'>
                     <Title classSection='services'>{MyData.home.services.title}</Title>
-                    <Grid item xs={12}>
+                    <Grid item xs={12} style={{marginTop: '15px'}}>
                         <Grid container spacing={3} justify='space-around'>
                             {MyData.home.services.items.map((item) => (
                                 <Grid item xs={12} sm={6} md={3} key={item.id}>
                                     <div className='services_item'>
                                         <Icon className='services_item-icon'>{item.icon}</Icon>
                                         <Typography className='services_item-title' variant='h6'>{item.title}</Typography>
-                                        <Typography className={['services_item-text', classes.color].join(' ')} variant='body2'>{item.text}</Typography>
                                     </div>
                                 </Grid>
                             ))}
