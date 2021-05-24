@@ -83,6 +83,7 @@ const MyNavbar = (props) => {
                                 {currentRoute === '/formations' ? <motion.div animate={{x: 0 }} initial={{x: "100px" }} transition={{duration: 0.5}}> {MyData.icons.nav_item2} </motion.div> : null}
                                 {currentRoute === '/projets' ? <motion.div animate={{x: 0 }} initial={{x: "100px" }} transition={{duration: 0.5}}> {MyData.icons.nav_item3} </motion.div> : null}
                                 {currentRoute === '/veilles' ? <motion.div animate={{x: 0 }} initial={{x: "100px" }} transition={{duration: 0.5}}> {MyData.icons.nav_item4} </motion.div>: null}
+                                {currentRoute === '/mentions' ? <motion.div animate={{x: 0 }} initial={{x: "100px" }} transition={{duration: 0.5}}> {MyData.icons.nav_item5} </motion.div>: null}
                                 {currentRoute === '/login' ? <motion.div animate={{x: 0 }} initial={{x: "100px" }} transition={{duration: 0.5}}> {MyData.icons.nav_authentication} </motion.div>: null}
                             </Navbar.Brand>
                     </AnimatePresence>

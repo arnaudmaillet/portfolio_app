@@ -1,0 +1,13 @@
+@import './../../utils/settings.scss';
+
+.mentions {
+    padding: $main-margin;
+
+    &_editeur, &_heb, &_conditions, &_cookies, &_liens, &_donnees, &_protriete, &_CNIL, &_litiges, &_personnel {
+        &_title {
+            margin-top: $main-margin;
+            font-size: '16px';
+            font-weight: 600;
+        }
+    }
+}

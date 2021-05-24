@@ -6,20 +6,21 @@ import { ThemeProvider, createMuiTheme, CssBaseline } from "@material-ui/core";
 import { AnimatePresence } from "framer-motion";
 
 // Import pages files
-import Accueil from './pages/Accueil/Accueil.js'
-import Formations from './pages/Formations/Formations.js'
-import Projets from './pages/Projets/Projets.js'
-import Veilles from './pages/Veilles/Veilles.js'
+import Accueil from './pages/Accueil/Accueil.js';
+import Formations from './pages/Formations/Formations.js';
+import Projets from './pages/Projets/Projets.js';
+import Veilles from './pages/Veilles/Veilles.js';
+import Mentions from './pages/Mentions/Mentions.js';
+
+// Import components files
+import Header from './components/Header/Header.js';
+import Social from "./components/Social/Social.js";
+import Map from "./components/Map/Map.js";
+import MyNavbar from './components/Navbar/Navbar.js';
+import Footer from './components/Footer/Footer.js';
 import Login from './components/Login/Login.js';
 import Register from './components/Register/Register.js';
 
-
-// Import components files
-import Header from './components/Header/Header.js'
-import Social from "./components/Social/Social.js"
-import Map from "./components/Map/Map.js"
-import MyNavbar from './components/Navbar/Navbar.js'
-import Footer from './components/Footer/Footer.js'
 
 // Import style
 import './App.scss';
@@ -103,6 +104,7 @@ function App() {
                         <Route exact path='/projets' component={Projets}/>
                         <Route exact path='/veilles' component={Veilles}/>
                         <Route exact path='/register' component={Register}/>
+                        <Route exact path='/mentions' component={Mentions}/>
                         <Route exact path='/login'>
                           <Login
                             logIn={val => setIsLogged(val)} />
@@ -112,8 +114,8 @@ function App() {
                   )}/>
                   </AnimatePresence>
                 </div>
+                <Footer />
               </BrowserRouter>
-              <Footer />
             </Grid>
           </Grid>
         </Container>

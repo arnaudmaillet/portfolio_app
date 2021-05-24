@@ -1,7 +1,8 @@
 import React from 'react'
 import './Footer.scss'
 import MyData from '../../utils/Data.js'
-import { makeStyles } from "@material-ui/core";
+import { makeStyles, Typography } from "@material-ui/core";
+import { NavLink, withRouter } from 'react-router-dom';
 
 const style = makeStyles(theme => ({
     color: {
@@ -17,7 +18,9 @@ const Footer = () => {
     return (
         <div className='footer'>
             <div className='footer_left'>
-                <a href='/' className={['footer_left_terms', classes.color].join(' ')}>Mentions légales</a>
+                <NavLink exact to='/mentions'>
+                    <Typography className={['footer_left_terms', classes.color].join(' ')}>Mentions légales</Typography>
+                </NavLink>
             </div>
             <div className='footer_right'>
                 <div className='footer_right_copyrights'>Tout droits reservés à
@@ -28,4 +31,4 @@ const Footer = () => {
     )
 }
 
-export default Footer
+export default withRouter(Footer)

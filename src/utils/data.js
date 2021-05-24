@@ -29,6 +29,7 @@ import VisibilityIcon from '@material-ui/icons/Visibility';
 import VisibilityOffIcon from '@material-ui/icons/VisibilityOff';
 import KeyboardArrowUpRoundedIcon from '@material-ui/icons/KeyboardArrowUpRounded';
 import KeyboardArrowDownRoundedIcon from '@material-ui/icons/KeyboardArrowDownRounded';
+import GavelRoundedIcon from '@material-ui/icons/GavelRounded';
 
 // Import profile image
 import WordpressForm from './../assets/img/wordpressForm.jpg';
@@ -94,9 +95,9 @@ export default {
     
         img : ImgProfil,
         email: 'arnaud.maillet.pro@gmail.com',
-        adress: '14 rue des Rinchevaux 8000 Amiens',
+        adress: '14 rue des Rinchevaux 8000 AMIENS',
         job: 'etudiant',
-        phone: '0101010101',
+        phone: '0688772879',
         CV : pdf,
 
         map: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2094.7675155657794!2d2.296521506320683!3d49.89343022524075!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e78438b0abd7c3%3A0xff54500fc939881f!2zTHljw6llIFByaXbDqSBTYWludCBSw6ltaQ!5e0!3m2!1sfr!2sfr!4v1617489467835!5m2!1sfr!2sfr" width="400" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>',
@@ -113,6 +114,7 @@ export default {
         nav_item2: <SchoolRoundedIcon/>,
         nav_item3: <DvrRoundedIcon/>,
         nav_item4: <NewReleasesRoundedIcon/>,
+        nav_item5: <GavelRoundedIcon/>,
         nav_authentication: <AccountCircleRoundedIcon/>,
         nav_darkmode_light: <BrightnessLowRoundedIcon/>,
         nav_darkmode_dark: <Brightness4RoundedIcon/>,
@@ -536,4 +538,11 @@ export default {
             ]
         }
     },
+
+    Mentions: {
+        adresse: 'www./',
+        hebergeur: {
+            name: 'OVH SA', adress: '2 rue Kellermann – BP 80157 59053 ROUBAIX CEDEX 1',
+        }
+    }
 }
