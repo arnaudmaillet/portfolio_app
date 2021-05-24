@@ -23,7 +23,7 @@ const SkillsArray = (props) => {
     const [data, setData] = useState(null)
     const [projects, setProjects] = useState(null)
     const [valide, setValide] = useState(null)
-    const [loginStatus, setLoginStatus] = useState(false)
+
 
     const [msg, setMsg] = useState('')
     const [alertOpen, setAlertOpen] = useState(false)
@@ -63,13 +63,6 @@ const SkillsArray = (props) => {
         })
     }, [])
 
-    useEffect(() => {
-        Axios.get('http://localhost:3003/login').then((response) => {
-            if (response.data.loggedIn === true) {
-                setLoginStatus(true)
-            }
-        })
-    }, [])
 
     const array = (data) => {
         let result = []
@@ -121,7 +114,7 @@ const SkillsArray = (props) => {
                             <Table size='small'>
                                 <TableBody>
                                     {props.proc.domaines.map((dom) => (
-                                        <Domaine key={dom.numDom} proc={props.proc} dom={dom} />
+                                        <Domaine key={dom.numDom} proc={props.proc} dom={dom} isLogged={props.isLogged}/>
                                     ))}
                                 </TableBody>
                             </Table>
@@ -150,7 +143,7 @@ const SkillsArray = (props) => {
                             <Table size='small'>
                                 <TableBody>
                                     {props.dom.activites.map((act) => (
-                                        <Activite key={act.numAct} proc={props.proc} dom={props.dom} act={act} />
+                                        <Activite key={act.numAct} proc={props.proc} dom={props.dom} act={act} isLogged={props.isLogged}/>
                                     ))}
                                 </TableBody>
                             </Table>
@@ -169,7 +162,7 @@ const SkillsArray = (props) => {
                 <TableCell width='400px'>
                     <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'flex-end' }}>
                         {projects && projects.map((proj) => (
-                            <CustomCheckbox key={proj.id} proc={props.proc} dom={props.dom} act={props.act} proj={proj} />
+                            <CustomCheckbox key={proj.id} proc={props.proc} dom={props.dom} act={props.act} proj={proj} isLogged={props.isLogged}/>
                         ))}
                     </div>
                 </TableCell>
@@ -201,9 +194,9 @@ const SkillsArray = (props) => {
         return (
             <div style={{ width: '80px', textAlign: 'center' }}>
                 {valide && valide.some(element => element.numProc === props.proc.numProc && element.numDom === props.dom.numDom && element.numAct === props.act.numAct && element.idProjet === props.proj.id) === true ?
-                    <Checkbox color='primary' disabled={loginStatus ? false : true} onClick={handleClick} checked></Checkbox>
+                    <Checkbox color='primary' disabled={props.isLogged ? false : true} onClick={handleClick} checked></Checkbox>
                     :
-                    <Checkbox color='primary' disabled={loginStatus ? false : true} onClick={handleClick}></Checkbox>
+                    <Checkbox color='primary' disabled={props.isLogged ? false : true} onClick={handleClick}></Checkbox>
                 }
             </div>
         )
@@ -211,6 +204,7 @@ const SkillsArray = (props) => {
 
     return (
         <>
+        
         <Dialog
             fullScreen
             open={props.open}
@@ -226,7 +220,7 @@ const SkillsArray = (props) => {
                     <Typography variant="h6" className={classes.title}>
                         {MyData.skillsArray.title}
                     </Typography>
-                    {loginStatus ? (
+                    {props.isLogged ? (
                         <Button autoFocus color="inherit" onClick={handleSave}>
                             Enregistrer
                         </Button>
@@ -255,7 +249,7 @@ const SkillsArray = (props) => {
                         <TableBody>
                             {data ?
                                 data.map((proc) => (
-                                    <Processus key={proc.numProc} proc={proc} />
+                                    <Processus key={proc.numProc} proc={proc} isLogged={props.isLogged}/>
                                 ))
                                 :
                                 <TableRow></TableRow>

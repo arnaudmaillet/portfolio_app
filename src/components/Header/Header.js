@@ -25,7 +25,7 @@ const Header = () => {
         <Paper elevation={MyData.settings.cardElevation}>
             <div className='profile'>
                 <div className='profile_name'>
-                    <Typography className={[classes.textDark, 'profile_name_text'].join(' ')}>{MyData.profile.name}</Typography>
+                    <Typography className={[classes.textDark, 'profile_name_text'].join(' ')}>{MyData.profile.firstName + ' '}{MyData.profile.name}</Typography>
                     <Typography className={[classes.text, 'profile_name_title'].join(' ')}>{MyData.profile.title}</Typography>
                 </div>
                 <div className='profile_img'>

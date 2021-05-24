@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { Grid, Tabs, Tab, Grow, Card, CardMedia, CardContent, Typography, makeStyles, Paper } from '@material-ui/core'
 import Axios from 'axios'
 
@@ -39,15 +39,6 @@ const Formations = (props) => {
     const [tabValue, setTabValue] = useState('all')
     const [option, setoption] = useState(0)
     const [openDialog, setOpenDialog] = useState(false)
-    const [loginStatus, setLoginStatus] = useState(false)
-
-    useEffect(() => {
-        Axios.get('http://localhost:3003/login').then((response) => {
-            if (response.data.loggedIn === true) {
-                setLoginStatus(true)
-            }
-        })
-    }, [])
 
     return (
         <Paper elevation={MyData.settings.cardElevation}>
@@ -189,7 +180,7 @@ const Formations = (props) => {
                     </Grid>
                 </Grid>
             </motion.div>
-            <SkillsArray open={openDialog} close={val => setOpenDialog(val)} isLogged={loginStatus || props.logStatus ? true : false} />
+            <SkillsArray open={openDialog} close={val => setOpenDialog(val)} isLogged={props.logStatus} />
         </Paper>
     )
 }

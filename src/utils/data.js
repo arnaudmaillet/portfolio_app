@@ -520,7 +520,20 @@ export default {
         title: 'Tableau des compétences'
     },
 
-    tech: {
-        title: 'Veilles technologiques',
+    veilles: {
+        droit: 
+        {
+            title: 'Veilles juridique',
+            items: [
+                {id: '1', title: 'Le contrat SAAS', link: <iframe src="https://lyceesaintremi-my.sharepoint.com/personal/arnaud_maillet_saint-remi_net/_layouts/15/Doc.aspx?sourcedoc={f383ba5a-1d26-44ec-ab13-7beea3697d66}&amp;action=embedview&amp;wdAr=1.7777777777777777" width="350px" height="221px" frameborder="0">Ceci est un document <a target="_blank" href="https://office.com">Microsoft Office</a> incorporé, avec <a target="_blank" href="https://office.com/webapps">Office</a>.</iframe>}
+            ]
+        },
+        tech: 
+        {
+            title: 'Veilles technologique',
+            items: [
+                {id: '1', title: 'La cryptographie', link : <iframe src="https://lyceesaintremi-my.sharepoint.com/personal/arnaud_maillet_saint-remi_net/_layouts/15/Doc.aspx?sourcedoc={4593c25c-bd13-41a4-a955-92df576712b1}&amp;action=embedview&amp;wdAr=1.7777777777777777" width="350px" height="221px" frameborder="0">Ceci est un document <a target="_blank" href="https://office.com">Microsoft Office</a> incorporé, avec <a target="_blank" href="https://office.com/webapps">Office</a>.</iframe>}
+            ]
+        }
     },
 }

@@ -90,14 +90,16 @@ function App() {
                 <MyNavbar
                   onChange={() => setDarkMode(!darkMode)}
                   checked={darkMode}
-                  logStatus={isLogged ? true : false}
+                  logStatus={isLogged}
                   logOut={val => setIsLogged(val)} />
                 <div className='main-content'>
                 <AnimatePresence exitBeforeEnter>
                   <Route render={({location}) =>(
                     <Switch location={location} key={location.pathname}>
                         <Route exact path='/' component={Accueil}/>
-                        <Route exact path='/formations' component={Formations} logStatus={isLogged ? true : false}/>
+                        <Route exact path='/formations'>
+                          <Formations logStatus={isLogged}/>
+                        </Route> 
                         <Route exact path='/projets' component={Projets}/>
                         <Route exact path='/veilles' component={Veilles}/>
                         <Route exact path='/register' component={Register}/>

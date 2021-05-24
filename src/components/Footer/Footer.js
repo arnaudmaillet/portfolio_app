@@ -21,7 +21,7 @@ const Footer = () => {
             </div>
             <div className='footer_right'>
                 <div className='footer_right_copyrights'>Tout droits reservés à
-                    <span className='footer_right_copyrights_name'>&nbsp;{MyData.profile.name}</span>
+                    <span className='footer_right_copyrights_name'>&nbsp;{MyData.profile.name + ' '}{MyData.profile.firstName}</span>
                 </div>
             </div>
         </div>
