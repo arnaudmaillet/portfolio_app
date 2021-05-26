@@ -58,6 +58,7 @@ const MyNavbar = (props) => {
             setMsg(response.data.message)
             setAlertType('success')
             setAlertOpen(true)
+            window.location = '/login'
         })
     }
 

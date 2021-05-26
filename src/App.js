@@ -5,6 +5,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import { ThemeProvider, createMuiTheme, CssBaseline } from "@material-ui/core";
 import { AnimatePresence } from "framer-motion";
 
+
 // Import pages files
 import Accueil from './pages/Accueil/Accueil.js';
 import Formations from './pages/Formations/Formations.js';
@@ -46,7 +47,7 @@ function App() {
       }
     },
   })
-
+  
   const darkTheme = createMuiTheme({
     palette: {
       type: 'dark',
@@ -63,6 +64,7 @@ function App() {
   })
   const [darkMode, setDarkMode] = useState(MyData.settings.darkmodeDefault)
   const [isLogged, setIsLogged] = useState(false)
+  
   return (
     <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
       <CssBaseline>
