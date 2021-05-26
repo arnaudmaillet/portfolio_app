@@ -50,7 +50,7 @@ const Register = () => {
             return;
         }
         if (password === confirmPassword) {
-            Axios.post("http://localhost:3003/register", {
+            Axios.post("http://152.228.135.248:3003/register", {
                 username: username,
                 password: password,
             }).then((response) => {

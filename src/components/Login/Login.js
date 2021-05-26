@@ -38,7 +38,7 @@ const Login = (props) => {
             setAlertType('error')
             setAlertOpen(true)
         } else {
-            Axios.post("http://localhost:3003/login", {
+            Axios.post("http://152.228.135.248:3003/login", {
                 username: username,
                 password: password,
             }).then((response) => {
