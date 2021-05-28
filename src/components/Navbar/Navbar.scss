@@ -127,6 +127,29 @@
 }
 
 
-@media (max-width: ) {
+@media (max-width: 992px) {
+    .myNavbar_content {
+        &_left_section {
+            align-items: flex-start;
+            margin-left: 0px;
     
+            &_link {
+                text-align: left;
+            }
+        }
+
+        &_right_section {
+            &_btn {
+                transform: translateY(-92px);
+            }
+
+            &_icons {
+                transform: translateY(40px) translateX(0px);
+            }
+
+            &_darkmode {
+                transform: rotateZ(90deg) translateY(-20px) translateX(18px);
+            }
+        }
+    }
 }
