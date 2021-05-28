@@ -19,6 +19,14 @@
             font-weight: 600!important;
         }
 
+        &_download{
+            margin: 15px;
+
+            &:hover{
+                cursor: pointer;
+            }
+        }
+
         &_text {
             font: smaller!important;
             line-height: 25px!important;

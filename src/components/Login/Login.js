@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import { NavLink } from 'react-router-dom';
 import { Grid, Paper, Typography, makeStyles, TextField, Snackbar } from '@material-ui/core'
 import { Alert } from '@material-ui/lab';
 import CustomButton from '../Button/Button.js'
@@ -97,9 +96,9 @@ const Login = (props) => {
                         </Grid>
                     </Grid>
                     <Grid item xs={12} className='authentication_login_btn'>
-                        <NavLink exact to='/register'>
+                        {/* <NavLink exact to='/register'> */}
                             <Typography className={['authentication_login_btn_create', classes.text].join(' ')}>{MyData.authentication.login.textBtnCreateAccount}</Typography>
-                        </NavLink>
+                        {/* </NavLink> */}
                         <CustomButton
                             className='authentication_login_btn_login'
                             color='primary'

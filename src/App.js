@@ -1,7 +1,7 @@
 // Import dependances
 import React, { useState } from 'react';
 import { Container, Grid } from '@material-ui/core';
-import { BrowserRouter, Switch, Route } from 'react-router-dom'
+import { HashRouter, Switch, Route } from 'react-router-dom'
 import { ThemeProvider, createMuiTheme, CssBaseline } from "@material-ui/core";
 import { AnimatePresence } from "framer-motion";
 
@@ -89,7 +89,7 @@ function App() {
               sm
               md
               lg>
-              <BrowserRouter>
+              <HashRouter>
                 <MyNavbar
                   onChange={() => setDarkMode(!darkMode)}
                   checked={darkMode}
@@ -117,7 +117,7 @@ function App() {
                   </AnimatePresence>
                 </div>
                 <Footer />
-              </BrowserRouter>
+              </HashRouter>
             </Grid>
           </Grid>
         </Container>

@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { Grid, Tabs, Tab, Grow, Card, CardMedia, CardContent, Typography, makeStyles, Paper } from '@material-ui/core'
-import Axios from 'axios'
 
 import Title from '../../components/Title/Title'
 import MyData from "../../utils/Data.js"
@@ -29,7 +28,7 @@ const style = makeStyles(theme => ({
         "&:hover": {
             color: theme.palette.primary.main,
         },
-    }
+    },
 }))
 
 const Formations = (props) => {
@@ -48,7 +47,10 @@ const Formations = (props) => {
                     <Grid item xs={12}>
                         <div className='school-training_item'>
                             <Typography className='school-training_item_title'>{MyData.learning.schoolTraining.btsSio.title}</Typography>
-                            <CustomButton text='Tableau des compétences' color='primary' onClick={() => setOpenDialog(true)} />
+                            <div>
+                                <CustomButton text='Tableau des compétences' color='primary' onClick={() => setOpenDialog(true)} />
+                                <span className='school-training_item_download'><a href={MyData.profile.E6} className={classes.icon} target="_blank" rel="noreferrer">{MyData.icons.btn_download}</a></span>
+                            </div>
                         </div>
                         <div>
                             <Typography className={['school-training_item_text', classes.text].join(' ')}>{MyData.learning.schoolTraining.btsSio.text}</Typography>
