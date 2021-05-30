@@ -42,9 +42,19 @@ import Javascript_O from './../assets/img/JavascriptForm_O.jpg';
 import SQLForm_O from './../assets/img/SQLForm_O.jpg';
 import SassForm_O from './../assets/img/sassForm_O.jpg';
 import GSBProj from './../assets/img/GSBProj.png';
+import GSBProj_1 from './../assets/img/GSBProj_1.png';
+import GSBProj_2 from './../assets/img/GSBProj_2.png';
+import GSBProj_3 from './../assets/img/GSBProj_3.png';
+import GSBProj_4 from './../assets/img/GSBProj_4.png';
 import VDSProj from './../assets/img/VDSProj.png';
+import VDSProj_1 from './../assets/img/VDSProj_1.png';
 import ReactPersoProj from './../assets/img/ReactPersoProj.PNG';
+import ReactPersoProj_1 from './../assets/img/ReactPersoProj_1.PNG';
+import ReactPersoProj_2 from './../assets/img/ReactPersoProj_2.PNG';
 import MeteoremProj from './../assets/img/MeteoremProj.PNG';
+import MeteoremProj_1 from './../assets/img/MeteoremProj_1.PNG';
+import MeteoremProj_2 from './../assets/img/MeteoremProj_2.PNG';
+import MeteoremProj_3 from './../assets/img/MeteoremProj_3.PNG';
 import RoseDesVentsProj from './../assets/img/roseDesVentsProj.PNG';
 import MeteoremAPIProj from './../assets/img/MeteoremAPIProj.png';
 import ADCProj from './../assets/img/ADCProj.PNG';
@@ -432,7 +442,7 @@ export default {
             {
                 id: 1,
                 tag: 'BTS',
-                img: GSBProj,
+                img: [GSBProj, GSBProj_1, GSBProj_2, GSBProj_3, GSBProj_4],
                 title: 'Application GSB',
                 description: 'Application centralisant des comptes rendus de visites',
                 text: 'Cette application représente le 2ème PPE de ma 2ème année de BTS. Ecrite en C#, elle a pour objectif de centraliser les comptes rendus de visites de praticiens pour les visiteurs médicaux.\n\n Principales fonctionalités : \n - Consultation, modification et impression d\'un rendez-vous \n - Bilan, consultation et modification des visites \n - Consultation des médicaments \n - Consultation, modification et suppression d\'un praticien \n\n Ce qui a été appliqué dans ce projet : \n - Les classes : classe métier et classe passerelle \n - Les procédures SQL',
@@ -445,7 +455,7 @@ export default {
             {
                 id: 2,
                 tag: 'Personnel',
-                img: ReactPersoProj,
+                img: [ReactPersoProj, ReactPersoProj_1, ReactPersoProj_2],
                 title: 'React App Personnages',
                 description: 'Application permet de créer des personnages de jeux fictifs',
                 text: 'Cette application React permet de personnaliser un personnage fictif de jeux video. Toutefois l\'application n\'est que visuelle (front-end), les données ne sont donc pas enregistrées dans une base de données. \n\n Principales fonctionalités : \n - Défilement des différents personnages stockées dans un tableau.\n - Attribution des points de compétences du personnage \n - Sélection de l\'arme du personnage. \n\n Ce qui a été appliqué dans ce projet : \n - Les composants et leur propriétés \n - La syntaxe JSX \n - Les évenements \n - Les opérateurs spread \n - Les fonctions fléchées',
@@ -456,7 +466,7 @@ export default {
             {
                 id: 3,
                 tag: 'Stages',
-                img: MeteoremProj,
+                img: [MeteoremProj, MeteoremProj_1, MeteoremProj_2, MeteoremProj_3],
                 title: 'Site Web Météorem',
                 description: 'Réalisation d\'un site web de type vitrine pour l\'entreprise Météorem',
                 text: 'Le site web a été réalisé durant ma période de stage du 11/01/2021 au 19/02/2021 lors de ma 2ème année de BTS SIO. Le site avait pour principale contrainte l\'utilisation de l\'outil WordPress. Ce site à ensuite été hébergé sur l\'hébergeur de l\'entreprise (OVH). \n\n Principales fonctionalités : \n - Multilangage \n - Contact de l\'entreprise via un formulaire \n - Présentation de l\'entreprise et de ses offres \n\n Ce qui a été appliqué dans ce projet : \n - La prise en main de l\'outil WordPress \n - L\'utilisation du plugin Elementor Pro, WPMail, GDPR Cookie \n - Hebergement du site via FileZilla et Duplicator',
@@ -468,7 +478,7 @@ export default {
             {
                 id: 4,
                 tag: 'BTS',
-                img: VDSProj,
+                img: [VDSProj, VDSProj_1],
                 title: 'Site Web VDS',
                 description: 'Refonte du site Web Amicale du Val de Somme',
                 text: 'Ce site a été réalisé lors de mon 1er PPE de ma deuxième année de BTS. Les membres du conseil de l\'association sportive Amical du Val de Somme ont décidé de redévelopper la totalité du site web suite au départ de l\'informaticien. Chaques membres de la classe est chargé de réaliser une fonctionnalité du site qui lui sera attribué. \n\n Fonctionalités attribuées : \n - Modification d\'un membre \n - Consultation des membres \n - Ajout d\'un membre \n\n Ce qui a été appliqué dans ce projet : \n - Bases de Javascript \n - Liaison à la base de données via PHP \n - Variables de session',
@@ -484,7 +494,7 @@ export default {
             {
                 id: 5,
                 tag: 'Stages',
-                img: RoseDesVentsProj,
+                img: [RoseDesVentsProj],
                 title: 'Widgets Météorem',
                 description: 'Conception de widgets intégrables dans une page web',
                 text: 'Ce composant a été réalisé durant ma période de stage du 11/01/2021 au 19/02/2021 lors de ma 2ème année de BTS SIO. Sous forme de fichiers, ce composant web permet d\'intégrer un widget météo sur n\'importe quelle page web. Les données sont alimentées via une API. Pour intégrer le widget, il suffit de copier le dossier contenant les fichiers à la racine du site web puis d\'insérer la balise <rose-des-vents/>  en renseignant les attributs vent-ville (id de la station) et vent-taille (taille du widget). \n\n Fonctionalités attribuées : \n - Choix de la station à afficher \n - Dimensions du widget \n\n Ce qui a été appliqué dans ce projet : \n - Composants web \n - La fonction fetch',
@@ -495,7 +505,7 @@ export default {
             {
                 id: 6,
                 tag: 'Stages',
-                img: MeteoremAPIProj,
+                img: [MeteoremAPIProj],
                 title: 'API Météorem',
                 description: 'API Rest alimentant les données des widgets Météorem',
                 text: 'Cette API a été réalisé durant ma période de stage du 11/01/2021 au 19/02/2021 lors de ma 2ème année de BTS SIO. Elle renvoie sous forme d\'un tableau JSON les données des différentes stations météorologiques. Les données sont ensuite mises en forme dans lors de l\'affichage des widgets \n\n Fonctionalités attribuées : \n - Consultation des données sous forme d\'un tableau JSON \n\n Ce qui a été appliqué dans ce projet : \n - ExpressJS (controllers, routes, liaison avec la base de données ...)',
@@ -506,7 +516,7 @@ export default {
             {
                 id: 7,
                 tag: 'BTS',
-                img: ADCProj,
+                img: [ADCProj],
                 title: 'Gestion des comptes',
                 description: 'Module gérant les comptes utilisateurs d\'un site en ligne',
                 text: 'Ce module a été réalisé lors de mon 1er PPE de ma permière année de BTS. L\'objectif est de créer deux interfaces, une pour l\'utilisateur permettant de modifier ses coordonnées et l\'autre pour l\'administrateur permettant de changer ses coordonnées et celles des autres utilisateurs. Un système de messagerie a été intégré par la suite. \n\n Fonctionalités attribuées : \n - Consultation, modification et suppression des données de l\'utilisateur \n - Consultation, modification et suppression des données des utilisateurs (admin) \n - Consultation, modification et suppression des messages \n - Création de comptes utilisateurs \n - Contrôle des données renseignées \n - Récupération du mot de passe \n\n Ce qui a été appliqué dans ce projet : \n - Expressions régulières \n - Evènements javascript',

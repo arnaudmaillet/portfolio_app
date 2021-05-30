@@ -3,6 +3,8 @@ import MyData from '../../utils/Data.js'
 import { Grid, Typography, Tabs, Tab, Card, CardActionArea, CardMedia, CardContent, Grow, Dialog, DialogTitle, DialogContent, DialogActions, Paper, makeStyles, Tooltip } from '@material-ui/core'
 import Title from '../../components/Title/Title.js'
 import { motion } from "framer-motion";
+import { Carousel } from 'react-responsive-carousel';
+import styles from 'react-responsive-carousel/lib/styles/carousel.min.css';
 
 import './Projets.scss'
 
@@ -75,7 +77,7 @@ const Projets = () => {
                                                 {/* An object is passed to the setProjectDialog function */}
                                                 <Card elevation={MyData.settings.cardElevation} className='projects_custom-card' onClick={() => setProjectDialog(project)}>
                                                     <CardActionArea>
-                                                        <CardMedia className='projects_custom-card_img' image={project.img} title={project.title} />
+                                                        <CardMedia className='projects_custom-card_img' image={project.img[0]} title={project.title} />
                                                         <CardContent>
                                                             <Typography className='projects_custom-card_title'>{project.title}</Typography>
                                                             <Typography variant='body2' className={['projects_custom-card_text', classes.text].join(' ')}>{project.description}</Typography>
@@ -97,7 +99,12 @@ const Projets = () => {
                         maxWidth='sm'
                         open={true}
                         onClose={() => setProjectDialog(null)}>
-                        <img src={projectDialog.img} alt='' className='projects_dialog-image'></img>
+                            <Carousel showThumbs={false} autoPlay infiniteLoop >
+                                {projectDialog?.img?.map((img, i) => (
+                                    <img key={i} src={img} alt='' className='projects_dialog-image'></img>
+                                ))}
+                            </Carousel>
+
                         <DialogActions className='projects_dialog-action'>
                             <div style={{marginLeft: '10px'}} className={['projects_dialog-action_icon', classes.color].join(' ')} onClick={() => setProjectDialog(null)}>
                                 {MyData.icons.dialog_close}

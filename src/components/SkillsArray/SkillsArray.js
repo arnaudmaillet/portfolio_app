@@ -31,7 +31,7 @@ const SkillsArray = (props) => {
     const [alertType, setAlertType] = useState('')
 
     const handleSave = () => {
-        Axios.post("http://152.228.135.248:3003/setSkills", {
+        Axios.post("https://152.228.135.248:3003/setSkills", {
             skills: valide
         }).then((response) => {
             if (response) {
@@ -47,25 +47,25 @@ const SkillsArray = (props) => {
     }
 
     useEffect(() => {
-        Axios.get('http://152.228.135.248:3003/skillsArray').then((response) => {
+        Axios.get('https://152.228.135.248:3003/skillsArray').then((response) => {
             response ? array(response.data.data) : console.log('error');
         })
     }, [])
 
     useEffect(() => {
-        Axios.get('http://152.228.135.248:3003/projects').then((response) => {
+        Axios.get('https://152.228.135.248:3003/projects').then((response) => {
             response ? setProjects(response.data.data) : console.log('error');
         })
     }, [])
 
     useEffect(() => {
-        Axios.get('http://152.228.135.248:3003/estValide').then((response) => {
+        Axios.get('https://152.228.135.248:3003/estValide').then((response) => {
             response ? setValide(response.data.data) : console.log('error');
         })
     }, [])
 
     useEffect(() => {
-        Axios.get('http://152.228.135.248:3003/login').then((response) => {
+        Axios.get('https://152.228.135.248:3003/login').then((response) => {
             if (response.data.loggedIn === true) {
                 setLoginStatus(true)
             }
