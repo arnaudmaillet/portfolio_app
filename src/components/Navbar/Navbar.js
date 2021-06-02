@@ -52,7 +52,7 @@ const MyNavbar = (props) => {
 
 
     const logout = () => {
-        Axios.post("https://152.228.135.248:3003/logout").then((response) => {
+        Axios.post("http://api.monsite80.fr:3003/logout").then((response) => {
             setLoginStatus(false)
             props.logOut(false)
             setMsg(response.data.message)
@@ -63,7 +63,7 @@ const MyNavbar = (props) => {
     }
 
     useEffect(() => {
-        Axios.get('https://152.228.135.248:3003/login').then((response) => {
+        Axios.get('http://api.monsite80.fr:3003/login').then((response) => {
             if (response.data.loggedIn === true) {
                 setLoginStatus(true)
             }
